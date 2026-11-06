@@ -5,44 +5,44 @@
       "qs": [
         "Which of our data and systems will you access — and from which countries?",
         "Do you hold ISO/IEC 27001, a SOC 2 Type II report or a national scheme such as BSI C5, SecNumCloud or ENS?",
-        "Will you use our data to train AI models? Can we opt out in the contract?",
+        "Will you use our data to train AI models — and can we opt out in the contract?",
         "Who are your sub-processors and fourth parties?",
-        "How do you build securely: SBOM, signed releases, a vulnerability disclosure policy?"
+        "How do you build securely — SBOM, signed releases, a vulnerability disclosure policy?"
       ]
     },
     {
       "name": "Contract",
       "qs": [
-        "Notify us of incidents within [X] hours — set it shorter than our own deadline (NIS2 24 h; DORA 4 h after classification).",
-        "Give us audit rights and cooperate with our regulators.",
-        "Commit to data location, return and certified deletion at exit.",
-        "Agree security requirements, patch timelines and vulnerability disclosure.",
-        "Give notice — and seek our approval — before changing sub-processors."
+        "Will you notify us of incidents within [X] hours — shorter than our own deadline (NIS2 24 h; DORA 4 h after classification)?",
+        "Will you give us audit rights and cooperate with our regulators?",
+        "Will you commit to where our data is stored — and to returning it and certifying its deletion at exit?",
+        "Will you agree security requirements, patch timelines and coordinated vulnerability disclosure?",
+        "Will you give notice — and seek our approval — before changing sub-processors?"
       ]
     },
     {
       "name": "Onboard",
       "qs": [
-        "Name 24/7 security and incident contacts — and test them.",
-        "Use MFA and least privilege for every supplier account.",
-        "Connect only through managed, logged channels.",
-        "Add the supplier to our asset, data-flow and register-of-information records."
+        "Who are your 24/7 security and incident contacts — and can we test them?",
+        "Will every account you use with us have MFA and only the access it needs?",
+        "Will you connect only through managed, logged channels?",
+        "Can you give us what we need for our asset, data-flow and register-of-information records?"
       ]
     },
     {
       "name": "Operate & monitor",
       "qs": [
-        "Refresh evidence every year: certificates, pen-test summaries, policies.",
-        "Review supplier accounts and access every quarter.",
-        "Watch their advisories, breaches and known-exploited vulnerabilities in their products.",
-        "Run a joint exercise at least once a year."
+        "Will you share fresh evidence every year — certificates, pen-test summaries, policies?",
+        "Can we review your accounts and access to our systems every quarter?",
+        "How will you tell us about advisories, breaches and known-exploited vulnerabilities in your products?",
+        "Will you run a joint exercise with us at least once a year?"
       ]
     },
     {
       "name": "Incident",
       "qs": [
-        "What happened, when, and is it contained?",
-        "Is our data or service affected? Which indicators should we block?",
+        "What happened, when — and is it contained?",
+        "Is our data or service affected — and which indicators should we block?",
         "Which authorities have you notified, and when?",
         "Who speaks to the press — and can we agree messages before anything is published?"
       ]
@@ -50,10 +50,10 @@
     {
       "name": "Exit",
       "qs": [
-        "Return our data and certify its deletion.",
-        "Revoke every account, key and connection.",
-        "Support the transition to a new provider.",
-        "Keep the logs we need for investigations and audits."
+        "How and when will you return our data — and certify its deletion?",
+        "Will you revoke every account, key and connection on the last day?",
+        "How will you support the transition to a new provider?",
+        "Will you keep the logs we need for investigations and audits — and for how long?"
       ]
     }
   ],

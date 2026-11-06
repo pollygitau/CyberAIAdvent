@@ -12,7 +12,7 @@
     try { s = await getJSON("supply.json"); } catch (e) { el("stages").append(h("p", { text: "The toolkit could not load. Please refresh the page." })); return; }
 
     s.stages.forEach((st, i) => {
-      const card = h("article", { class: "card" },
+      const card = h("article", { class: "stage" },
         h("div", { class: "ch" }, h("span", { class: "badge-n", text: String(i + 1) }), h("h3", { text: st.name })),
         h("ul", {}, st.qs.map((q) => h("li", {}, h("b", { "aria-hidden": "true", text: "?" }), q))));
       card.style.animationDelay = (i * 0.08).toFixed(2) + "s";
