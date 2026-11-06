@@ -77,12 +77,12 @@ GitHub Pages on the free plan only serves public repositories, so this repo can 
 | Repo | Visibility | Holds |
 |---|---|---|
 | this repo (`CyberAIAdvent`) | Private | All source, the daily alerts and their secrets |
-| `AdventCalendar2026` (set in `SITE_REPO` in `pages.yml`) | Public | Only the built `site/` folder, served at `https://pollygitau.github.io/AdventCalendar2026/` |
+| `aware-by-design/aware-by-design.github.io` (set in `SITE_REPO` in `pages.yml`) | Public, in the free **aware-by-design** organisation | Only the built `site/` folder, served at `https://aware-by-design.github.io/` |
 
 Do it in this order so the site never goes offline:
 
-1. Create the public repo `AdventCalendar2026` (no README).
-2. Create a fine-grained token for **that repo only** with **Contents: Read and write** and an expiry after the campaign (e.g. 31 Jan 2027).
+1. Create the free organisation **aware-by-design** and, inside it, the public repo **`aware-by-design.github.io`** (no README). That exact name gives the short address with no repo name in it.
+2. Create a fine-grained token with **Resource owner: aware-by-design**, for **that repo only**, with **Contents: Read and write** and an expiry after the campaign (e.g. 31 Jan 2027).
 3. Store it in **this** repo as an Actions secret named `SITE_DEPLOY_TOKEN` (Settings → Secrets and variables → Actions). Never paste it anywhere else.
 4. Push or merge anything to `main` (or run the *Pages* workflow by hand). The `publish-site` job copies the built site into the public repo, adding `.nojekyll` and a short README.
 5. In the public repo: **Settings → Pages → Source: Deploy from a branch → `main` / `(root)`**. Check the site loads.

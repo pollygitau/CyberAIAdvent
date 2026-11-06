@@ -23,7 +23,7 @@ concurrency:
 
 env:
   # The public repo that hosts the built site when this repo is private.
-  SITE_REPO: pollygitau/AdventCalendar2026
+  SITE_REPO: aware-by-design/aware-by-design.github.io
 
 jobs:
   # Runs on every pull request too: this is the "build" status check that must pass before merging.
@@ -115,7 +115,10 @@ jobs:
           echo "::add-mask::${auth}"
           git_auth() { git -c "http.extraheader=AUTHORIZATION: basic ${auth}" "$@"; }
 
-          git_auth clone --quiet --depth 1 "https://github.com/${SITE_REPO}.git" public
+          if ! git_auth clone --quiet --depth 1 "https://github.com/${SITE_REPO}.git" public; then
+            echo "::error::Could not open ${SITE_REPO}. Check that the repo exists and that SITE_DEPLOY_TOKEN was created for it (resource owner = its organisation or account; Contents: read and write)."
+            exit 1
+          fi
           git -C public symbolic-ref HEAD refs/heads/main   # an empty repo starts on main too
 
           # Replace everything except git's own folder with the freshly built site.

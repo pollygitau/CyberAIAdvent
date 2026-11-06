@@ -74,4 +74,4 @@ The code can't set these; they decide who can change what goes live and what get
 
 ## Reporting a vulnerability
 
-Please report security issues privately through GitHub: open the **Security** tab of the public site repository, [pollygitau/AdventCalendar2026](https://github.com/pollygitau/AdventCalendar2026/security/advisories/new), and choose **Report a vulnerability**. You can also email **[SECURITY CONTACT]**. Please don't open a public issue for security problems.
+Please report security issues privately through GitHub: open the **Security** tab of the public site repository, [aware-by-design/aware-by-design.github.io](https://github.com/aware-by-design/aware-by-design.github.io/security/advisories/new), and choose **Report a vulnerability**. You can also email **[SECURITY CONTACT]**. Please don't open a public issue for security problems.
