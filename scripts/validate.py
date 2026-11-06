@@ -6,7 +6,7 @@ Checks
   * known stakeholders, icons, map pins and country-lens categories
   * every link is https:// AND on an allow-list of official domains — so a malicious
     pull request cannot slip phishing or javascript: links into the calendar (OWASP A05/A08)
-  * WhatsApp template limits for the fields the daily alert sends
+  * titles, DOs and DON'Ts are short single lines (they feed the share kit and calendar reminders)
   * every door has 1+ verbatim quotes that exist in the quote library (each with an allow-listed
     official link) and exactly four activities — at home, at work, leaders, tech teams — each
     tagged cyber (c), AI (a) or privacy (p) hygiene
@@ -49,7 +49,7 @@ def check_url(u: str, where: str) -> None:
 def main() -> int:
     data = json.loads((ROOT / "site" / "days.json").read_text(encoding="utf-8"))
     supply = json.loads((ROOT / "site" / "supply.json").read_text(encoding="utf-8"))
-    cfg = json.loads((ROOT / "config" / "alerts.json").read_text(encoding="utf-8"))
+    cfg = json.loads((ROOT / "config" / "site.json").read_text(encoding="utf-8"))
     settings = json.loads((ROOT / "site" / "settings.json").read_text(encoding="utf-8"))
     days, stk = data["days"], set(data["stakeholders"])
 
@@ -59,7 +59,6 @@ def main() -> int:
     check(data["modes"]["advent"]["doors"] == 24 and data["modes"]["full"]["doors"] == 31, "modes must be 24 and 31 doors")
     check(settings.get("defaultMode") in ("advent", "full"), "settings.json defaultMode must be advent or full")
     check(settings.get("defaultCountry", "eu") in {c["id"] for c in data["countries"]}, "settings.json defaultCountry must be a known country id")
-    check(cfg.get("mode") in ("advent", "full"), "alerts.json mode must be advent or full")
     for cid, nat in data["national"].items():
         check_url(nat.get("url", ""), f"national.{cid}")
         check(bool(nat.get("general")), f"national.{cid}: needs a 'general' entry as fallback")
@@ -98,7 +97,7 @@ def main() -> int:
             check_url(m.get("url", ""), f"door {n} readMore[{i}]")
         for field in ("title", "do", "dont"):
             val = d.get(field, "")
-            check(not re.search(r"[\r\n\t]| {5,}", val), f"door {n}: {field} breaks WhatsApp parameter rules")
+            check(not re.search(r"[\r\n\t]| {5,}", val), f"door {n}: {field} must be one line (no line breaks, tabs or long runs of spaces)")
             check(len(val) <= 200, f"door {n}: {field} is over 200 characters")
         for qid in d.get("quotes", []):
             check(qid in quotes, f"door {n}: unknown quote id {qid!r}")
@@ -127,11 +126,11 @@ def main() -> int:
     warnings: list[str] = []
     site_url = str(cfg.get("siteUrl", ""))
     if "[" in site_url or not site_url.startswith("https://"):
-        warnings.append("config/alerts.json siteUrl is still a placeholder: the .ics files will use the Pages address, and real alerts will refuse to send")
-    if "[" in str(cfg.get("reviewer", "[")):
-        warnings.append("config/alerts.json reviewer is still a placeholder: real alerts will refuse to send")
-    if cfg.get("mode") != settings.get("defaultMode"):
-        warnings.append(f"alerts.json mode ({cfg.get('mode')}) differs from settings.json defaultMode ({settings.get('defaultMode')}): alerts and the site will count doors differently")
+        warnings.append("config/site.json siteUrl is still a placeholder: the .ics files will use the Pages address")
+    # Privacy by design: the repo must never hold recipient lists or social-media identities.
+    banned = re.compile(r"WHATSAPP_RECIPIENTS|LINKEDIN_AUTHOR_URN|urn:li:person:", re.I)
+    for path in [*ROOT.joinpath("config").glob("*.json"), *ROOT.joinpath(".github", "workflows").glob("*.yml")]:
+        check(not banned.search(path.read_text(encoding="utf-8")), f"{path.relative_to(ROOT)}: personal-data channels (phone recipients or LinkedIn member IDs) are not allowed")
     for w in warnings:
         print(f"::warning::{w}" if os.environ.get("GITHUB_ACTIONS") == "true" else f"WARNING {w}")
 

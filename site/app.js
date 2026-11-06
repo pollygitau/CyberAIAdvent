@@ -280,7 +280,7 @@
       const p = el("panel"); p.replaceChildren();
       const n = state.selected, d = DAYS[n - 1];
       if (isLocked(n)) {
-        p.append(h("div", { class: "locked-msg" }, svg(P.lock), h("h2", { text: `Door ${n} opens on ${n} December` }), h("p", { text: "No peeking. Come back on the day — or ask your organiser to add you to the daily WhatsApp or LinkedIn alert." })));
+        p.append(h("div", { class: "locked-msg" }, svg(P.lock), h("h2", { text: `Door ${n} opens on ${n} December` }), h("p", { text: "No peeking. Come back on the day — or add the calendar reminders (the link just below the house) and each door will tell you when it opens." })));
         return;
       }
       const dt = new Date(data.year, data.month - 1, n), occ = data.occasions[n], isAI = d.track !== "cyber";

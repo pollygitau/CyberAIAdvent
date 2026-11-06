@@ -19,7 +19,8 @@ Also included:
 - **Around Europe:** an original map (Natural Earth, public domain) with a pin for each case study's location.
 - **Supplier toolkit** (`supply.html`): what to ask suppliers at each stage, the NIS2, DORA, GDPR, Cyber Resilience Act and AI Act duties, what happens when a supplier's incident hits you, who to contact at the authorities by country, and a joint tabletop exercise.
 - **The Winterwatch house:** a snowy house cut open like a doll's house. In the attic, Clinker keeps the Naughty list (it shows the player's own doors to redeem) beside a chest of presents, and smoke curls from the stone chimney. The calendar wall fills the middle floor: a Winterwatch sign, a **Follow December dates** switch (off = explore every door early), and door cards with *December*, a serif number, a line icon, the title and the topic, whose two leaves swing apart onto the explored card (points and status). The living room below has snow falling past the window, an armchair, a decorated tree and a fire burning under the CYBER / AI / PRIVACY stockings. Outside, a snowman waves in the falling snow. Everything is drawn in SVG and CSS; all motion switches off for visitors who ask their device to reduce motion.
-- **Alerts:** each morning a GitHub Actions job sends the day's door to **WhatsApp** (opted-in numbers) and posts it on **LinkedIn**, logging every send as a GitHub issue.
+- **Daily reminders without personal data:** a calendar subscription (`.ics`) reminds people each morning when a door opens. There's nothing to sign up for and no contact list. Each door's **share kit** opens WhatsApp, LinkedIn, email, X or Bluesky with ready-made text and no recipient filled in; the person sharing chooses where it goes.
+- **No personal data:** no phone numbers, LinkedIn identities, email addresses or contact lists are collected, processed or stored, by the site or by its workflows.
 - **Hosting:** a static site on **GitHub Pages**. No dependencies, no cookies, no analytics, no third-party requests. See `SECURITY.md` for the security and logic review.
 
 > Independent awareness initiative by an ENISA Ambassador — not an official ENISA publication. Don't use ENISA's name or logo as branding without their permission. Not legal advice.
@@ -43,14 +44,12 @@ site/                    The website GitHub Pages serves
   europe-map.svg         Original Europe map (Natural Earth, public domain)
   settings.json          defaultMode, defaultCountry, lockFuture, gamified
   fonts/                 Fraunces + IBM Plex (SIL OFL 1.1)
-config/alerts.json       Alert settings: mode, site URL, WhatsApp template, LinkedIn version
+config/site.json         The public site address (used for the calendar reminders' links)
 scripts/
   validate.py            Content checks; fails the build on any problem
   build_ics.py           Builds advent-24.ics and days-31.ics calendar reminders (generated on deploy, not committed)
-  notify.py              Sends the daily alert (Python standard library only)
 .github/workflows/
-  pages.yml              Validate → build → deploy to Pages
-  daily-alert.yml        07:17 UTC daily in December (08:17 Europe/Rome)
+  pages.yml              Validate → build → publish the site
 .github/dependabot.yml   Keeps the SHA-pinned Actions current
 SECURITY.md              How this repo itself maps to OWASP Top 10:2025
 ```
@@ -61,8 +60,7 @@ SECURITY.md              How this repo itself maps to OWASP Top 10:2025
 2. **Settings → Pages → Build and deployment → Source: GitHub Actions.** Then tick **Enforce HTTPS**.
 3. **Replace the placeholders:**
    - `site/index.html`: `[YOUR BRAND]`, `[LOGO]`, `[YOUR NAME]`, `[COUNTRY / ORGANISATION]`, `[REVIEW DATE]`, `[YOUR SITE URL]`, `[CONTACT]`
-   - `config/alerts.json`: `siteUrl` (e.g. `https://your-user.github.io/your-repo/`), `reviewer`, `unsubscribeUrl`
-     Until `siteUrl` and `reviewer` are filled in, every build shows a warning, the `.ics` reminders use the address GitHub Pages reports, and real alerts refuse to send (dry runs still work).
+   - `config/site.json`: `siteUrl` (e.g. `https://your-user.github.io/your-repo/`). While it is a placeholder, every build shows a warning and the `.ics` reminders use the address GitHub Pages reports.
    - `site/settings.json`: `defaultMode` (`"full"` or `"advent"`) and `lockFuture` (the default for the *Follow December dates* switch; `true` keeps future doors shut until each visitor switches it off)
 4. **Push to `main`.** The *Pages* workflow validates the content, builds the `.ics` files and deploys.
 5. **Preview every door before December:** open `…/?preview=all`. The lock is a convenience, not a secret: all content is public in `days.json`. Share kits built while previewing link to the normal calendar, but a link copied from the address bar during a preview still contains `preview=all`, so don't post those.
@@ -72,11 +70,11 @@ Useful links: `?day=7` opens door 7, `?mode=advent` forces Advent mode.
 
 ### Keep the source private (free plan)
 
-GitHub Pages on the free plan only serves public repositories, so this repo can publish the **built website only** to a separate public repo, while everything else (scripts, workflows, alert settings, this README, `SECURITY.md`, the history) stays private. The website's own files — HTML, CSS, JavaScript and `days.json` — always reach visitors' browsers, so they are public either way.
+GitHub Pages on the free plan only serves public repositories, so this repo can publish the **built website only** to a separate public repo, while everything else (scripts, workflows, settings, this README, `SECURITY.md`, the history) stays private. The website's own files — HTML, CSS, JavaScript and `days.json` — always reach visitors' browsers, so they are public either way.
 
 | Repo | Visibility | Holds |
 |---|---|---|
-| this repo (`CyberAIAdvent`) | Private | All source, the daily alerts and their secrets |
+| this repo (`CyberAIAdvent`) | Private | All source, and the deploy token as an Actions secret |
 | `aware-by-design/CyberAIAdvent2026` (set in `SITE_REPO` in `pages.yml`) | Public, in the free **aware-by-design** organisation | Only the built `site/` folder, served at `https://aware-by-design.github.io/CyberAIAdvent2026/` |
 
 Do it in this order so the site never goes offline:
@@ -89,61 +87,15 @@ Do it in this order so the site never goes offline:
 6. Before making this repo private, untick **Require code scanning results** in the ruleset (CodeQL needs a paid plan on private repos, so pull requests would be blocked). Then make this repo private (**Settings → General → Change visibility**). The old address goes offline; the new one carries on, and every merge to `main` republishes it.
 7. In the public repo: turn on **private vulnerability reporting** (Settings → Advanced Security) — the workflow adds a `SECURITY.md` there that points to it — and protect `main` with a ruleset that blocks deletion and force pushes, bypass *Repository admin: Always*. Don't add a pull-request rule there: the workflow pushes to it directly.
 
-## 2. Turn on the daily alert
+## 2. Daily reminders and sharing — no personal data
 
-The workflow runs at **07:17 UTC** on 1–31 December (08:17 in Rome; CET is UTC+1 all December). It checks the date in `Europe/Rome`, picks the door, stops after door 24 in Advent mode, and won't send the same door twice: it checks for an existing GitHub issue first. Channels without their secrets are skipped.
+This calendar collects, processes and stores **no personal data**: no phone numbers, no LinkedIn or other social-media identities, no email addresses, no contact lists. It has no sign-up and no mailing list.
 
-**Create an environment for the secrets:** Settings → Environments → New environment → `alerts` → Deployment branches: **main only**. Add the secrets below there. Don't add required reviewers, or scheduled runs will wait for an approval nobody gives.
+- **Daily reminders:** the site offers calendar subscriptions (`advent-24.ics` and `days-31.ics`, built on every deploy). Each door is an 08:30 (Europe/Rome) event with a reminder, the DO and DON'T, and a link. People add it to their own calendar, and nothing about them reaches you.
+- **Sharing:** every door's full briefing has a **share kit** with ready-made text for LinkedIn, WhatsApp/Signal, email/Teams, an intranet or newsletter, and X/Bluesky. Its buttons open the visitor's own app with the text filled in and **no recipient**. The person sharing picks where it goes, and nothing passes through this site.
+- **Posting to a WhatsApp Channel or a LinkedIn page yourself:** copy the day's text from the share kit and post it by hand. WhatsApp Channels don't show followers' phone numbers to admins. No API tokens, member IDs or recipient lists are needed.
 
-### WhatsApp (WhatsApp Business Platform, Cloud API)
-
-Business-initiated messages need a **Meta-approved message template** and the **recipient's opt-in**. Meta charges per delivered template message and decides the template's category when it reviews it (a daily tip is likely *Marketing*). Check current rates in Meta's pricing pages.
-
-1. In Meta Business Manager, set up a WhatsApp Business account and a Cloud API app with a business phone number.
-2. Create a **System User** token with the `whatsapp_business_messaging` permission. Note the **Phone number ID**.
-3. Create a template named **`advent_daily`**, language **English (`en`)**, with this body (six variables):
-
-   ```
-   Door {{1}} of {{2}} is open: {{3}}
-   DO: {{4}}
-   DON'T: {{5}}
-   Today's challenge (+20 pts): {{6}}
-   AI-assisted · reviewed by [YOUR NAME]. To stop these messages: [UNSUBSCRIBE LINK]
-   ```
-
-4. Collect opt-ins (name, number, consent date) and honour opt-outs.
-5. Add the secrets:
-
-| Secret | Value |
-|---|---|
-| `WHATSAPP_TOKEN` | System User access token |
-| `WHATSAPP_PHONE_NUMBER_ID` | Numeric phone number ID |
-| `WHATSAPP_RECIPIENTS` | Comma-separated E.164 numbers that get **every** door, e.g. `+393331234567,+447700900123` |
-| `WHATSAPP_RECIPIENTS_FINANCE` (optional) | Extra numbers that get only the doors tagged for that group. Also available: `_LEADERS`, `_IT`, `_DEV`, `_HR`, `_LEGAL`, `_MARKETING`, `_SUPPORT`, `_PROCUREMENT`, `_HOME` |
-
-The Graph API version is set in `config/alerts.json` (`graphApiVersion`, currently `v26.0`). **WhatsApp groups and Channels:** this kit doesn't automate them. Post there with the **Share on WhatsApp** button on each door.
-
-### LinkedIn (Posts API)
-
-LinkedIn doesn't open direct messaging to general developers, so the daily touchpoint is a **post** on your profile or a company page.
-
-1. Create an app at the LinkedIn Developer Portal.
-2. **Your profile:** add the *Share on LinkedIn* product (scope `w_member_social`) and *Sign In with LinkedIn using OpenID Connect* (to read your member ID). **A company page:** you need the *Community Management API* (scope `w_organization_social`, which LinkedIn must approve) and an admin or content-admin role on the page.
-3. Generate a 3-legged OAuth access token. Member tokens typically expire after about **60 days**, so create it in late November to cover all of December.
-4. Add the secrets:
-
-| Secret | Value |
-|---|---|
-| `LINKEDIN_ACCESS_TOKEN` | OAuth access token |
-| `LINKEDIN_AUTHOR_URN` | `urn:li:person:<id>` (the `sub` from `/v2/userinfo`) or `urn:li:organization:<id>` |
-
-`config/alerts.json → linkedin.apiVersion` is the `Linkedin-Version` header (`YYYYMM`). LinkedIn retires versions roughly a year after release, so update it if posts start failing with HTTP 400 or 426.
-
-### Test before 1 December
-
-Actions → **Daily alert** → **Run workflow**. *Dry run* is ticked by default: it prints the exact WhatsApp template and LinkedIn post, with phone numbers masked, and sends nothing. When the output looks right, untick dry run, set `day` to `1`, tick `force`, and send one real alert to yourself.
-
-**Schedule caveats (GitHub's rules):** scheduled runs can start late when GitHub is busy. In a **public** repo, schedules are switched off after **60 days without repository activity**, so push a commit in November.
+Once you click a share button, the platform you choose applies its own privacy terms; this site sends it only the text you see.
 
 ## 3. Edit the content
 
@@ -153,7 +105,7 @@ All calendar content lives in **`site/days.json`**. Each door has:
 - `track`: `ai`, `cyber` or `both`, which drives the AI label
 - `for`: stakeholder IDs
 - `do` and `dont`
-- `cases`: the first case is the headline lesson used in alerts; add `pin` to show it on the map
+- `cases`: the first case is the headline lesson used in the share kit and the calendar reminders; add `pin` to show it on the map
 - `lab`: `timeline`, `prevent`, `detect`, `tune`, `playbook` and `tabletop`
 - `readMore`: official sources
 - `explain`: `simple`, `technical` and `business` versions
@@ -163,7 +115,7 @@ All calendar content lives in **`site/days.json`**. Each door has:
 
 The supplier toolkit lives in `site/supply.json`; national standards are under `national` in `days.json`.
 
-Push your changes and the build re-validates everything: numbering, quiz answers, map pins, quote IDs, the four activities per door, WhatsApp parameter limits, OWASP coverage in doors 1–24, and **every link**. Links must be `https://` and on the allow-list in `scripts/validate.py`. To cite a new official source, add its domain to that list in the same pull request so a reviewer sees it.
+Push your changes and the build re-validates everything: numbering, quiz answers, map pins, quote IDs, the four activities per door, short single-line titles and DO/DON'T texts (for the share kit and reminders), OWASP coverage in doors 1–24, and **every link**. Links must be `https://` and on the allow-list in `scripts/validate.py`. To cite a new official source, add its domain to that list in the same pull request so a reviewer sees it.
 
 Facts were checked in November 2026. Two excerpts carry a dated note: the EU AI Act Article 4 text is the version amended by the Digital Omnibus on AI (Commission AI Act Service Desk, consolidated as at 27 July 2026), and GDPR Article 33(1) notes the proposed 96-hour change, which is not law at the time of writing (Council position, 21 October 2026). Re-check both before December. Re-check any figure you change against its source, then update `[REVIEW DATE]`. The detection rules in the incident lab are illustrative starting points; adapt them to your SIEM or EDR before using them.
 
@@ -179,7 +131,7 @@ Facts were checked in November 2026. Two excerpts carry a dated note: the EU AI 
 
 - No cookies, analytics or third-party requests. Fonts are self-hosted. In 2022 a Munich court (LG München I, 3 O 17493/20) ruled that embedding Google Fonts dynamically, which sends visitors' IP addresses to Google, breached the GDPR.
 - Game progress is stored in `localStorage` on the visitor's device only.
-- WhatsApp recipients' numbers are personal data. Keep them only in GitHub secrets: the script masks them in logs and never writes them to issues. Keep proof of opt-in and offer an easy unsubscribe.
+- No phone numbers, social-media identities, email addresses or contact lists are collected, processed or stored. Daily reminders come from a calendar file people add themselves, and the share kit hands text to the visitor's own app with no recipient.
 
 ## Credits and licences
 
