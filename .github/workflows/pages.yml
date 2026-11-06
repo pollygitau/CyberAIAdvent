@@ -23,7 +23,7 @@ concurrency:
 
 env:
   # The public repo that hosts the built site when this repo is private.
-  SITE_REPO: aware-by-design/aware-by-design.github.io
+  SITE_REPO: aware-by-design/CyberAIAdvent2026
 
 jobs:
   # Runs on every pull request too: this is the "build" status check that must pass before merging.
