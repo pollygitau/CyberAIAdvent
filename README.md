@@ -83,7 +83,7 @@ Do it in this order so the site never goes offline:
 
 1. Create the free organisation **aware-by-design** and, inside it, the public repo **`CyberAIAdvent2026`** (no README). The repo name becomes the last part of the address.
 2. Create a fine-grained token with **Resource owner: aware-by-design**, for **that repo only**, with **Contents: Read and write** and an expiry after the campaign (e.g. 31 Jan 2027).
-3. Store it in **this** repo as an Actions secret named `SITE_DEPLOY_TOKEN` (Settings → Secrets and variables → Actions). Never paste it anywhere else.
+3. Store it in **this** repo as an Actions secret named `CYBERAI_DEPLOY_TOKEN` (Settings → Secrets and variables → Actions). Never paste it anywhere else.
 4. Push or merge anything to `main` (or run the *Pages* workflow by hand). The `publish-site` job copies the built site into the public repo, adding `.nojekyll` and a short README.
 5. In the public repo: **Settings → Pages → Source: Deploy from a branch → `main` / `(root)`**. Check the site loads.
 6. Before making this repo private, untick **Require code scanning results** in the ruleset (CodeQL needs a paid plan on private repos, so pull requests would be blocked). Then make this repo private (**Settings → General → Change visibility**). The old address goes offline; the new one carries on, and every merge to `main` republishes it.

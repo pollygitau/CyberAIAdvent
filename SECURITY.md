@@ -38,7 +38,7 @@ Every attack below was tried against the built site in a headless browser, or ag
 | 28 | **Keyboard and screen-reader users losing their place** after every click | Fixed | Focus returns to the same control after each re-render, moves to the door's heading when a door opens and to the result after an answer; the briefing no longer re-announces the whole page |
 | 29 | **A missing or broken `settings.json`** stopping the calendar | Falls back to the defaults | The settings fetch is caught; only `days.json` is required |
 | 30 | **Wrong or tampered Action pins** | Verified 6 Nov 2026 | `checkout` v7.0.1, `configure-pages` v6.0.0, `upload-pages-artifact` v5.0.0 and `deploy-pages` v5.0.1 each match their release tag's commit |
-| 31 | **Publishing from a private repo** — leaking the source, or the deploy token, through the public site repo | Only the built site is copied | `publish-site` copies `site/` alone, using `SITE_DEPLOY_TOKEN` (fine-grained, one repo, *Contents* only). It runs only on pushes to `main`, never on pull requests; the token reaches git as a masked one-off header, never a remote URL or a file; commits in the public repo carry no source history |
+| 31 | **Publishing from a private repo** — leaking the source, or the deploy token, through the public site repo | Only the built site is copied | `publish-site` copies `site/` alone, using `CYBERAI_DEPLOY_TOKEN` (fine-grained, one repo, *Contents* only). It runs only on pushes to `main`, never on pull requests; the token reaches git as a masked one-off header, never a remote URL or a file; commits in the public repo carry no source history |
 
 ## OWASP Top 10:2025 mapping
 
