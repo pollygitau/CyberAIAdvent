@@ -38,6 +38,7 @@ Every attack below was tried against the built site in a headless browser, or ag
 | 28 | **Keyboard and screen-reader users losing their place** after every click | Fixed | Focus returns to the same control after each re-render, moves to the door's heading when a door opens and to the result after an answer; the briefing no longer re-announces the whole page |
 | 29 | **A missing or broken `settings.json`** stopping the calendar | Falls back to the defaults | The settings fetch is caught; only `days.json` is required |
 | 30 | **Wrong or tampered Action pins** | Verified 6 Nov 2026 | `checkout` v7.0.1, `configure-pages` v6.0.0, `upload-pages-artifact` v5.0.0 and `deploy-pages` v5.0.1 each match their release tag's commit |
+| 31 | **Publishing from a private repo** — leaking the source, or the deploy token, through the public site repo | Only the built site is copied | `publish-site` copies `site/` alone, using `SITE_DEPLOY_TOKEN` (fine-grained, one repo, *Contents* only). It runs only on pushes to `main`, never on pull requests; the token reaches git as a masked one-off header, never a remote URL or a file; commits in the public repo carry no source history |
 
 ## OWASP Top 10:2025 mapping
 
@@ -65,7 +66,7 @@ Every attack below was tried against the built site in a headless browser, or ag
 
 The code can't set these; they decide who can change what goes live and what gets broadcast.
 
-- **Settings → Rules → Rulesets:** protect `main` — require a pull request with one approval and block force pushes and deletion. Anything merged is published and sent to WhatsApp and LinkedIn.
+- **Settings → Rules → Rulesets:** an *Owner only* ruleset on all branches (restrict creations, updates, deletions; block force pushes; bypass: Repository admin) and a *Protect main* ruleset on the default branch (require a pull request — 0 approvals for a sole maintainer — conversation resolution and the `build` status check; bypass: Repository admin, *for pull requests only*). Anything merged is published and sent to WhatsApp and LinkedIn. On the public site repo use only the owner-only ruleset, because the workflow pushes to it directly.
 - **Settings → Actions → General:** workflow permissions *Read repository contents and packages permissions*; leave *Allow GitHub Actions to create and approve pull requests* unticked; keep approval required for first-time contributors' workflows.
 - **Settings → Advanced Security:** turn on private vulnerability reporting, secret scanning with push protection, and Dependabot alerts.
 - **Settings → Environments:** `alerts` limited to `main` with no required reviewers (see README); keep `github-pages` limited to the default branch.
