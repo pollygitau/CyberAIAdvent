@@ -59,7 +59,7 @@ SECURITY.md              How this repo itself maps to OWASP Top 10:2025
 1. **Create a repository** and push these files to `main`. GitHub Pages is free for public repositories; private repositories need GitHub Pro, Team or Enterprise.
 2. **Settings → Pages → Build and deployment → Source: GitHub Actions.** Then tick **Enforce HTTPS**.
 3. **Replace the placeholders:**
-   - `site/index.html`: `[YOUR BRAND]`, `[LOGO]`, `[YOUR NAME]`, `[COUNTRY / ORGANISATION]`, `[REVIEW DATE]`, `[YOUR SITE URL]`, `[CONTACT]`
+   - `site/index.html`: `[YOUR BRAND]`, `[LOGO]`, `[YOUR NAME]`, `[COUNTRY / ORGANISATION]`, `[REVIEW DATE]`, `[CONTACT]` (the site address in the footers is already set)
    - `config/site.json`: `siteUrl` (e.g. `https://your-user.github.io/your-repo/`). While it is a placeholder, every build shows a warning and the `.ics` reminders use the address GitHub Pages reports.
    - `site/settings.json`: `defaultMode` (`"full"` or `"advent"`) and `lockFuture` (the default for the *Follow December dates* switch; `true` keeps future doors shut until each visitor switches it off)
 4. **Push to `main`.** The *Pages* workflow validates the content, builds the `.ics` files and deploys.
