@@ -1,6 +1,6 @@
 {
   "mode": "full",
-  "siteUrl": "https://[YOUR-GITHUB-USER].github.io/[YOUR-REPO]/",
+  "siteUrl": "https://pollygitau.github.io/AdventCalendar2027/",
   "whatsapp": {
     "enabled": true,
     "graphApiVersion": "v26.0",
@@ -12,7 +12,11 @@
     "enabled": true,
     "apiVersion": "202609",
     "visibility": "PUBLIC",
-    "hashtags": ["CyberSecurity", "AI", "CyberAdvent"]
+    "hashtags": [
+      "CyberSecurity",
+      "AI",
+      "CyberAdvent"
+    ]
   },
   "githubIssue": {
     "enabled": true,

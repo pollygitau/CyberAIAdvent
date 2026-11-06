@@ -1,4 +1,11 @@
-# Validate the content and publish the site to GitHub Pages.
+# Validate the content, then publish the website.
+#
+# Two ways to publish, chosen automatically:
+#   * job "deploy": while this repo is PUBLIC, GitHub Pages also serves it from this repo
+#   * job "publish-site": once SITE_DEPLOY_TOKEN is set, only the built website (the site/
+#     folder) is copied to the public repo in SITE_REPO, which GitHub Pages serves. Make this
+#     repo private and the source, scripts, workflows and alert settings stay hidden.
+#
 # Actions are pinned to full commit SHAs (OWASP A03:2025 / the tj-actions lesson, Door 22).
 name: Pages
 
@@ -14,7 +21,12 @@ concurrency:
   group: pages-${{ github.ref }}
   cancel-in-progress: false
 
+env:
+  # The public repo that hosts the built site when this repo is private.
+  SITE_REPO: pollygitau/AdventCalendar2027
+
 jobs:
+  # Runs on every pull request too: this is the "build" status check that must pass before merging.
   build:
     runs-on: ubuntu-24.04
     timeout-minutes: 10
@@ -30,7 +42,7 @@ jobs:
 
       - name: Configure Pages
         id: pages
-        if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request' && !github.event.repository.private
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
 
       # The Pages address is passed through env (never interpolated into the shell). It is used
@@ -41,13 +53,14 @@ jobs:
         run: python3 scripts/build_ics.py
 
       - name: Upload site
-        if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request' && !github.event.repository.private
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           path: site
 
+  # Public repo: GitHub Pages serves this repo directly.
   deploy:
-    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && !github.event.repository.private
     needs: build
     runs-on: ubuntu-24.04
     timeout-minutes: 10
@@ -60,3 +73,67 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
+
+  # Copy only the built website into the public SITE_REPO. This runs whether this repo is public
+  # or private, so the public site is already live before the source is made private (no gap).
+  # Needs the secret SITE_DEPLOY_TOKEN: a fine-grained token for SITE_REPO only, with
+  # Contents: read and write. Runs only for pushes to main (never for pull requests, which
+  # don't receive secrets anyway). Without the secret it skips with a notice.
+  publish-site:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Validate content
+        run: python3 scripts/validate.py
+
+      - name: Build calendar subscriptions (.ics)
+        run: python3 scripts/build_ics.py
+
+      # The token reaches the shell only through env; its base64 form is masked before use, and
+      # it is passed to git as a one-off header (never written to a remote URL or to disk).
+      - name: Copy the website to the public repo
+        env:
+          SITE_DEPLOY_TOKEN: ${{ secrets.SITE_DEPLOY_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [ -z "${SITE_DEPLOY_TOKEN:-}" ]; then
+            echo "::notice::SITE_DEPLOY_TOKEN is not set, so ${SITE_REPO} was not updated."
+            exit 0
+          fi
+          if ! printf '%s' "$SITE_REPO" | grep -Eq '^[A-Za-z0-9-]+/[A-Za-z0-9._-]+$'; then
+            echo "::error::SITE_REPO must look like owner/repo"; exit 1
+          fi
+          auth="$(printf 'x-access-token:%s' "$SITE_DEPLOY_TOKEN" | base64 -w0)"
+          echo "::add-mask::${auth}"
+          git_auth() { git -c "http.extraheader=AUTHORIZATION: basic ${auth}" "$@"; }
+
+          git_auth clone --quiet --depth 1 "https://github.com/${SITE_REPO}.git" public
+          git -C public symbolic-ref HEAD refs/heads/main   # an empty repo starts on main too
+
+          # Replace everything except git's own folder with the freshly built site.
+          find public -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          cp -a site/. public/
+          touch public/.nojekyll                             # serve files as-is, no Jekyll
+          printf '%s\n' "# Winterwatch · Cyber & AI" "" \
+            "This repository holds only the built website, published with GitHub Pages." \
+            "It is updated automatically; please don't open pull requests here." > public/README.md
+
+          cd public
+          git add -A
+          if git diff --cached --quiet; then
+            echo "::notice::The public site is already up to date."
+            exit 0
+          fi
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit --quiet -m "Publish site ($(date -u +%Y-%m-%dT%H:%MZ))"
+          git_auth push --quiet origin HEAD:main
+          echo "::notice::Published to https://github.com/${SITE_REPO}"

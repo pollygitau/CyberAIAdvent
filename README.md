@@ -70,6 +70,25 @@ SECURITY.md              How this repo itself maps to OWASP Top 10:2025
 
 Useful links: `?day=7` opens door 7, `?mode=advent` forces Advent mode.
 
+### Keep the source private (free plan)
+
+GitHub Pages on the free plan only serves public repositories, so this repo can publish the **built website only** to a separate public repo, while everything else (scripts, workflows, alert settings, this README, `SECURITY.md`, the history) stays private. The website's own files — HTML, CSS, JavaScript and `days.json` — always reach visitors' browsers, so they are public either way.
+
+| Repo | Visibility | Holds |
+|---|---|---|
+| this repo (`CyberAIAdvent`) | Private | All source, the daily alerts and their secrets |
+| `AdventCalendar2027` (set in `SITE_REPO` in `pages.yml`) | Public | Only the built `site/` folder, served at `https://pollygitau.github.io/AdventCalendar2027/` |
+
+Do it in this order so the site never goes offline:
+
+1. Create the public repo `AdventCalendar2027` (no README).
+2. Create a fine-grained token for **that repo only** with **Contents: Read and write** and an expiry after the campaign (e.g. 31 Jan 2027).
+3. Store it in **this** repo as an Actions secret named `SITE_DEPLOY_TOKEN` (Settings → Secrets and variables → Actions). Never paste it anywhere else.
+4. Push or merge anything to `main` (or run the *Pages* workflow by hand). The `publish-site` job copies the built site into the public repo, adding `.nojekyll` and a short README.
+5. In the public repo: **Settings → Pages → Source: Deploy from a branch → `main` / `(root)`**. Check the site loads.
+6. Make this repo private (**Settings → General → Change visibility**). The old address goes offline; the new one carries on, and every merge to `main` republishes it.
+7. Protect the public repo with an owner-only ruleset (no pull-request rule there — the workflow pushes to it directly).
+
 ## 2. Turn on the daily alert
 
 The workflow runs at **07:17 UTC** on 1–31 December (08:17 in Rome; CET is UTC+1 all December). It checks the date in `Europe/Rome`, picks the door, stops after door 24 in Advent mode, and won't send the same door twice: it checks for an existing GitHub issue first. Channels without their secrets are skipped.
