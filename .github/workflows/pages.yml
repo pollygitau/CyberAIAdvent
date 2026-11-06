@@ -14,6 +14,11 @@ on:
     branches: [main]
   pull_request:
   workflow_dispatch:
+    inputs:
+      force:
+        description: "Republish even if nothing changed (use when a GitHub Pages deployment timed out)"
+        type: boolean
+        default: false
 
 permissions: {}
 
@@ -99,9 +104,12 @@ jobs:
 
       # The token reaches the shell only through env; its base64 form is masked before use, and
       # it is passed to git as a one-off header (never written to a remote URL or to disk).
+      # FORCE_REPUBLISH comes from the "Run workflow" tick box (empty on pushes); it is only ever
+      # compared with "true", never run.
       - name: Copy the website to the public repo
         env:
           CYBERAI_DEPLOY_TOKEN: ${{ secrets.CYBERAI_DEPLOY_TOKEN }}
+          FORCE_REPUBLISH: ${{ inputs.force }}
         run: |
           set -euo pipefail
           if [ -z "${CYBERAI_DEPLOY_TOKEN:-}" ]; then
@@ -134,12 +142,18 @@ jobs:
 
           cd public
           git add -A
+          bot=(-c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com")
           if git diff --cached --quiet; then
-            echo "::notice::The public site is already up to date."
+            if [ "${FORCE_REPUBLISH:-}" = "true" ]; then
+              # Nothing changed, but an empty commit makes GitHub Pages build and deploy the site again.
+              git "${bot[@]}" commit --quiet --allow-empty -m "Republish site, forced ($(date -u +%Y-%m-%dT%H:%MZ))"
+              git_auth push --quiet origin HEAD:main
+              echo "::notice::Nothing had changed, so an empty commit was pushed to ${SITE_REPO}: GitHub Pages will deploy the site again."
+              exit 0
+            fi
+            echo "::notice::The public site is already up to date. To deploy it again anyway (for example after a GitHub Pages timeout), run this workflow by hand with 'Republish even if nothing changed' ticked."
             exit 0
           fi
-          git -c user.name="github-actions[bot]" \
-              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
-              commit --quiet -m "Publish site ($(date -u +%Y-%m-%dT%H:%MZ))"
+          git "${bot[@]}" commit --quiet -m "Publish site ($(date -u +%Y-%m-%dT%H:%MZ))"
           git_auth push --quiet origin HEAD:main
           echo "::notice::Published to https://github.com/${SITE_REPO}"
