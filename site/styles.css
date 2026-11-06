@@ -72,7 +72,7 @@ h1, h2, h3, h4, p { margin: 0; }
 .wrap { position: relative; z-index: 1; max-width: 1328px; margin: 0 auto; padding: 8px 16px 64px; display: flex; flex-direction: column; gap: 40px; }
 .top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
 .brand { display: flex; align-items: center; gap: 12px; }
-.logo-slot { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 10px; border: 1px dashed var(--faint); font: 11px var(--mono); color: var(--muted); }
+.brand-star { width: 16px; height: 16px; fill: var(--gold); flex: none; }
 .brand-name { font: 13px var(--mono); letter-spacing: .08em; color: var(--muted); }
 .seg { display: flex; gap: 4px; padding: 4px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); }
 .seg button { border: 0; border-radius: 999px; min-height: 44px; padding: 0 18px; font: 500 13px var(--mono); letter-spacing: .04em; background: transparent; color: var(--muted); transition: background-color .25s ease; }
@@ -514,11 +514,26 @@ select { min-height: 44px; padding: 0 12px; border-radius: 12px; background: var
 }
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } .snow, .hsnow { display: none; } .card .leaf, .card .inside { transition: none; } }
+/* Print / Save as PDF keeps the festive look: pine-green pages, gold accents, a light snow texture,
+   the fairy-light garland and the ornament. Browsers leave out background colours when printing unless
+   the page asks for them, so colours are marked "exact"; animation stops and on-screen controls hide. */
 @media print {
-  body { background: #fff; color: #000; }
-  .snow, .lights, .seg, .hud, .chips, .legend, .nav, .skip, .europe, .confetti, .hsnow, .bf-bar, .kit, .brief-cta, .house { display: none !important; }
-  .quote { break-inside: avoid; } .case, .lab .lsec { break-inside: avoid; }
-  .panel, .pane, .case, .lab, .rm, .acts, .act, .kit, .why div { border-color: #999; background: #fff !important; color: #000; }
+  @page { size: A4; margin: 10mm 0; background: #0D2118; }
+  html, body { background-color: var(--ground) !important; }
+  *, *::before, *::after { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; animation: none !important; transition: none !important; }
+  body {
+    background-image: radial-gradient(circle, #ffffff30 0 1.1px, transparent 1.7px), radial-gradient(circle, #ffffff1e 0 1.4px, transparent 2.1px) !important;
+    background-size: 54px 54px, 83px 83px; background-position: 0 0, 27px 41px;
+  }
+  .snow, .hsnow, .seg, .hud, .chips, .legend, .nav, .skip, .europe, .confetti, .kit, .brief-cta, .house, .back-up, .sp-wrap .back, .framed-warning { display: none !important; }
+  .lights { display: flex !important; height: 44px; margin: -10mm 0 2mm; }
+  .wrap, .bf-wrap, .sp-wrap { padding-left: 14mm !important; padding-right: 14mm !important; max-width: none !important; }
+  .bf-bar { display: flex !important; padding: 0 0 8px; }
+  .bf-bar > :not(.pos) { display: none !important; }
+  .bf-bar .pos::before { content: "WINTERWATCH · CYBER & AI  ·  "; color: var(--gold); }
+  .quote, .case, .lab .lsec, .act, .rm, .why > div, .lens, .refs, .dd, .stage, .check, .ex, tr { break-inside: avoid; }
+  h1, h2, h3, h4, .shead, .lhead, .lk { break-after: avoid; }
+  a { text-decoration: none; }
 }
 
 @media (max-width: 760px) {
