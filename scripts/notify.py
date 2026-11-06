@@ -61,6 +61,16 @@ def mask(number: str) -> str:
     return "+" + "•" * max(len(digits) - 2, 0) + digits[-2:]
 
 
+# Any run of 8–15 digits (optionally after "+") looks like a phone number.
+PHONE_LIKE = re.compile(r"\+?\d{8,15}")
+
+
+def scrub(text: str) -> str:
+    """Mask anything that looks like a phone number before text reaches a log or the public
+    GitHub issue. API error messages can echo the recipient; log masking would not cover the issue."""
+    return PHONE_LIKE.sub(lambda m: mask(m.group(0)), str(text))
+
+
 def http(method: str, url: str, headers: dict, body: dict | None = None, retries: int = 2):
     """JSON over HTTPS with timeouts and bounded retries. Never logs headers (they hold tokens).
 
@@ -177,10 +187,10 @@ def send_whatsapp(cfg: dict, day: dict, total: int, url: str, dry: bool) -> None
     if not wc.get("enabled"):
         summary.append("- WhatsApp: disabled in config/alerts.json")
         return
+    # Recipient numbers are never printed in full: logs show only the last two digits (mask) and
+    # API error text is scrubbed (scrub), so nothing needs ::add-mask:: — which would itself
+    # mean writing each number to the output stream.
     numbers = whatsapp_recipients(day)
-    if os.environ.get("GITHUB_ACTIONS") == "true":
-        for num in numbers:
-            print(f"::add-mask::{num}")
     if not (token and phone_id and numbers):
         summary.append("- WhatsApp: skipped (set WHATSAPP_TOKEN, WHATSAPP_PHONE_NUMBER_ID and WHATSAPP_RECIPIENTS)")
         return
@@ -213,7 +223,7 @@ def send_whatsapp(cfg: dict, day: dict, total: int, url: str, dry: bool) -> None
             ok += 1
         else:
             detail = resp.get("error", {}).get("message", "") if isinstance(resp, dict) else str(resp)[:200]
-            failures.append(f"WhatsApp to {mask(num)}: HTTP {status} {detail}")
+            failures.append(f"WhatsApp to {mask(num)}: HTTP {status} {scrub(detail)}")
         time.sleep(0.2)
     summary.append(f"- WhatsApp: {ok}/{len(numbers)} delivered to the API")
 
@@ -317,7 +327,7 @@ def log_issue(cfg: dict, data: dict, day: dict, url: str, mode: str) -> None:
         f"**DO:** {day['do']}", "", f"**DON’T:** {day['dont']}", "",
         f"**Lesson learnt** — {lesson(day)['kind']}, {lesson(day)['when']}, {lesson(day)['name']}: {lesson(day)['text']}", "",
         f"Open the door: {url}", "", f"Mode: `{mode}`", "", "### Delivery", *summary,
-        *(["", "### Failures", *[f"- {f}" for f in failures]] if failures else []),
+        *(["", "### Failures", *[f"- {scrub(f)}" for f in failures]] if failures else []),
     ])
     status, _, _ = gh("POST", "/issues", {"title": issue_title(data, day), "body": body, "labels": [ic["label"]]})
     if status != 201:
@@ -365,11 +375,11 @@ def main() -> int:
         with open(step, "a", encoding="utf-8") as f:
             f.write(f"## {issue_title(data, day)}\n\n" + "\n".join(summary) + "\n")
             if failures:
-                f.write("\n### Failures\n" + "\n".join(f"- {x}" for x in failures) + "\n")
+                f.write("\n### Failures\n" + "\n".join(f"- {scrub(x)}" for x in failures) + "\n")
     for line in summary:
         print(line)
     for err in failures:
-        log("error", err)
+        log("error", scrub(err))
     return 1 if failures else 0
 
 
