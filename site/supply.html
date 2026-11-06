@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Supplier toolkit · Winterwatch</title>
+<meta name="description" content="What to ask suppliers at every stage, what EU law expects, what happens when a supplier’s incident hits you, who to call at the authorities, and how to rehearse it.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<script src="common.js" defer></script>
+<script src="supply.js" defer></script>
+</head>
+<body>
+<div class="snow" id="snow" aria-hidden="true"></div>
+<div class="sp-wrap">
+  <header class="hero">
+    <a class="back" href="./">← Back to the calendar</a>
+    <p class="eyebrow">COMPANION TO DOORS 22 &amp; 23 · SUPPLY CHAIN</p>
+    <h1>Supplier toolkit: <em>their breach, your clock.</em></h1>
+    <p class="lede">What to ask suppliers at every stage, what EU law expects, what happens when a supplier’s incident lands on you, who to call at the authorities, and how to rehearse it together.</p>
+  </header>
+
+  <section class="sec" aria-labelledby="s1">
+    <span class="num">01 · ASK</span>
+    <h2 id="s1">Questions for every stage of the supplier lifecycle</h2>
+    <div class="grid3" id="stages"></div>
+  </section>
+
+  <section class="sec" aria-labelledby="s2">
+    <span class="num">02 · KNOW THE RULES</span>
+    <h2 id="s2">What EU law expects from you and your suppliers</h2>
+    <div class="tbl"><table>
+      <thead><tr><th scope="col">LAW</th><th scope="col">WHO IT COVERS</th><th scope="col">SUPPLY-CHAIN DUTIES</th><th scope="col">INCIDENT CLOCK</th></tr></thead>
+      <tbody id="laws"></tbody>
+    </table></div>
+    <p class="note">Summaries for awareness, not legal advice. National laws add detail: in Germany, NIS2 applies through the NIS2UmsuCG (in force 6 December 2025); in Italy through Legislative Decree 138/2024; in Belgium through the NIS2 law of 26 April 2024.</p>
+  </section>
+
+  <section class="sec" aria-labelledby="s3">
+    <span class="num">03 · WHEN YOUR SUPPLIER IS HIT</span>
+    <h2 id="s3">Their incident, your deadlines</h2>
+    <p class="intro">Your clock starts when <strong>you</strong> become aware of an incident that is significant for you — not when your supplier finishes investigating. If it hits your services, you report your own incident, even though the cause sits with the supplier.</p>
+    <ol class="clockgrid" id="clock"></ol>
+    <div class="grid3" id="examples"></div>
+  </section>
+
+  <section class="sec" aria-labelledby="s4">
+    <span class="num">04 · WHO TO CALL</span>
+    <h2 id="s4">Points of contact at the authorities</h2>
+    <p class="intro">Write these into your incident plan now — portal, phone and out-of-hours line — and check them every year. The exact NIS2 authority can depend on your sector, so confirm it under your national law.</p>
+    <div class="tbl"><table>
+      <thead><tr><th scope="col">COUNTRY</th><th scope="col">CYBER INCIDENTS (NIS2 CSIRT)</th><th scope="col">PERSONAL-DATA BREACHES (GDPR)</th><th scope="col">FINANCIAL SECTOR (DORA)</th><th scope="col">CRIME</th></tr></thead>
+      <tbody id="contacts"></tbody>
+    </table></div>
+    <p class="note">ENISA supports the EU’s network of national CSIRTs but does not take incident reports from companies; CERT-EU serves EU institutions. For significant banks in the euro area, the ECB is the DORA competent authority. The UK is outside the EU and follows its own rules.</p>
+  </section>
+
+  <section class="sec" aria-labelledby="s5">
+    <span class="num">05 · TEST IT TOGETHER</span>
+    <h2 id="s5">Rehearse the plan with your suppliers</h2>
+    <div class="split">
+      <div class="stack" id="tests"></div>
+      <div class="ttx">
+        <span class="lk">TABLETOP · 60 MINUTES · YOU + YOUR TOP SUPPLIERS</span>
+        <h3>“The payroll provider has been breached”</h3>
+        <ol id="injects"></ol>
+        <span class="lk">DISCUSS</span>
+        <div class="stack" id="discuss"></div>
+        <p class="note">Output: an updated contact tree, contract gaps to fix, pre-filled regulator templates and owners with dates.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <p class="fine">Paraphrased from NIS2 (Directive (EU) 2022/2555), DORA (Regulation (EU) 2022/2554) and its RTS on incident reporting, GDPR (Regulation (EU) 2016/679), the Cyber Resilience Act (Regulation (EU) 2024/2847) and the EU AI Act (Regulation (EU) 2024/1689). Check the official texts and your national implementing laws. Not legal advice. An independent awareness initiative by an ENISA Ambassador; not an official ENISA publication.</p>
+    <a class="back" href="./">← Back to the calendar</a>
+  </footer>
+</div>
+</body>
+</html>

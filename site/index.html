@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Winterwatch · Cyber &amp; AI calendar</title>
+<meta name="description" content="A gamified advent / 31-day calendar of cybersecurity, AI and privacy do's and don'ts, with real case studies, activities for every audience, an incident lab and a quick challenge behind every door.">
+<meta property="og:title" content="One door a day. One do, one don’t.">
+<meta property="og:description" content="Cybersecurity and AI habits, real case studies, incident playbooks and a 20-second challenge behind every door.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/fraunces-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script src="common.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#doors">Skip to the doors</a>
+<div class="snow" id="snow" aria-hidden="true"></div>
+<div class="lights" id="lights" aria-hidden="true">
+  <svg viewBox="0 0 100 56" preserveAspectRatio="none"><path d="M0 6 Q50 46 100 6" fill="none" stroke="#2C5341" stroke-width="1.2" vector-effect="non-scaling-stroke"/></svg>
+</div>
+
+<div class="wrap">
+<header class="top">
+  <div class="brand"><span class="logo-slot">[LOGO]</span><span class="brand-name">[YOUR BRAND]</span></div>
+  <div class="seg" id="mode" role="group" aria-label="Calendar length">
+    <button type="button" data-mode="advent" aria-pressed="false">Advent · 24 doors</button>
+    <button type="button" data-mode="full" aria-pressed="true">31 days</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <p class="eyebrow" id="eyebrow">31 DAYS · CYBERSECURITY &amp; AI</p>
+    <h1>Winterwatch <em>Cyber &amp; AI</em></h1>
+    <p class="lede">One door a day, one do, one don’t. Bite-sized cybersecurity, AI and privacy habits, real case studies from Europe and beyond, activities for every audience, an incident lab with timelines and playbooks, and a 20-second challenge behind every door — from the boardroom to the kitchen table.</p>
+    <p class="byline">Curated by <strong>[YOUR NAME]</strong> · ENISA Ambassador · [COUNTRY / ORGANISATION]</p>
+  </div>
+</section>
+
+<section class="hud" id="hud" aria-label="Your progress">
+  <div class="stats">
+    <div class="stat"><span class="k">SCORE</span><span class="v score"><span id="score">0</span><small>pts</small></span></div>
+    <div class="stat"><span class="k">RANK</span><span class="v rank" id="rank">Rookie</span><span class="bar"><span id="rankbar"></span></span><span class="sub" id="rankline"></span></div>
+    <div class="stat"><span class="k">STREAK</span><span class="v"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 3 4.5 5 4.5 9.5a4.5 4.5 0 0 1-9 0c0-2.2 1.1-3.6 2.2-4.6 0 2 1 3.2 2.3 3.2 0-3-1.2-5.2 0-8.1z"/></svg><span id="streak">0</span><small id="streakunit">days</small></span></div>
+    <div class="stat"><span class="k">DOORS OPENED</span><span class="v"><span id="opened">0</span><small>/ <span id="total">31</span></small></span></div>
+    <div class="stat"><label class="k" for="team">PLAY FOR A TEAM</label><select id="team"></select></div>
+  </div>
+  <div class="badges"><span class="k">BADGES <span id="badgecount">0</span>/8</span><ul id="badges"></ul></div>
+  <section class="santa" id="santa" aria-label="Santa’s list"></section>
+  <p class="rules">+10 for opening a door · +20 for a correct answer · +5 for each activity you tick off · +10 more when the door is tagged for your team. Scores stay in this browser.</p>
+</section>
+
+<div class="main">
+  <section class="col" aria-label="Calendar doors">
+    <div class="chips"><span class="k">SHOW DOORS FOR</span><div id="chips" class="chips"></div></div>
+    <div class="house" id="house">
+      <svg class="defs" width="0" height="0" aria-hidden="true" focusable="false"><defs><pattern id="f1Stone" width="42" height="22" patternUnits="userSpaceOnUse"><rect width="42" height="22" fill="#4A4338"></rect><path d="M1 1h15q2 0 2 2v6q0 2-2 2H2q-1 0-1-1z" fill="#A39782"></path><path d="M20 1h13q2 0 2 2v6q0 2-2 2H21q-1 0-1-1z" fill="#8E826E"></path><path d="M37 1h4v10h-3q-1 0-1-1z" fill="#B3A68E"></path><path d="M1 13h7q2 0 2 2v6H2q-1 0-1-1z" fill="#968A75"></path><path d="M12 13h16q2 0 2 2v6H13q-1 0-1-1z" fill="#B0A38B"></path><path d="M32 13h9v8h-8q-1 0-1-1z" fill="#857A67"></path></pattern></defs></svg>
+      <div class="hsnow" id="hsnow" aria-hidden="true"></div>
+      <div class="attic">
+        <svg class="sc roofsvg" viewBox="0 0 1000 300" role="img" aria-label="The attic under a snowy roof: Clinker keeps the Naughty list beside a chest of presents, and smoke rises from the stone chimney">
+<defs>
+<pattern id="a1Plank" width="30" height="40" patternUnits="userSpaceOnUse"><rect width="30" height="40" fill="#3A2616"></rect><rect x="15" width="15" height="40" fill="#422B18"></rect><path d="M.5 0V40M15.5 0V40" stroke="#24170D"></path></pattern>
+<pattern id="a1Slate" width="32" height="16" patternUnits="userSpaceOnUse"><rect width="32" height="16" fill="#2B3038"></rect><rect x="1" y="1" width="14" height="6" fill="#333943"></rect><rect x="17" y="9" width="14" height="6" fill="#262A31"></rect><path d="M0 15.5H32M0 7.5H32M16 0V8M.5 8V16M31.5 8V16" stroke="#16191D" stroke-width="1.4"></path></pattern>
+<pattern id="a1Stone" width="42" height="22" patternUnits="userSpaceOnUse"><rect width="42" height="22" fill="#4A4338"></rect><path d="M1 1h15q2 0 2 2v6q0 2-2 2H2q-1 0-1-1z" fill="#A39782"></path><path d="M20 1h13q2 0 2 2v6q0 2-2 2H21q-1 0-1-1z" fill="#8E826E"></path><path d="M37 1h4v10h-3q-1 0-1-1z" fill="#B3A68E"></path><path d="M1 13h7q2 0 2 2v6H2q-1 0-1-1z" fill="#968A75"></path><path d="M12 13h16q2 0 2 2v6H13q-1 0-1-1z" fill="#B0A38B"></path><path d="M32 13h9v8h-8q-1 0-1-1z" fill="#857A67"></path></pattern>
+<radialGradient id="a1Glow"><stop offset="0" stop-color="#FFB54A" stop-opacity=".35"></stop><stop offset="1" stop-color="#FFB54A" stop-opacity="0"></stop></radialGradient>
+</defs>
+<path d="M40 300L500 66L960 300Z" fill="url(#a1Plank)"></path>
+<path d="M40 300L500 66L960 300Z" fill="#000000" opacity=".28"></path>
+<ellipse class="gl" cx="430" cy="290" rx="300" ry="110" fill="url(#a1Glow)"></ellipse>
+<rect x="276" y="180" width="448" height="10" fill="#4A2E18"></rect>
+<rect x="494" y="66" width="12" height="234" fill="#4A2E18"></rect>
+<path d="M60 296L500 82L940 296" fill="none" stroke="#1F3B2A" stroke-width="2.5"></path>
+<g fill="#FFD58A"><circle class="tw" cx="104" cy="275" r="4.5"></circle><circle class="tw t2" cx="148" cy="253" r="4.5" fill="#FF8A8A"></circle><circle class="tw t3" cx="192" cy="232" r="4.5"></circle><circle class="tw" cx="236" cy="210" r="4.5" fill="#FFE9B8"></circle><circle class="tw t2" cx="280" cy="189" r="4.5"></circle><circle class="tw t3" cx="324" cy="168" r="4.5" fill="#FF8A8A"></circle><circle class="tw" cx="368" cy="146" r="4.5"></circle><circle class="tw t2" cx="412" cy="125" r="4.5" fill="#FFE9B8"></circle><circle class="tw t3" cx="456" cy="103" r="4.5"></circle><circle class="tw" cx="544" cy="103" r="4.5"></circle><circle class="tw t2" cx="588" cy="125" r="4.5" fill="#FF8A8A"></circle><circle class="tw t3" cx="632" cy="146" r="4.5"></circle><circle class="tw" cx="676" cy="168" r="4.5" fill="#FFE9B8"></circle><circle class="tw t2" cx="720" cy="189" r="4.5"></circle><circle class="tw t3" cx="852" cy="253" r="4.5" fill="#FF8A8A"></circle><circle class="tw" cx="896" cy="275" r="4.5"></circle></g>
+<g transform="translate(222 222) scale(.8)">
+<circle cx="10" cy="22" r="5" fill="#6B6B72" opacity=".5"></circle><circle cx="4" cy="11" r="3" fill="#6B6B72" opacity=".35"></circle>
+<path d="M14 52L22 34L40 28L60 32L74 46L76 66L64 82L42 88L22 82L10 68Z" fill="#232326"></path>
+<path d="M22 34L40 28L44 46L26 52Z" fill="#36363C"></path><path d="M60 32L74 46L58 54L44 46Z" fill="#2D2D32"></path><path d="M10 68L26 52L36 70L22 82Z" fill="#1A1A1D"></path><path d="M58 54L76 66L64 82L50 70Z" fill="#2A2A2F"></path>
+<ellipse cx="34" cy="57" rx="8" ry="9" fill="#FFFFFF"></ellipse><ellipse cx="54" cy="57" rx="8" ry="9" fill="#FFFFFF"></ellipse><circle cx="38.5" cy="59" r="3.6" fill="#111111"></circle><circle cx="58.5" cy="59" r="3.6" fill="#111111"></circle>
+<path d="M25 46L41 51M63 46L47 51" stroke="#111111" stroke-width="3.2" stroke-linecap="round"></path>
+<path d="M36 73Q46 77 57 68" fill="none" stroke="#E8E2D6" stroke-width="2.6" stroke-linecap="round"></path>
+<path d="M24 34Q36 8 66 10Q58 18 60 30Z" fill="#C8202F"></path><path d="M66 10Q78 6 76 18" fill="none" stroke="#C8202F" stroke-width="6" stroke-linecap="round"></path><circle cx="76" cy="21" r="5" fill="#F4EFE6"></circle>
+<path d="M20 37Q42 25 64 31" fill="none" stroke="#F4EFE6" stroke-width="8" stroke-linecap="round"></path>
+<path d="M74 60L92 50" stroke="#232326" stroke-width="6" stroke-linecap="round"></path>
+</g>
+<rect x="520" y="278" width="26" height="22" fill="#9E1B24"></rect><rect x="531" y="278" width="4" height="22" fill="#D4AF5A"></rect>
+<rect x="548" y="264" width="36" height="36" fill="#C9A14A"></rect><rect x="563" y="264" width="6" height="36" fill="#9E1B24"></rect><rect x="548" y="279" width="36" height="6" fill="#9E1B24"></rect><path d="M566 264q-10-10-13 0zM566 264q10-10 13 0z" fill="#9E1B24"></path>
+<rect x="590" y="262" width="100" height="38" rx="4" fill="#6B4527"></rect><path d="M590 276h100M618 262v38M662 262v38" stroke="#B8893B" stroke-width="3"></path><rect x="636" y="272" width="8" height="10" rx="1" fill="#D4AF5A"></rect>
+<rect x="608" y="244" width="26" height="18" fill="#1F4D36"></rect><rect x="619" y="244" width="4" height="18" fill="#E9DFC9"></rect>
+<path d="M640 190V212" stroke="#B8893B" stroke-width="1.5"></path>
+<path class="gl" d="M640 212l3.5 8 8.5.8-6.4 5.6 2 8.4-7.6-4.4-7.6 4.4 2-8.4-6.4-5.6 8.5-.8z" fill="#D4AF5A"></path>
+<path d="M-6 302L500 32L1006 302L960 300L500 66L40 300Z" fill="url(#a1Slate)"></path>
+<path d="M40 300L500 66L960 300" fill="none" stroke="#5A3A20" stroke-width="8"></path>
+<path d="M-12 300L500 26L1012 300" fill="none" stroke="#F7FBFF" stroke-width="16" stroke-linejoin="round" stroke-linecap="round"></path>
+<g fill="#F7FBFF"><ellipse cx="150" cy="208" rx="30" ry="10" transform="rotate(-28 150 208)"></ellipse><ellipse cx="300" cy="128" rx="34" ry="10" transform="rotate(-28 300 128)"></ellipse><ellipse cx="424" cy="62" rx="28" ry="9" transform="rotate(-28 424 62)"></ellipse><ellipse cx="850" cy="208" rx="30" ry="10" transform="rotate(28 850 208)"></ellipse><ellipse cx="700" cy="128" rx="34" ry="10" transform="rotate(28 700 128)"></ellipse><ellipse cx="576" cy="62" rx="28" ry="9" transform="rotate(28 576 62)"></ellipse></g>
+<rect x="742" y="68" width="58" height="232" fill="url(#a1Stone)"></rect><rect x="742" y="68" width="58" height="232" fill="none" stroke="#3E3830" stroke-width="2"></rect>
+<rect x="734" y="60" width="74" height="12" rx="2" fill="#5E564A"></rect><path d="M730 62Q750 48 771 58Q792 48 812 62V66H730Z" fill="#F7FBFF"></path>
+<g fill="#D5DEE8"><circle class="sm" cx="771" cy="48" r="12"></circle><circle class="sm m2" cx="771" cy="48" r="12"></circle><circle class="sm m3" cx="771" cy="48" r="12"></circle><circle class="sm m4" cx="771" cy="48" r="12"></circle></g>
+</svg>
+        <div class="scroll" id="scroll"></div>
+      </div>
+      <div class="floor1">
+        <svg class="garland" aria-hidden="true" viewBox="0 0 1000 40" preserveAspectRatio="none"><path d="M0 4Q50 34 100 4T200 4T300 4T400 4T500 4T600 4T700 4T800 4T900 4T1000 4" fill="none" stroke="#1F3B2A" stroke-width="12" stroke-linecap="round"/><path d="M0 4Q50 34 100 4T200 4T300 4T400 4T500 4T600 4T700 4T800 4T900 4T1000 4" fill="none" stroke="#2F5A3E" stroke-width="5" stroke-dasharray="2 7" stroke-linecap="round"/></svg>
+        <div class="eave" id="eave" aria-hidden="true"></div>
+        <svg class="bow" aria-hidden="true" viewBox="0 0 80 50"><path d="M40 22L8 6Q0 3 2 12L6 34Q8 40 16 36Z M40 22L72 6Q80 3 78 12L74 34Q72 40 64 36Z" fill="#B3202F"/><path d="M40 22L14 10L12 28Z M40 22L66 10L68 28Z" fill="#8E1622" opacity=".5"/><circle cx="40" cy="22" r="8" fill="#9E1B26"/><path d="M36 28L24 50M44 28L56 50" stroke="#B3202F" stroke-width="6" stroke-linecap="round"/></svg>
+        <div class="sign">
+          <svg class="fl-l" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M3.3 7l17.4 10M3.3 17L20.7 7M9 3.5l3 2.5 3-2.5M9 20.5l3-2.5 3 2.5"/></svg>
+          <svg class="fl-r" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M3.3 7l17.4 10M3.3 17L20.7 7M9 3.5l3 2.5 3-2.5M9 20.5l3-2.5 3 2.5"/></svg>
+          <h2 class="sign-t">WINTERWATCH</h2>
+          <p class="sign-s" id="boardsub">Cyber &amp; AI · 31 days of cyber, AI &amp; privacy hygiene</p>
+        </div>
+        <div class="follow"><span class="note" id="locknote"></span><button type="button" role="switch" id="follow" aria-checked="true"><span class="track" aria-hidden="true"><span class="knob"></span></span>Follow December dates</button></div>
+        <div id="doors" class="cards"></div>
+        <div class="plaque2"><span class="p"><i aria-hidden="true">❦</i>Small habits. Safer holidays.<i aria-hidden="true">❦</i></span></div>
+        <div class="wainscot" aria-hidden="true"></div>
+      </div>
+      <div class="slab" aria-hidden="true"></div>
+      <svg class="sc floor0" viewBox="0 0 1000 330" role="img" aria-label="The living room: snow falls past the window, an armchair and a decorated tree stand by the wall, and a fire burns under three stockings labelled CYBER, AI and PRIVACY">
+<defs>
+<linearGradient id="f0Night" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0B1A33"></stop><stop offset="1" stop-color="#2C4A75"></stop></linearGradient>
+<radialGradient id="f0Fire" cx=".5" cy=".9" r=".9"><stop offset="0" stop-color="#FFF6C4"></stop><stop offset=".3" stop-color="#FFC93F"></stop><stop offset=".65" stop-color="#FF7A1A"></stop><stop offset="1" stop-color="#C92E14"></stop></radialGradient>
+<radialGradient id="f0Glow"><stop offset="0" stop-color="#FFA24A" stop-opacity=".5"></stop><stop offset="1" stop-color="#FFA24A" stop-opacity="0"></stop></radialGradient>
+<linearGradient id="f0Oak" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7A5230"></stop><stop offset="1" stop-color="#4A2E18"></stop></linearGradient>
+<linearGradient id="f0Box" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A120A"></stop><stop offset="1" stop-color="#070302"></stop></linearGradient>
+<pattern id="f0Wall" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="40" height="40" fill="#1C2E23"></rect><rect width="20" height="40" fill="#1F3227"></rect><path d="M10 14l3 6-3 6-3-6z" fill="#27402F"></path></pattern>
+<pattern id="f0Plank" width="36" height="58" patternUnits="userSpaceOnUse"><rect width="36" height="58" fill="#4A2E18"></rect><rect x="18" width="18" height="58" fill="#53351D"></rect><path d="M.5 0V58M18.5 0V58" stroke="#2E1C0E"></path></pattern>
+<pattern id="f0Brick" width="40" height="20" patternUnits="userSpaceOnUse"><rect width="40" height="20" fill="#8C3B2B"></rect><rect x="21" y="1" width="18" height="8" fill="#7E3426"></rect><rect x="11" y="11" width="18" height="8" fill="#96442F"></rect><path d="M0 .5H40M0 10.5H40M.5 0V10M20.5 0V10M10.5 10V20M30.5 10V20" stroke="#4A1D14" stroke-width="1.6"></path></pattern>
+<clipPath id="f0Glass"><path d="M88 222V96a62 62 0 0 1 124 0V222Z"></path></clipPath>
+</defs>
+<rect width="1000" height="330" fill="url(#f0Wall)"></rect>
+<ellipse class="gl" cx="770" cy="260" rx="320" ry="170" fill="url(#f0Glow)"></ellipse>
+<rect y="262" width="1000" height="58" fill="url(#f0Plank)"></rect><rect y="258" width="1000" height="5" fill="#74502E"></rect>
+<rect y="318" width="1000" height="12" fill="url(#f0Oak)"></rect>
+<rect x="52" y="14" width="196" height="5" rx="2.5" fill="#B8893B"></rect>
+<path d="M78 232V96a72 72 0 0 1 144 0V232Z" fill="#5A3A20"></path>
+<g clip-path="url(#f0Glass)">
+<rect x="88" y="20" width="124" height="210" fill="url(#f0Night)"></rect>
+<path d="M88 190Q120 172 150 184T212 178V230H88Z" fill="#1A3557"></path>
+<path d="M100 200l10-34 10 34zM186 196l12-40 12 40z" fill="#0C1F33"></path>
+<path d="M110 166l-4 11h8zM198 156l-4 12h8z" fill="#E8F1FB"></path>
+<rect x="140" y="184" width="26" height="18" fill="#3A2A20"></rect><path d="M136 186L153 172L170 186Z" fill="#E8F1FB"></path><rect class="gl" x="149" y="190" width="8" height="8" fill="#FFC870"></rect>
+<path d="M88 230V206Q124 196 150 204T212 200V230Z" fill="#E6EEF8"></path>
+<g fill="#FFFFFF"><circle class="ws d1" cx="96" cy="40" r="1.8"></circle><circle class="ws s2 d2" cx="108" cy="56" r="1.4"></circle><circle class="ws s3 d3" cx="122" cy="36" r="2"></circle><circle class="ws d4" cx="136" cy="52" r="1.5"></circle><circle class="ws s2 d5" cx="150" cy="38" r="2.2"></circle><circle class="ws s3 d1" cx="164" cy="54" r="1.4"></circle><circle class="ws d2" cx="178" cy="40" r="1.9"></circle><circle class="ws s2 d3" cx="192" cy="56" r="1.5"></circle><circle class="ws s3 d4" cx="204" cy="42" r="1.8"></circle><circle class="ws d5" cx="114" cy="70" r="1.3"></circle><circle class="ws s2 d1" cx="144" cy="72" r="1.6"></circle><circle class="ws s3 d2" cx="186" cy="74" r="1.3"></circle></g>
+<ellipse cx="94" cy="222" rx="30" ry="18" fill="#FFFFFF" opacity=".35"></ellipse><ellipse cx="206" cy="222" rx="30" ry="18" fill="#FFFFFF" opacity=".35"></ellipse>
+</g>
+<g fill="#5A3A20"><rect x="147" y="30" width="6" height="194"></rect><rect x="88" y="150" width="124" height="5"></rect><rect x="88" y="94" width="124" height="4"></rect></g>
+<rect x="68" y="230" width="164" height="9" rx="3" fill="#6B4527"></rect>
+<path d="M56 19H94Q90 110 84 160Q82 180 90 192Q86 240 92 262H60Q64 230 62 192Q68 178 64 160Q58 110 56 19Z" fill="#8E1622"></path>
+<path d="M244 19H206Q210 110 216 160Q218 180 210 192Q214 240 208 262H240Q236 230 238 192Q232 178 236 160Q242 110 244 19Z" fill="#8E1622"></path>
+<path d="M66 19V262M80 19V170M62 70H92M62 130H88M220 19V170M234 19V262M208 70H238M212 130H238" stroke="#5E0F18" stroke-width="2.5" opacity=".7"></path>
+<path d="M72 19V262M228 19V262" stroke="#E9DFC9" stroke-width="1" opacity=".35"></path>
+<rect x="62" y="186" width="30" height="6" rx="3" fill="#D4AF5A"></rect><rect x="208" y="186" width="30" height="6" rx="3" fill="#D4AF5A"></rect>
+<g transform="translate(98 197) scale(.62)"><circle class="gl" cx="15" cy="30" r="20" fill="#FFB54A" opacity=".35"></circle><path d="M11 4h8M15 0v4" stroke="#B8893B" stroke-width="2"></path><path d="M6 12L15 5L24 12Z" fill="#B8893B"></path><rect x="8" y="12" width="14" height="30" rx="1" fill="#FFE2A0" opacity=".35"></rect><rect x="13" y="27" width="4" height="12" fill="#F4EBDD"></rect><path class="cd" d="M15 19c-2 3-2 5 0 7 2-2 2-4 0-7z" fill="#FFC060"></path><path d="M8 12V42M22 12V42" stroke="#B8893B" stroke-width="1.8"></path><rect x="6" y="42" width="18" height="4" rx="1" fill="#7A5A22"></rect></g>
+<rect x="195" y="212" width="9" height="18" rx="2" fill="#F4EBDD"></rect><path class="cd" d="M199.5 200c-3 5-4 8-2 11 1 1 3 1 4 0 2-3 1-6-2-11z" fill="url(#f0Fire)"></path>
+<path d="M272 318V206Q272 176 302 174H362Q392 176 392 206V318Z" fill="#7E1A22"></path>
+<g fill="#5E1018"><circle cx="300" cy="200" r="2.5"></circle><circle cx="332" cy="196" r="2.5"></circle><circle cx="364" cy="200" r="2.5"></circle><circle cx="316" cy="226" r="2.5"></circle><circle cx="348" cy="226" r="2.5"></circle></g>
+<rect x="258" y="238" width="30" height="66" rx="13" fill="#8E2028"></rect><rect x="376" y="238" width="30" height="66" rx="13" fill="#8E2028"></rect>
+<rect x="282" y="262" width="100" height="30" rx="8" fill="#9A2630"></rect>
+<path d="M268 304h128v8H268z" fill="#5E1018"></path><path d="M274 312v6M390 312v6" stroke="#3A2616" stroke-width="5"></path>
+<path d="M354 182Q394 180 404 214V300L392 294 380 302 368 294 356 300V230Q356 200 354 182Z" fill="#E9DFC9"></path>
+<path d="M362 200V296M374 194V300M386 196V296M396 206V298" stroke="#D2C4A8" stroke-width="2"></path>
+<rect x="478" y="296" width="24" height="22" rx="3" fill="#B8893B"></rect>
+<path d="M490 56L534 132H516L556 208H532L576 292H404L448 208H424L464 132H446Z" fill="#1F4D36"></path>
+<path d="M454 120Q490 140 526 118M430 196Q490 222 548 194M414 280Q490 306 566 278" fill="none" stroke="#D4AF5A" stroke-width="2" opacity=".8"></path>
+<g fill="#FFD58A"><circle class="tw" cx="478" cy="104" r="2.6"></circle><circle class="tw t2" cx="502" cy="112" r="2.6"></circle><circle class="tw t3" cx="462" cy="150" r="2.6"></circle><circle class="tw" cx="520" cy="160" r="2.6"></circle><circle class="tw t2" cx="490" cy="176" r="2.6"></circle><circle class="tw t3" cx="446" cy="228" r="2.6"></circle><circle class="tw" cx="536" cy="236" r="2.6"></circle><circle class="tw t2" cx="470" cy="250" r="2.6"></circle><circle class="tw t3" cx="512" cy="262" r="2.6"></circle><circle class="tw" cx="430" cy="282" r="2.6"></circle><circle class="tw t2" cx="552" cy="282" r="2.6"></circle></g>
+<circle cx="470" cy="128" r="5" fill="#B3202F"></circle><circle cx="512" cy="136" r="5" fill="#C9A14A"></circle><circle cx="452" cy="190" r="6" fill="#C9A14A"></circle><circle cx="534" cy="196" r="6" fill="#B3202F"></circle><circle cx="490" cy="214" r="5" fill="#1E4468"></circle><circle cx="438" cy="264" r="6.5" fill="#B3202F"></circle><circle cx="490" cy="270" r="6.5" fill="#C9A14A"></circle><circle cx="546" cy="262" r="6.5" fill="#1E4468"></circle>
+<path class="tw" d="M490 40l4.7 10.6 11.5 1.1-8.7 7.6 2.6 11.3L490 64.7l-10.1 5.9 2.6-11.3-8.7-7.6 11.5-1.1z" fill="#D4AF5A"></path>
+<rect x="410" y="290" width="40" height="28" fill="#B3202F"></rect><rect x="427" y="290" width="6" height="28" fill="#D4AF5A"></rect>
+<rect x="532" y="294" width="36" height="24" fill="#1F4D36"></rect><rect x="547" y="294" width="6" height="24" fill="#B3202F"></rect>
+<rect x="456" y="302" width="22" height="16" fill="#D4AF5A"></rect><rect x="465" y="302" width="4" height="16" fill="#8E1622"></rect>
+<rect x="714" y="0" width="112" height="112" fill="url(#f1Stone)"></rect>
+<circle cx="770" cy="54" r="26" fill="none" stroke="#1D5534" stroke-width="13"></circle><circle cx="770" cy="54" r="26" fill="none" stroke="#2F7D4A" stroke-width="5" stroke-dasharray="3 6" stroke-linecap="round"></circle>
+<g fill="#D0263A"><circle cx="750" cy="40" r="2.6"></circle><circle cx="792" cy="46" r="2.6"></circle><circle cx="760" cy="76" r="2.6"></circle><circle cx="786" cy="72" r="2.6"></circle></g>
+<path d="M770 82l-13-8v14zM770 82l13-8v14z" fill="#C21F32"></path><circle cx="770" cy="82" r="3.6" fill="#E0303F"></circle>
+<rect x="672" y="123" width="196" height="196" fill="url(#f0Brick)"></rect>
+<path d="M712 318V222q0-20 20-20h76q20 0 20 20v96z" fill="url(#f0Box)"></path>
+<ellipse class="gl" cx="770" cy="306" rx="56" ry="28" fill="url(#f0Glow)"></ellipse>
+<rect x="726" y="300" width="88" height="12" rx="6" fill="#5A3620"></rect><rect x="738" y="291" width="66" height="11" rx="5.5" fill="#6E4428" transform="rotate(-7 771 296)"></rect>
+<rect class="gl" x="740" y="309" width="60" height="4" rx="2" fill="#FF7A1A"></rect>
+<path class="fl" d="M770 300C738 280 744 248 758 224c3 16 13 18 10-8 20 22 34 56 2 84z" fill="url(#f0Fire)"></path>
+<path class="fl fl2" d="M732 304c-18-14-12-36-2-50 2 10 8 12 8-2 14 16 18 40-6 52z" fill="url(#f0Fire)"></path>
+<path class="fl fl3" d="M810 304c-20-12-16-34-6-48 2 10 8 10 9-4 14 18 18 40-3 52z" fill="url(#f0Fire)"></path>
+<path class="fl fl4" d="M770 302c-10-8-10-22-2-34 2 8 6 8 6-2 10 12 10 28-4 36z" fill="#FFF4C2"></path>
+<g fill="#FFB04A"><circle class="em" cx="760" cy="250" r="1.6"></circle><circle class="em e2" cx="782" cy="256" r="1.4"></circle><circle class="em e3" cx="748" cy="262" r="1.3"></circle><circle class="em e4" cx="794" cy="260" r="1.5"></circle></g>
+<rect x="656" y="314" width="228" height="6" fill="#7A6F66"></rect>
+<rect x="650" y="122" width="240" height="6" fill="#000000" opacity=".35"></rect>
+<rect x="648" y="108" width="244" height="15" rx="3" fill="url(#f0Oak)"></rect><rect x="648" y="108" width="244" height="3" rx="1.5" fill="#9A6A40"></rect>
+<ellipse class="gl" cx="668" cy="84" rx="16" ry="16" fill="url(#f0Glow)"></ellipse><rect x="663" y="86" width="10" height="22" rx="2" fill="#F4EBDD"></rect><path class="cd" d="M668 72c-3 5-4 8-2 11 1 1 3 1 4 0 2-3 1-6-2-11z" fill="url(#f0Fire)"></path>
+<ellipse class="gl" cx="872" cy="88" rx="16" ry="16" fill="url(#f0Glow)"></ellipse><rect x="867" y="90" width="10" height="18" rx="2" fill="#F4EBDD"></rect><path class="cd" d="M872 76c-3 5-4 8-2 11 1 1 3 1 4 0 2-3 1-6-2-11z" fill="url(#f0Fire)"></path>
+<path d="M708 122v3M770 122v3M832 122v3" stroke="#C9962F" stroke-width="2"></path>
+<g class="sw"><path d="M693 140V174Q693 194 712 194H726Q738 194 736 182Q734 172 722 172H723V140Z" fill="#A8202E"></path><path d="M708 152v14M701 159h14M703 154l10 10M713 154l-10 10" stroke="#F4EFE6" stroke-width="1.2"></path><rect x="689" y="124" width="38" height="17" rx="4" fill="#F4EFE6"></rect><text x="708" y="136" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="7.5" font-weight="700" fill="#3A2208">CYBER</text></g>
+<g class="sw w2"><path d="M755 140V174Q755 194 774 194H788Q800 194 798 182Q796 172 784 172H785V140Z" fill="#1F5E3A"></path><path d="M770 152v14M763 159h14M765 154l10 10M775 154l-10 10" stroke="#F4EFE6" stroke-width="1.2"></path><rect x="751" y="124" width="38" height="17" rx="4" fill="#F4EFE6"></rect><text x="770" y="136" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="7.5" font-weight="700" fill="#3A2208">AI</text></g>
+<g class="sw w3"><path d="M817 140V174Q817 194 836 194H850Q862 194 860 182Q858 172 846 172H847V140Z" fill="#A8202E"></path><path d="M832 152v14M825 159h14M827 154l10 10M837 154l-10 10" stroke="#F4EFE6" stroke-width="1.2"></path><rect x="813" y="124" width="38" height="17" rx="4" fill="#F4EFE6"></rect><text x="832" y="136" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="7.5" font-weight="700" fill="#3A2208">PRIVACY</text></g>
+<path d="M648 116Q709 140 770 118Q831 140 892 116" fill="none" stroke="#1D5534" stroke-width="9" stroke-linecap="round"></path>
+<path d="M648 116Q709 140 770 118Q831 140 892 116" fill="none" stroke="#2F7D4A" stroke-width="4" stroke-dasharray="2 5" stroke-linecap="round"></path>
+<circle class="tw" cx="678.5" cy="128" r="3" fill="#FFD58A"></circle><circle class="tw t2" cx="709" cy="131.5" r="3" fill="#FF8A8A"></circle><circle class="tw t3" cx="739.5" cy="129" r="3" fill="#FFD58A"></circle><circle class="tw t2" cx="800.5" cy="129" r="3" fill="#FFE9B8"></circle><circle class="tw" cx="831" cy="131.5" r="3" fill="#FF8A8A"></circle><circle class="tw t3" cx="861.5" cy="128" r="3" fill="#FFD58A"></circle>
+<rect x="900" y="282" width="52" height="36" rx="4" fill="#B8893B"></rect><path d="M900 290h52M900 308h52" stroke="#8C6A2A" stroke-width="2"></path>
+<rect x="904" y="262" width="12" height="36" rx="6" fill="#EDE6D6" transform="rotate(-8 910 280)"></rect><rect x="920" y="256" width="12" height="40" rx="6" fill="#E3DACA"></rect><rect x="936" y="264" width="12" height="34" rx="6" fill="#EDE6D6" transform="rotate(8 942 281)"></rect>
+<path d="M908 268h4M924 266h5M940 272h4M922 280h4" stroke="#3A3530" stroke-width="2"></path>
+<rect width="24" height="330" fill="url(#f1Stone)"></rect><rect x="976" width="24" height="330" fill="url(#f1Stone)"></rect>
+</svg>
+      <div class="found" aria-hidden="true"></div>
+      <svg class="sc ground" aria-hidden="true" viewBox="0 0 1600 420">
+<path d="M40 40L92 330H-12ZM118 100L158 330H78ZM1520 30L1574 330H1466ZM1580 110L1620 330H1540Z" fill="#10203A"></path>
+<path d="M40 40l12 34h-24zM118 100l9 26h-18zM1520 30l12 34h-24zM1580 110l9 26h-18z" fill="#E8F0F8"></path>
+<path d="M14 170h52l6 8H8zM98 210h40l5 7H93zM1494 160h52l6 8h-64zM1562 220h36l5 7h-46z" fill="#E8F0F8" opacity=".85"></path>
+<path d="M0 420V318Q200 296 420 312T860 306T1300 314T1600 300V420Z" fill="#E3ECF5"></path>
+<path d="M0 420V362Q260 338 560 358T1100 352T1600 342V420Z" fill="#F7FBFF"></path>
+<ellipse cx="76" cy="374" rx="62" ry="8" fill="#000000" opacity=".15"></ellipse>
+<circle cx="76" cy="322" r="50" fill="#F7FBFF" stroke="#D3DEEA" stroke-width="2"></circle>
+<circle cx="76" cy="246" r="36" fill="#F7FBFF" stroke="#D3DEEA" stroke-width="2"></circle>
+<circle cx="76" cy="190" r="27" fill="#F7FBFF" stroke="#D3DEEA" stroke-width="2"></circle>
+<g fill="#232326"><circle cx="67" cy="184" r="3"></circle><circle cx="85" cy="184" r="3"></circle><circle cx="64" cy="199" r="1.8"></circle><circle cx="70" cy="203" r="1.8"></circle><circle cx="76" cy="205" r="1.8"></circle><circle cx="82" cy="203" r="1.8"></circle><circle cx="88" cy="199" r="1.8"></circle><circle cx="76" cy="236" r="3.6"></circle><circle cx="76" cy="254" r="3.6"></circle><circle cx="76" cy="306" r="4"></circle><circle cx="76" cy="328" r="4"></circle></g>
+<path d="M76 191L100 196L76 197Z" fill="#E8792B"></path>
+<path d="M50 210Q76 222 102 210V221Q76 234 50 221Z" fill="#1F5E3A"></path><path d="M86 221L96 262L82 262L78 223Z" fill="#1F5E3A"></path>
+<path d="M60 212V226M76 216V230M92 212V226M84 236H94M83 248H95" stroke="#B3202F" stroke-width="2.5"></path><path d="M68 214V228M85 214V227" stroke="#F4EFE6" stroke-width="1"></path>
+<path d="M51 176Q53 148 76 142Q99 148 101 176Z" fill="#B3202F"></path><path d="M64 174V152M76 174V144M88 174V152" stroke="#8E1622" stroke-width="2"></path>
+<rect x="48" y="170" width="56" height="10" rx="5" fill="#F4EFE6"></rect><circle cx="76" cy="139" r="8" fill="#F4EFE6"></circle>
+<path d="M42 246L6 222M16 229L8 213M16 229L0 233" fill="none" stroke="#5A3A20" stroke-width="4" stroke-linecap="round"></path>
+<g class="wave"><path d="M110 246L146 214M136 223L140 204M136 223L156 220" fill="none" stroke="#5A3A20" stroke-width="4" stroke-linecap="round"></path></g>
+</svg>
+    </div>
+    
+    <div class="legend">
+      <span class="ai-key"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>AI label: the door covers AI</span>
+      <span id="aicount"></span>
+      <a id="ics" href="days-31.ics">Add reminders to your calendar (.ics)</a>
+      <button type="button" class="ghost" id="reset">Reset my progress</button>
+    </div>
+  </section>
+  <aside class="panel" id="panel" aria-live="polite" aria-label="Selected door"></aside>
+  <section class="europe" aria-label="Around Europe">
+      <div class="europe-head"><h2>Around Europe</h2><span class="note">Where this calendar’s case studies happened · pins glow for the open door</span></div>
+      <div class="map" id="map"><img src="europe-map.svg" alt="Map of Europe. EU member states are shown in a lighter green." width="800" height="632"></div>
+      <div class="places" id="places"></div>
+      <p class="note">Map: Natural Earth (public domain). Lighter green = EU member states. The UK is shown for its case studies but is not in the EU.</p>
+    </section>
+</div>
+
+<footer class="foot">
+  <div class="ai-disclosure">
+    <span class="ai-pill"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>AI-ASSISTED</span>
+    <p>Drafted with AI, fact-checked against the cited sources and reviewed by [YOUR NAME] on [REVIEW DATE]. We label AI-assisted content because we ask you to do the same (Door 21).</p>
+  </div>
+  <p class="fine">Mapped to OWASP Top 10:2025 and the OWASP Top 10 for LLM Applications 2025 — every category appears within the first 24 doors. Read-more summaries paraphrase ENISA, OWASP, NIST, the EU AI Act, NIS2, DORA, GDPR and national authorities; follow the links for the authoritative text. Detection rules are illustrative starting points. An independent awareness initiative by an ENISA Ambassador; not an official ENISA publication. Not legal advice. Every door has a <a href="door.html">full briefing</a> with verbatim rule excerpts and a share kit. <a href="supply.html">Supplier toolkit</a>.</p>
+  <p class="fine mono">[YOUR BRAND] · [YOUR SITE URL] · [CONTACT] · Fonts: Fraunces and IBM Plex (SIL OFL 1.1), self-hosted — no third-party requests.</p>
+</footer>
+</div>
+<noscript><p class="noscript">This calendar needs JavaScript to open its doors. The full content is also in <a href="days.json">days.json</a>.</p></noscript>
+</body>
+</html>

@@ -1,0 +1,272 @@
+{
+  "stages": [
+    {
+      "name": "Plan & select",
+      "qs": [
+        "Which of our data and systems will you access — and from which countries?",
+        "Do you hold ISO/IEC 27001, a SOC 2 Type II report or a national scheme such as BSI C5, SecNumCloud or ENS?",
+        "Will you use our data to train AI models? Can we opt out in the contract?",
+        "Who are your sub-processors and fourth parties?",
+        "How do you build securely: SBOM, signed releases, a vulnerability disclosure policy?"
+      ]
+    },
+    {
+      "name": "Contract",
+      "qs": [
+        "Notify us of incidents within [X] hours — set it shorter than our own deadline (NIS2 24 h; DORA 4 h after classification).",
+        "Give us audit rights and cooperate with our regulators.",
+        "Commit to data location, return and certified deletion at exit.",
+        "Agree security requirements, patch timelines and vulnerability disclosure.",
+        "Give notice — and seek our approval — before changing sub-processors."
+      ]
+    },
+    {
+      "name": "Onboard",
+      "qs": [
+        "Name 24/7 security and incident contacts — and test them.",
+        "Use MFA and least privilege for every supplier account.",
+        "Connect only through managed, logged channels.",
+        "Add the supplier to our asset, data-flow and register-of-information records."
+      ]
+    },
+    {
+      "name": "Operate & monitor",
+      "qs": [
+        "Refresh evidence every year: certificates, pen-test summaries, policies.",
+        "Review supplier accounts and access every quarter.",
+        "Watch their advisories, breaches and known-exploited vulnerabilities in their products.",
+        "Run a joint exercise at least once a year."
+      ]
+    },
+    {
+      "name": "Incident",
+      "qs": [
+        "What happened, when, and is it contained?",
+        "Is our data or service affected? Which indicators should we block?",
+        "Which authorities have you notified, and when?",
+        "Who speaks to the press — and can we agree messages before anything is published?"
+      ]
+    },
+    {
+      "name": "Exit",
+      "qs": [
+        "Return our data and certify its deletion.",
+        "Revoke every account, key and connection.",
+        "Support the transition to a new provider.",
+        "Keep the logs we need for investigations and audits."
+      ]
+    }
+  ],
+  "laws": [
+    {
+      "name": "NIS2",
+      "ref": "Directive (EU) 2022/2555",
+      "url": "https://eur-lex.europa.eu/eli/dir/2022/2555/oj",
+      "who": "Essential and important entities in 18 sectors, including managed (security) service providers.",
+      "duty": "Supply-chain security (Art. 21(2)(d)); weigh each direct supplier’s vulnerabilities and secure-development practices (Art. 21(3)). Management bodies approve and oversee measures (Art. 20).",
+      "clock": "Early warning 24 h · notification 72 h · final report 1 month (Art. 23)"
+    },
+    {
+      "name": "DORA",
+      "ref": "Regulation (EU) 2022/2554",
+      "url": "https://eur-lex.europa.eu/eli/reg/2022/2554/oj",
+      "who": "Financial entities — and EU oversight of critical ICT third-party providers.",
+      "duty": "ICT third-party risk and a register of information (Art. 28); key contract provisions including incident help, audit and exit (Art. 30); resilience testing (Art. 24–26).",
+      "clock": "Initial 4 h after classifying as major (≤ 24 h after detection) · intermediate 72 h · final 1 month"
+    },
+    {
+      "name": "GDPR",
+      "ref": "Regulation (EU) 2016/679",
+      "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj",
+      "who": "Anyone processing personal data — controllers and their processors.",
+      "duty": "Processor contracts and approval of sub-processors (Art. 28).",
+      "clock": "Processor → controller without undue delay (Art. 33(2)) · controller → authority within 72 h (Art. 33(1)) · tell people if high risk (Art. 34)"
+    },
+    {
+      "name": "Cyber Resilience Act",
+      "ref": "Regulation (EU) 2024/2847",
+      "url": "https://eur-lex.europa.eu/eli/reg/2024/2847/oj",
+      "who": "Manufacturers of products with digital elements sold in the EU.",
+      "duty": "Security by design, vulnerability handling and a software bill of materials for products.",
+      "clock": "Actively exploited vulnerabilities and severe incidents: early warning within 24 h, from 11 September 2026"
+    },
+    {
+      "name": "EU AI Act",
+      "ref": "Regulation (EU) 2024/1689",
+      "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+      "who": "Providers and deployers of AI systems, and providers of general-purpose AI models.",
+      "duty": "Responsibilities along the AI value chain (Art. 25); GPAI providers give documentation to downstream providers (Art. 53); deployers monitor and inform providers (Art. 26).",
+      "clock": "Providers report serious incidents of high-risk AI (Art. 73) — within 15 days, faster in the most critical cases"
+    }
+  ],
+  "clock": [
+    {
+      "t": "T + 0",
+      "title": "Supplier detects",
+      "text": "They notify you as the contract requires; as a processor they must tell you without undue delay."
+    },
+    {
+      "t": "T + 1 h",
+      "title": "You triage",
+      "text": "Which services, data and connections are affected? Activate your incident team and cut risky links."
+    },
+    {
+      "t": "T + 4 h",
+      "title": "DORA initial",
+      "text": "Financial entities: initial notification within 4 hours of classifying a major ICT incident."
+    },
+    {
+      "t": "T + 24 h",
+      "title": "NIS2 early warning",
+      "text": "Send it to your CSIRT or authority if the incident is significant for you — even with partial facts."
+    },
+    {
+      "t": "T + 72 h",
+      "title": "Notify in full",
+      "text": "NIS2 incident notification, GDPR breach notification and DORA intermediate report."
+    },
+    {
+      "t": "1 month",
+      "title": "Final reports",
+      "text": "NIS2 and DORA final reports. Lessons learnt, contract fixes and a supplier reassessment."
+    }
+  ],
+  "examples": [
+    {
+      "when": "Sep 2025",
+      "chain": "Collins Aerospace → European airports",
+      "text": "Ransomware at a check-in software supplier disrupted Brussels, Berlin and Heathrow."
+    },
+    {
+      "when": "Jun 2023",
+      "chain": "MOVEit → payroll provider → employers",
+      "text": "A file-transfer zero-day exposed staff data at organisations that never ran MOVEit themselves."
+    },
+    {
+      "when": "Oct 2023",
+      "chain": "Südwestfalen-IT → ~70 municipalities",
+      "text": "One municipal IT provider’s ransomware attack stopped citizen services across a German region."
+    },
+    {
+      "when": "May 2024",
+      "chain": "Snowflake accounts → Santander and others",
+      "text": "Stolen passwords on cloud accounts without MFA led to data theft at many customers."
+    }
+  ],
+  "contacts": [
+    {
+      "country": "Germany",
+      "csirt": "BSI",
+      "url": "https://www.bsi.bund.de",
+      "dpa": "State data-protection authority (BfDI for federal bodies)",
+      "fin": "BaFin",
+      "crime": "State police cybercrime units (ZAC)"
+    },
+    {
+      "country": "France",
+      "csirt": "ANSSI / CERT-FR",
+      "url": "https://cyber.gouv.fr",
+      "dpa": "CNIL",
+      "fin": "ACPR · AMF",
+      "crime": "Police or gendarmerie; cybermalveillance.gouv.fr for help"
+    },
+    {
+      "country": "Italy",
+      "csirt": "ACN / CSIRT Italia",
+      "url": "https://www.acn.gov.it",
+      "dpa": "Garante per la protezione dei dati personali",
+      "fin": "Banca d’Italia · Consob · IVASS",
+      "crime": "Polizia Postale"
+    },
+    {
+      "country": "Spain",
+      "csirt": "INCIBE-CERT (private) · CCN-CERT (public)",
+      "url": "https://www.incibe.es",
+      "dpa": "AEPD",
+      "fin": "Banco de España · CNMV",
+      "crime": "Policía Nacional · Guardia Civil"
+    },
+    {
+      "country": "Belgium",
+      "csirt": "CCB / CERT.be",
+      "url": "https://ccb.belgium.be",
+      "dpa": "Data Protection Authority (APD/GBA)",
+      "fin": "National Bank of Belgium · FSMA",
+      "crime": "Federal police"
+    },
+    {
+      "country": "Netherlands",
+      "csirt": "NCSC-NL or your sector CSIRT",
+      "url": "https://www.ncsc.nl",
+      "dpa": "Autoriteit Persoonsgegevens",
+      "fin": "DNB · AFM",
+      "crime": "Police"
+    },
+    {
+      "country": "Ireland",
+      "csirt": "NCSC Ireland (CSIRT-IE)",
+      "url": "https://www.ncsc.gov.ie",
+      "dpa": "Data Protection Commission",
+      "fin": "Central Bank of Ireland",
+      "crime": "Garda National Cyber Crime Bureau"
+    },
+    {
+      "country": "United Kingdom (non-EU)",
+      "csirt": "NCSC",
+      "url": "https://www.ncsc.gov.uk",
+      "dpa": "ICO (72 h)",
+      "fin": "FCA · PRA",
+      "crime": "Police / national fraud reporting"
+    }
+  ],
+  "tests": [
+    {
+      "title": "Run a joint tabletop every year",
+      "text": "Invite your top suppliers; use a real case such as MOVEit or Collins Aerospace."
+    },
+    {
+      "title": "Test the contact tree",
+      "text": "Call each supplier’s 24/7 line out of hours (announced) and log the response time."
+    },
+    {
+      "title": "Check the clocks",
+      "text": "Do contractual notification times beat your NIS2, DORA and GDPR deadlines?"
+    },
+    {
+      "title": "Pre-fill the regulator templates",
+      "text": "NIS2 early warning, DORA initial notification and GDPR breach forms — ready before you need them."
+    },
+    {
+      "title": "Follow DORA testing duties",
+      "text": "A digital operational resilience testing programme (Art. 24–25); threat-led penetration testing at least every three years for designated entities (Art. 26)."
+    },
+    {
+      "title": "Measure effectiveness",
+      "text": "NIS2 Art. 21(2)(f) asks for policies to assess whether your measures work. Exercises are your evidence."
+    }
+  ],
+  "injects": [
+    {
+      "t": "T + 0",
+      "text": "Your payroll provider emails: ‘suspicious activity — investigating’."
+    },
+    {
+      "t": "T + 2 h",
+      "text": "A ransomware group lists your company on its leak site, naming the supplier."
+    },
+    {
+      "t": "T + 6 h",
+      "text": "A journalist calls. The supplier still can’t say what data was taken."
+    },
+    {
+      "t": "T + 20 h",
+      "text": "Your NIS2 early warning is due in four hours. The facts are still unclear."
+    }
+  ],
+  "discuss": [
+    "Do we report with partial facts? (The early warning is meant to be early.)",
+    "Is this a personal-data breach — and whose 72 hours are running?",
+    "Do we suspend the integration, and what stops working?",
+    "Who briefs staff whose bank details may be exposed?"
+  ]
+}

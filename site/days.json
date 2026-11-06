@@ -1,0 +1,4816 @@
+{
+  "year": 2026,
+  "timezone": "Europe/Rome",
+  "month": 12,
+  "modes": {
+    "advent": {
+      "doors": 24,
+      "big": [
+        24
+      ]
+    },
+    "full": {
+      "doors": 31,
+      "big": [
+        24,
+        25,
+        31
+      ]
+    }
+  },
+  "order": [
+    7,
+    24,
+    13,
+    2,
+    19,
+    11,
+    28,
+    5,
+    16,
+    31,
+    9,
+    22,
+    1,
+    27,
+    14,
+    20,
+    3,
+    25,
+    30,
+    8,
+    17,
+    12,
+    26,
+    6,
+    21,
+    10,
+    29,
+    15,
+    4,
+    23,
+    18
+  ],
+  "occasions": {
+    "24": "Christmas Eve",
+    "25": "Christmas Day",
+    "26": "St Stephen’s Day",
+    "31": "New Year’s Eve"
+  },
+  "stakeholders": {
+    "everyone": "Everyone",
+    "home": "Home & Family",
+    "leaders": "Leadership & Board",
+    "it": "IT & Security",
+    "dev": "Developers",
+    "hr": "HR & People",
+    "finance": "Finance",
+    "legal": "Legal & Compliance",
+    "marketing": "Marketing & Comms",
+    "support": "Customer Support",
+    "procurement": "Procurement"
+  },
+  "ranks": [
+    {
+      "share": 0,
+      "name": "Rookie"
+    },
+    {
+      "share": 0.15,
+      "name": "Watcher"
+    },
+    {
+      "share": 0.4,
+      "name": "Defender"
+    },
+    {
+      "share": 0.65,
+      "name": "Guardian"
+    },
+    {
+      "share": 0.9,
+      "name": "Cyber Ambassador"
+    }
+  ],
+  "badges": [
+    {
+      "name": "First door",
+      "hint": "Open any door",
+      "first": true
+    },
+    {
+      "name": "Phish finder",
+      "hint": "Answer doors 4, 5 and 18 correctly",
+      "days": [
+        4,
+        5,
+        18
+      ]
+    },
+    {
+      "name": "Deepfake detective",
+      "hint": "Answer doors 7, 11, 20 and 21 correctly",
+      "days": [
+        7,
+        11,
+        20,
+        21
+      ]
+    },
+    {
+      "name": "Prompt-proof",
+      "hint": "Answer doors 3, 10 and 17 correctly",
+      "days": [
+        3,
+        10,
+        17
+      ]
+    },
+    {
+      "name": "Agent wrangler",
+      "hint": "Answer door 15 correctly",
+      "days": [
+        15
+      ]
+    },
+    {
+      "name": "OWASP ten",
+      "hint": "Answer the doors covering all ten OWASP Top 10:2025 categories",
+      "days": [
+        1,
+        14,
+        15,
+        16,
+        17,
+        22,
+        24
+      ]
+    },
+    {
+      "name": "7-day streak",
+      "hint": "Open seven doors in a row",
+      "streak": 7
+    },
+    {
+      "name": "Cyber sharp",
+      "hint": "Open every door",
+      "all": true
+    }
+  ],
+  "icons": {
+    "shield": "M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6zM8.5 12l2.5 2.5 4.5-5",
+    "password": "M3 8h18v8H3zM7.5 12h.01M12 12h.01M16.5 12h.01",
+    "chat": "M4 5h16v11H9l-5 4zM9 10.5h6",
+    "hook": "M15 3v10a5 5 0 0 1-10 0v-1.5M5 11.5l2.5 2",
+    "parcel": "M3 7.5l9-4.5 9 4.5v9L12 21l-9-4.5zM3 7.5l9 4.5 9-4.5M12 12v9",
+    "gift": "M3 9h18v4H3zM5 13v8h14v-8M12 9v12M12 9c-2.5 0-5-1.2-5-3s2.5-2 5 3c2.5-5 5-4.8 5-3s-2.5 3-5 3",
+    "mask": "M4 7c3-2 13-2 16 0 0 6-3 11-8 11S4 13 4 7zM8.5 11h2M13.5 11h2M10 15c1.3.8 2.7.8 4 0",
+    "building": "M3 21h18M5 21V9l7-5 7 5v12M9.5 21v-5h5v5M9 12h.01M15 12h.01",
+    "eye": "M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z",
+    "prompt": "M4 5h16v11H9l-5 4zM12 8v3.5M12 13.5h.01",
+    "person": "M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 21c0-4 3-6.5 7-6.5s7 2.5 7 6.5M16 11l2 2 4-4",
+    "search": "M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM21 21l-5-5",
+    "card": "M3 6h18v12H3zM3 10h18M7 15h4",
+    "key": "M8 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM11.5 10.5L20 19M16.5 15.5l2-2M14 13l2-2",
+    "robot": "M5 9h14v10H5zM12 5v4M12 3.5v.01M9 13.5v.01M15 13.5v.01M9.5 16.5h5M3 13v2M21 13v2",
+    "server": "M4 4h16v6H4zM4 14h16v6H4zM8 7h.01M8 17h.01M12 7h4M12 17h4",
+    "code": "M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16",
+    "phone": "M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z",
+    "plane": "M22 2L11 13M22 2l-7 20-4-9-9-4z",
+    "wave": "M3 12h2M7 8v8M11 5v14M15 8v8M19 11v2",
+    "tag": "M3 12V3h9l9 9-9 9zM7.5 7.5h.01",
+    "chain": "M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1",
+    "doc": "M6 2h9l5 5v15H6zM14 2v6h6M9 13h6M9 17h6",
+    "bell": "M6 9a6 6 0 1 1 12 0c0 6 3 8 3 8H3s3-2 3-8M10 20a2 2 0 0 0 4 0",
+    "kids": "M3 4h11v8H7l-4 3zM10 15h7l4 3V9h-4",
+    "device": "M7 2h10v20H7zM11 18h2",
+    "trend": "M3 17l6-6 4 4 8-8M15 7h6v6",
+    "scales": "M12 3v18M6 21h12M4 7h16M7 7l-3 7a3 3 0 0 0 6 0zM17 7l-3 7a3 3 0 0 0 6 0z",
+    "exit": "M14 3h6v18h-6M10 17l5-5-5-5M15 12H3",
+    "megaphone": "M3 10v4l13 5V5zM16 9a3 3 0 0 1 0 6M6 14l1 6h3l-1-5",
+    "star": "M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6-4.5-4.2 6.1-.7z"
+  },
+  "pins": {
+    "dublin": {
+      "name": "Dublin, Ireland",
+      "short": "Dublin",
+      "left": 17.92,
+      "top": 33.56
+    },
+    "uk": {
+      "name": "United Kingdom (non-EU)",
+      "short": "UK",
+      "left": 26.86,
+      "top": 42.02
+    },
+    "paris": {
+      "name": "Paris, France",
+      "short": "Paris",
+      "left": 30.23,
+      "top": 51.63
+    },
+    "brussels": {
+      "name": "Brussels, Belgium",
+      "short": "Brussels",
+      "left": 34.15,
+      "top": 45.29
+    },
+    "thehague": {
+      "name": "The Hague, Netherlands",
+      "short": "The Hague",
+      "left": 34.32,
+      "top": 41.14
+    },
+    "nrw": {
+      "name": "Bonn & Hagen, Germany",
+      "short": "NRW",
+      "left": 39.15,
+      "top": 45.31
+    },
+    "berlin": {
+      "name": "Berlin, Germany",
+      "short": "Berlin",
+      "left": 49.27,
+      "top": 39.91
+    },
+    "copenhagen": {
+      "name": "Copenhagen, Denmark",
+      "short": "Copenhagen",
+      "left": 47.61,
+      "top": 29.25
+    },
+    "madrid": {
+      "name": "Madrid, Spain",
+      "short": "Madrid",
+      "left": 15.75,
+      "top": 77.91
+    },
+    "barcelona": {
+      "name": "Barcelona, Spain",
+      "short": "Barcelona",
+      "left": 27.91,
+      "top": 76.81
+    },
+    "rome": {
+      "name": "Rome, Italy",
+      "short": "Rome",
+      "left": 48.73,
+      "top": 76.02
+    }
+  },
+  "national": {
+    "de": {
+      "auth": "BSI — Federal Office for Information Security",
+      "url": "https://www.bsi.bund.de",
+      "general": "IT-Grundschutz Compendium and BSI Standards 200-1 to 200-4 for running an ISMS and business continuity.",
+      "identity": "IT-Grundschutz module ORP.4 Identity and Access Management. BSI dropped mandatory regular password changes from IT-Grundschutz in 2020.",
+      "awareness": "IT-Grundschutz module ORP.3 Awareness and Training, plus BSI’s consumer guidance on recognising phishing.",
+      "ai": "BSI’s ‘Generative AI Models — Opportunities and Risks for Industry and Authorities’ and the AIC4 criteria catalogue for AI cloud services.",
+      "fraud": "BSI consumer guidance on scams; report crimes to your state police’s online station (Onlinewache).",
+      "governance": "NIS2 applies in Germany through the NIS2 Implementation Act (NIS2UmsuCG), in force since 6 December 2025, which amends the BSI Act (BSIG).",
+      "hr": "IT-Grundschutz module ORP.2 Personnel.",
+      "crypto": "BSI TR-02102 Cryptographic Mechanisms: recommended algorithms and key lengths.",
+      "vuln": "IT-Grundschutz module OPS.1.1.3 Patch and Change Management, plus CERT-Bund advisories.",
+      "secdev": "IT-Grundschutz module CON.8 Software Development.",
+      "supply": "BSI C5 Cloud Computing Compliance Criteria Catalogue for assessing cloud providers.",
+      "incident": "IT-Grundschutz modules DER.2.1 Security Incident Handling and CON.3 Backup Concept.",
+      "privacy": "GDPR together with the Federal Data Protection Act (BDSG).",
+      "iot": "BSI IT Security Label (IT-Sicherheitskennzeichen) for consumer devices."
+    },
+    "fr": {
+      "auth": "ANSSI — National Cybersecurity Agency of France",
+      "url": "https://cyber.gouv.fr",
+      "general": "ANSSI’s ‘Guide d’hygiène informatique’: 42 measures for organisations; CERT-FR alerts.",
+      "identity": "ANSSI recommendations on multi-factor authentication and passwords (2021).",
+      "awareness": "ANSSI’s hygiene guide; citizens and small firms can get help at cybermalveillance.gouv.fr.",
+      "ai": "ANSSI security recommendations for a generative AI system (2024).",
+      "fraud": "Cybermalveillance.gouv.fr: victim assistance and scam alerts.",
+      "supply": "SecNumCloud: ANSSI’s qualification for trusted cloud providers.",
+      "incident": "CERT-FR alerts and incident response support."
+    },
+    "it": {
+      "auth": "ACN — National Cybersecurity Agency",
+      "url": "https://www.acn.gov.it",
+      "general": "ACN guidance; CSIRT Italia alerts and incident notifications.",
+      "governance": "NIS2 is transposed by Legislative Decree 138/2024, supervised by ACN.",
+      "ai": "Law 132/2025, Italy’s national framework law on artificial intelligence.",
+      "privacy": "The Garante enforces GDPR — including its ChatGPT and OpenAI decisions.",
+      "incident": "Notify CSIRT Italia (part of ACN) under the NIS2 decree."
+    },
+    "es": {
+      "auth": "INCIBE — National Cybersecurity Institute",
+      "url": "https://www.incibe.es",
+      "general": "CCN-CERT’s CCN-STIC guides and the Esquema Nacional de Seguridad (Royal Decree 311/2022) for public bodies and their suppliers.",
+      "awareness": "INCIBE’s free 017 helpline answers cybersecurity questions.",
+      "fraud": "Call INCIBE’s free 017 helpline for help with scams.",
+      "ai": "AESIA, Spain’s Agency for the Supervision of Artificial Intelligence."
+    },
+    "be": {
+      "auth": "CCB — Centre for Cybersecurity Belgium",
+      "url": "https://ccb.belgium.be",
+      "general": "CCB CyberFundamentals framework (Basic, Important, Essential levels).",
+      "governance": "Belgium’s NIS2 law of 26 April 2024, with CyberFundamentals as a route to compliance.",
+      "awareness": "Forward suspicious messages to suspicious@safeonweb.be.",
+      "fraud": "Forward suspicious messages to suspicious@safeonweb.be."
+    },
+    "nl": {
+      "auth": "NCSC-NL — National Cyber Security Centre",
+      "url": "https://www.ncsc.nl",
+      "general": "NCSC-NL advisories and guidance; the BIO security baseline for government.",
+      "fraud": "Report scams to the Fraudehelpdesk.",
+      "awareness": "Report scams to the Fraudehelpdesk."
+    },
+    "ie": {
+      "auth": "NCSC Ireland",
+      "url": "https://www.ncsc.gov.ie",
+      "general": "NCSC Ireland guidance and alerts.",
+      "privacy": "The Data Protection Commission is lead EU regulator for many big tech firms, including in the TikTok children’s-data case."
+    },
+    "uk": {
+      "auth": "NCSC — National Cyber Security Centre (UK, non-EU)",
+      "url": "https://www.ncsc.gov.uk",
+      "general": "Cyber Essentials certification and the Cyber Assessment Framework (CAF).",
+      "identity": "NCSC: use three random words and turn on 2-step verification.",
+      "awareness": "Forward scam emails to report@phishing.gov.uk and scam texts to 7726.",
+      "fraud": "Forward scam emails to report@phishing.gov.uk and scam texts to 7726.",
+      "ai": "Guidelines for secure AI system development (NCSC, CISA and partners, 2023).",
+      "incident": "NCSC incident management guidance; report significant incidents to the NCSC."
+    }
+  },
+  "countries": [
+    {
+      "id": "eu",
+      "name": "EU baseline"
+    },
+    {
+      "id": "de",
+      "name": "Germany · BSI"
+    },
+    {
+      "id": "fr",
+      "name": "France · ANSSI"
+    },
+    {
+      "id": "it",
+      "name": "Italy · ACN"
+    },
+    {
+      "id": "es",
+      "name": "Spain · CCN-CERT & INCIBE"
+    },
+    {
+      "id": "be",
+      "name": "Belgium · CCB"
+    },
+    {
+      "id": "nl",
+      "name": "Netherlands · NCSC-NL"
+    },
+    {
+      "id": "ie",
+      "name": "Ireland · NCSC"
+    },
+    {
+      "id": "uk",
+      "name": "United Kingdom · NCSC (non-EU)"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Lock the front door",
+      "topic": "MFA & passkeys",
+      "track": "cyber",
+      "for": [
+        "everyone"
+      ],
+      "icon": "shield",
+      "category": "identity",
+      "do": "Turn on multi-factor authentication for email, banking and work — passkeys or an authenticator app first.",
+      "dont": "Approve a sign-in prompt you didn’t start. A flood of prompts is an attack, not a glitch.",
+      "cases": [
+        {
+          "kind": "Attack",
+          "when": "Feb 2024",
+          "name": "Change Healthcare",
+          "location": "United States",
+          "text": "Attackers used stolen credentials on a remote-access portal that had no MFA. The ransomware attack disrupted US healthcare payments and exposed data on about 190 million people.",
+          "source": "UnitedHealth Group; US Senate testimony"
+        },
+        {
+          "kind": "Attack",
+          "when": "May 2024",
+          "name": "Santander (Snowflake campaign)",
+          "location": "Madrid, Spain",
+          "pin": "madrid",
+          "text": "Santander was among firms hit when criminals used passwords stolen by infostealer malware on cloud data accounts without MFA. It confirmed data on customers in Spain, Chile and Uruguay was exposed.",
+          "source": "Santander; Mandiant (UNC5537)"
+        }
+      ],
+      "lab": {
+        "timeline": [
+          {
+            "when": "12 Feb 2024",
+            "what": "Attackers log in to a Citrix remote-access portal with stolen credentials. No MFA."
+          },
+          {
+            "when": "21 Feb 2024",
+            "what": "Ransomware deployed; Change Healthcare disconnects systems nationwide."
+          },
+          {
+            "when": "Early Mar 2024",
+            "what": "UnitedHealth pays a US$22 million ransom."
+          },
+          {
+            "when": "Jan 2025",
+            "what": "Affected people estimated at about 190 million."
+          }
+        ],
+        "prevent": [
+          "Phishing-resistant MFA on every remote-access entry point",
+          "Inventory every internet-facing login page"
+        ],
+        "detect": [
+          "Alert on first-time logins from new devices or countries",
+          "Monitor infostealer leak feeds for staff credentials"
+        ],
+        "tune": [
+          "IF remote-access login succeeds AND no MFA claim → high-severity alert + block",
+          "IF new device AND impossible travel on VPN/Citrix → step-up auth"
+        ],
+        "playbook": [
+          "Disable the account and kill all sessions",
+          "Enforce MFA on the portal; scan for other MFA gaps",
+          "Hunt for lateral movement from the entry host",
+          "Brief executives; prepare regulator and customer notices"
+        ],
+        "tabletop": {
+          "inject": "Monday 07:00: your remote-access portal shows a successful admin login from an unknown country — and that portal has no MFA.",
+          "questions": [
+            "Who can switch the portal off, and how fast?",
+            "What tells us whether data has already left?"
+          ]
+        }
+      },
+      "readMore": [
+        {
+          "org": "NIS2",
+          "ref": "Art. 21(2)(j)",
+          "text": "Essential and important entities must use multi-factor or continuous authentication, and secured voice, video and text communications, where appropriate.",
+          "url": "https://eur-lex.europa.eu/eli/dir/2022/2555/oj"
+        },
+        {
+          "org": "CISA",
+          "ref": "Secure Our World",
+          "text": "Turning on MFA is one of four simple steps CISA asks everyone to take.",
+          "url": "https://www.cisa.gov/secure-our-world"
+        },
+        {
+          "org": "OWASP",
+          "ref": "A07:2025",
+          "text": "Authentication Failures: weak, missing or bypassable authentication remains a top application risk.",
+          "url": "https://owasp.org/Top10/2025/"
+        }
+      ],
+      "explain": {
+        "simple": "MFA is a second lock. Even if someone steals your password, they still can’t get in without your phone or key — unless you approve their prompt.",
+        "technical": "Attackers push-bomb users (MFA fatigue) to coerce approval. Prefer FIDO2 passkeys, enable number matching, and alert on bursts of denied prompts.",
+        "business": "One approved prompt can hand an attacker your systems. Phishing-resistant MFA is cheap, NIS2 names it explicitly, and insurers ask about it."
+      },
+      "refs": "CISA Secure Our World · OWASP A07:2025 Authentication Failures",
+      "owasp": [
+        "A07:2025"
+      ],
+      "quiz": {
+        "question": "Your phone shows a sign-in approval you didn’t request. What now?",
+        "options": [
+          "Approve it so it stops",
+          "Deny it and report it to security",
+          "Ignore it until tomorrow"
+        ],
+        "answer": 1
+      },
+      "quotes": [
+        "nis2_21_2j",
+        "owasp_a07"
+      ],
+      "activities": [
+        {
+          "audience": "home",
+          "type": "c",
+          "text": "Turn on MFA for your main email and bank account today."
+        },
+        {
+          "audience": "work",
+          "type": "c",
+          "text": "Register a passkey or authenticator app for your work account."
+        },
+        {
+          "audience": "leaders",
+          "type": "c",
+          "text": "Ask IT for the list of systems that still have no MFA."
+        },
+        {
+          "audience": "tech",
+          "type": "c",
+          "text": "Report accounts without phishing-resistant MFA and set a fix date."
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "Length beats complexity",
+      "topic": "Passwords",
+      "track": "cyber",
+      "for": [
+        "everyone",
+        "it"
+      ],
+      "icon": "password",
+      "category": "identity",
+      "do": "Use long passphrases and a password manager — one unique password for every account.",
+      "dont": "Reuse passwords. IT: don’t force scheduled resets — require a change when there’s evidence of compromise.",
+      "cases": [
+        {
+          "kind": "Attack",
+          "when": "Oct 2023",
+          "name": "23andMe",
+          "location": "United States",
+          "text": "Credential stuffing with reused passwords opened about 14,000 accounts — and, through a sharing feature, exposed profile data of about 6.9 million users.",
+          "source": "23andMe filings"
+        },
+        {
+          "kind": "Attack",
+          "when": "2023",
+          "name": "KNP Logistics",
+          "location": "Northamptonshire, UK",
+          "pin": "uk",
+          "text": "Ransomware attackers got in by guessing an employee’s password. The 158-year-old transport firm couldn’t recover; around 700 people lost their jobs.",
+          "source": "BBC, July 2025"
+        }
+      ],
+      "lab": {
+        "timeline": [
+          {
+            "when": "Spring–summer 2023",
+            "what": "Attackers try leaked username/password pairs against 23andMe logins."
+          },
+          {
+            "when": "Oct 2023",
+            "what": "Stolen profiles are offered on a hacking forum."
+          },
+          {
+            "when": "Dec 2023",
+            "what": "Company confirms ~14,000 accounts accessed and ~6.9 million profiles exposed."
+          }
+        ],
+        "prevent": [
+          "Mandatory MFA and screening against breached passwords",
+          "Rate-limit logins per IP and per account"
+        ],
+        "detect": [
+          "Spikes in failed logins from proxy or hosting networks",
+          "Successful logins right after many failures"
+        ],
+        "tune": [
+          "IF login failures per ASN > 5× baseline in 10 min → CAPTCHA + rate-limit",
+          "IF one IP succeeds on > 3 accounts in 1 h → block + alert"
+        ],
+        "playbook": [
+          "Force password resets for affected accounts",
+          "Turn on MFA for everyone",
+          "Limit data exposed by sharing features",
+          "Notify users and the data-protection authority"
+        ],
+        "tabletop": {
+          "inject": "Support tickets surge: customers report logins they didn’t make.",
+          "questions": [
+            "How do we tell credential stuffing from a breach of our own database?",
+            "Do we force MFA for everyone today — and what breaks?"
+          ]
+        }
+      },
+      "readMore": [
+        {
+          "org": "NIST",
+          "ref": "SP 800-63B-4",
+          "text": "Favours longer passwords, screening against breached lists and no forced periodic changes — change on evidence of compromise.",
+          "url": "https://csrc.nist.gov/pubs/sp/800/63/b/4/final"
+        },
+        {
+          "org": "OWASP",
+          "ref": "A07:2025",
+          "text": "Credential stuffing and weak passwords are classic authentication failures.",
+          "url": "https://owasp.org/Top10/2025/"
+        }
+      ],
+      "explain": {
+        "simple": "A long sentence-like password is harder to guess than a short tricky one. A password manager remembers them so every account can be different.",
+        "technical": "Length drives entropy. Screen against breach corpora, rate-limit, enforce MFA, and drop composition rules and scheduled rotation per SP 800-63B-4.",
+        "business": "One reused or guessable password can end a company — KNP did. A password manager and MFA cost little next to a shutdown."
+      },
+      "refs": "NIST SP 800-63B-4 · OWASP A07:2025",
+      "owasp": [
+        "A07:2025"
+      ],
+      "quiz": {
+        "question": "Which password habit does NIST recommend?",
+        "options": [
+          "Long, unique passphrases kept in a manager",
+          "Change every password every 90 days",
+          "Short passwords packed with symbols"
+        ],
+        "answer": 0
+      },
+      "quotes": [
+        "nist_63b",
+        "owasp_a07"
+      ],
+      "activities": [
+        {
+          "audience": "home",
+          "type": "c",
+          "text": "Install a password manager and move your five most important accounts."
+        },
+        {
+          "audience": "work",
+          "type": "c",
+          "text": "Change any work password you also use somewhere else."
+        },
+        {
+          "audience": "leaders",
+          "type": "c",
+          "text": "Fund a company password manager for everyone."
+        },
+        {
+          "audience": "tech",
+          "type": "c",
+          "text": "Turn on breached-password screening and drop forced 90-day resets."
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "Think before you paste",
+      "topic": "Data leakage into chatbots",
+      "track": "ai",
+      "for": [
+        "everyone"
+      ],
+      "icon": "chat",
+      "category": "ai",
+      "do": "Use your organisation’s approved AI tools for work, with data-protection settings switched on.",
+      "dont": "Paste customer data, passwords, source code or contracts into public chatbots.",
+      "cases": [
+        {
+          "kind": "Leak",
+          "when": "Apr 2023",
+          "name": "Samsung",
+          "location": "South Korea",
+          "text": "Engineers pasted confidential source code and meeting notes into a public chatbot. Weeks later, Samsung restricted generative AI tools on company devices.",
+          "source": "Bloomberg, May 2023"
+        },
+        {
+          "kind": "Ruling",
+          "when": "Mar 2023",
+          "name": "Italy’s Garante blocks ChatGPT",
+          "location": "Rome, Italy",
+          "pin": "rome",
+          "text": "After a bug exposed some ChatGPT users’ chat titles and payment details, Italy’s data-protection authority temporarily blocked the service until OpenAI made privacy changes.",
+          "source": "Garante per la protezione dei dati personali"
+        }
+      ],
+      "lab": {
+        "timeline": [
+          {
+            "when": "Mar 2023",
+            "what": "Engineers use a public chatbot to fix code and summarise a meeting."
+          },
+          {
+            "when": "Apr 2023",
+            "what": "Leaks reported in Korean media."
+          },
+          {
+            "when": "May 2023",
+            "what": "Samsung restricts generative AI tools on company devices."
+          }
+        ],
+        "prevent": [
+          "Approved enterprise AI with retention controls",
+          "Data-loss prevention on paste and upload to AI sites"
+        ],
+        "detect": [
+          "Discover AI domains in proxy/DNS logs",
+          "DLP alerts on source-code patterns sent externally"
+        ],
+        "tune": [
+          "IF upload to unsanctioned AI domain contains source code or ‘CONFIDENTIAL’ → block + coach",
+          "Weekly report: new AI domains by user count and data volume"
+        ],
+        "playbook": [
+          "Identify what was shared and with which service",
+          "Request deletion from the provider where possible",
+          "Rotate any secrets in the pasted content",
+          "Publish an approved-AI path and guidance"
+        ],
+        "tabletop": {
+          "inject": "An engineer admits pasting a customer’s database schema — with credentials — into a free chatbot.",
+          "questions": [
+            "Is this a personal-data breach we must report within 72 hours?",
+            "Which secrets do we rotate first?"
+          ]
+        }
+      },
+      "readMore": [
+        {
+          "org": "OWASP",
+          "ref": "LLM02:2025",
+          "text": "Sensitive Information Disclosure: data can leak through prompts, outputs and training. Limit what goes in and what comes out.",
+          "url": "https://genai.owasp.org/llm-top-10/"
+        },
+        {
+          "org": "GDPR",
+          "ref": "Art. 5(1)(c)",
+          "text": "Data minimisation: personal data must be adequate, relevant and limited to what is necessary.",
+          "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
+        },
+        {
+          "org": "ENISA",
+          "ref": "AI good practices",
+          "text": "ENISA’s multilayer framework sets out good cybersecurity practice across the AI lifecycle.",
+          "url": "https://www.enisa.europa.eu/publications/multilayer-framework-for-good-cybersecurity-practices-for-ai"
+        }
+      ],
+      "explain": {
+        "simple": "A public chatbot is like a stranger’s notebook. Anything you paste may be stored, reviewed or leaked — so keep work secrets out.",
+        "technical": "Consumer LLM services may retain prompts for abuse review or training. Use enterprise tenants with retention controls, SSO and DLP on paste/upload.",
+        "business": "Leaked contracts or code can breach NDAs and GDPR. Approved AI tools with data controls keep the productivity and remove the exposure."
+      },
+      "refs": "OWASP LLM02:2025 Sensitive Information Disclosure",
+      "owasp": [
+        "LLM02:2025"
+      ],
+      "quiz": {
+        "question": "You need to summarise a customer contract quickly. Best move?",
+        "options": [
+          "Paste it into any free chatbot",
+          "Email it to your personal account first",
+          "Use the approved AI tool with data controls on"
+        ],
+        "answer": 2
+      },
+      "quotes": [
+        "llm02",
+        "gdpr_5_1c"
+      ],
+      "activities": [
+        {
+          "audience": "home",
+          "type": "p",
+          "text": "Turn off ‘use my chats for training’ in your chatbot’s settings."
+        },
+        {
+          "audience": "work",
+          "type": "a",
+          "text": "Find your organisation’s approved AI tool and bookmark it."
+        },
+        {
+          "audience": "leaders",
+          "type": "a",
+          "text": "Publish a one-page ‘what not to paste’ guide."
+        },
+        {
+          "audience": "tech",
+          "type": "a",
+          "text": "Add DLP rules for source code and secrets on AI websites."
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "Polished isn’t proof",
+      "topic": "AI-written phishing",
+      "track": "both",
+      "for": [
+        "everyone"
+      ],
+      "icon": "hook",
+      "category": "awareness",
+      "do": "Check the real sender address, hover before you click, and use the Report button.",
+      "dont": "Read perfect grammar as a sign of safety — AI makes fluent, personalised phishing cheap.",
+      "cases": [
+        {
+          "kind": "Report",
+          "when": "2025",
+          "name": "ENISA Threat Landscape",
+          "location": "European Union",
+          "text": "Phishing was the leading way in, at about 60% of observed intrusions. By early 2025, AI-supported phishing made up over 80% of social-engineering activity worldwide.",
+          "source": "ENISA Threat Landscape 2025"
+        },
+        {
+          "kind": "Attack",
+          "when": "Mar 2024",
+          "name": "France Travail",
+          "location": "Paris, France",
+          "pin": "paris",
+          "text": "Attackers took over employment advisers’ accounts through social engineering and reached data on up to 43 million people. France’s CNIL later fined the agency €5 million.",
+          "source": "France Travail; CNIL"
+        }
+      ],
+      "lab": {
+        "timeline": [
+          {
+            "when": "Jul 2024 – Jun 2025",
+            "what": "Reporting period analysed by ENISA."
+          },
+          {
+            "when": "Oct 2025",
+            "what": "ENISA Threat Landscape 2025 published."
+          },
+          {
+            "when": "Finding",
+            "what": "Phishing ~60% of intrusions; AI-supported phishing >80% of social engineering."
+          }
+        ],
+        "prevent": [
+          "Phishing-resistant MFA so stolen passwords aren’t enough",
+          "Enforce DMARC on your own domains"
+        ],
+        "detect": [
+          "One-click Report button feeding the SOC",
+          "Alerts on newly registered look-alike domains"
+        ],
+        "tune": [
+          "Cluster user-reported emails by sender + URL → auto-purge matching messages",
+          "IF mailbox rule created within 1 h of risky sign-in → alert"
+        ],
+        "playbook": [
+          "Triage the reported email",
+          "Purge similar messages from all inboxes",
+          "Reset credentials of anyone who entered them",
+          "Block sender and domains; tell staff what to look for"
+        ],
+        "tabletop": {
+          "inject": "A flawless email from ‘HR’ about bonus changes has been clicked by 40 staff.",
+          "questions": [
+            "How fast can we pull it from every inbox?",
+            "How do we find who typed their password?"
+          ]
+        }
+      },
+      "readMore": [
+        {
+          "org": "ENISA",
+          "ref": "Threat Landscape 2025",
+          "text": "ENISA’s annual analysis of threats facing the EU, including the rise of AI-supported social engineering.",
+          "url": "https://www.enisa.europa.eu/publications/enisa-threat-landscape-2025"
+        },
+        {
+          "org": "NIS2",
+          "ref": "Art. 21(2)(g)",
+          "text": "Requires basic cyber hygiene practices and cybersecurity training.",
+          "url": "https://eur-lex.europa.eu/eli/dir/2022/2555/oj"
+        },
+        {
+          "org": "ENISA",
+          "ref": "European Cybersecurity Month",
+          "text": "ENISA’s annual EU-wide awareness campaign every October.",
+          "url": "https://cybersecuritymonth.eu/"
+        }
+      ],
+      "explain": {
+        "simple": "Scammers now use AI to write perfect emails. Don’t judge by spelling — check who really sent it, and report anything odd.",
+        "technical": "LLMs remove linguistic tells, so detection shifts to sender authentication (SPF/DKIM/DMARC), link and attachment analysis, and user reports into the SOC.",
+        "business": "Phishing is the most common way in. A one-click report button turns every employee into an early-warning sensor."
+      },
+      "refs": "ENISA Threat Landscape 2025 · CISA Secure Our World",
+      "owasp": [],
+      "quiz": {
+        "question": "An email from “IT” is flawless, personal and urgent. What does that prove?",
+        "options": [
+          "It’s genuine — scams have typos",
+          "Nothing — verify the sender and report it",
+          "It’s safe if the logo looks right"
+        ],
+        "answer": 1
+      },
+      "quotes": [
+        "nis2_21_2g"
+      ],
+      "activities": [
+        {
+          "audience": "home",
+          "type": "c",
+          "text": "Report one suspicious message to your email provider."
+        },
+        {
+          "audience": "work",
+          "type": "c",
+          "text": "Find the Report Phishing button in your mail client."
+        },
+        {
+          "audience": "leaders",
+          "type": "c",
+          "text": "Thank the last person who reported a phish — publicly."
+        },
+        {
+          "audience": "tech",
+          "type": "c",
+          "text": "Check DMARC is set to p=reject on your domains."
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "Parcel panic",
+      "topic": "Smishing",
+      "track": "cyber",
+      "for": [
+        "home",
+        "everyone"
+      ],
+      "icon": "parcel",
+      "category": "fraud",
+      "do": "Track deliveries in the courier’s own app, or type its web address yourself.",
+      "dont": "Tap “missed delivery”, “customs fee” or “unpaid toll” links in text messages.",
+      "cases": [
+        {
+          "kind": "Alert",
+          "when": "Apr 2024",
+          "name": "FBI IC3",
+          "location": "United States",
+          "text": "The FBI warned of mass texts demanding small “unpaid toll” fees. The links led to look-alike sites built to steal card and personal details.",
+          "source": "FBI IC3 public service announcement"
+        },
+        {
+          "kind": "Takedown",
+          "when": "Jun 2022",
+          "name": "FluBot (Europol)",
+          "location": "The Hague, Netherlands",
+          "pin": "thehague",
+          "text": "Europol announced an international operation that dismantled FluBot, Android malware that spread across Europe through fake parcel-delivery texts.",
+          "source": "Europol, 1 June 2022"
+        }
+      ],
+      "lab": {
+        "timeline": [
+          {
+            "when": "Early 2024",
+            "what": "Mass texts claim small unpaid road-toll fees."
+          },
+          {
+            "when": "Apr 2024",
+            "what": "FBI IC3 warns the public."
+          },
+          {
+            "when": "Ongoing",
+            "what": "Phishing kits clone toll and parcel sites in many countries."
+          }
+        ],
+        "prevent": [
+          "Use official apps; never pay from a text link",
+          "Mobile threat protection on work phones"
+        ],
+        "detect": [
+          "Staff report suspicious texts",
+          "Card-issuer alerts on unusual payments"
+        ],
+        "tune": [
+          "Managed phones: DNS-block newly registered domains (< 30 days)",
+          "IF corporate card used on a new merchant right after an SMS link click → alert"
+        ],
+        "playbook": [
+          "Don’t click; report the text",
+          "If you paid: call your bank and block the card",
+          "Change passwords you entered",
+          "Warn family and colleagues"
+        ],
+        "tabletop": {
+          "inject": "Your CFO paid a ‘€1.99 customs fee’ from a text on their work phone.",
+          "questions": [
+            "Is the work phone now compromised?",
+            "Who calls the bank, and who checks the phone?"
+          ]
+        }
+      },
+      "readMore": [
+        {
+          "org": "CISA",
+          "ref": "Secure Our World",
+          "text": "Recognise and report phishing — including text messages (smishing).",
+          "url": "https://www.cisa.gov/secure-our-world"
+        },
+        {
+          "org": "ENISA",
+          "ref": "European Cybersecurity Month",
+          "text": "Campaign material on recognising scams across the EU.",
+          "url": "https://cybersecuritymonth.eu/"
+        }
+      ],
+      "explain": {
+        "simple": "Couriers rarely text you a link to pay a fee. Open their real app or website yourself instead of tapping the link.",
+        "technical": "Smishing kits clone carrier sites to harvest card data or push malicious apps; domains rotate quickly, so blocklists lag.",
+        "business": "Staff phones carry work access. A parcel scam on a personal phone can become a company incident."
+      },
+      "refs": "FBI IC3 public service announcement, April 2024",
+      "owasp": [],
+      "quiz": {
+        "question": "A text says your parcel is held for a €1.99 fee. What do you do?",
+        "options": [
+          "Pay — it’s only €1.99",
+          "Reply STOP to the sender",
+          "Open the courier’s app or website yourself"
+        ],
+        "answer": 2
+      },
+      "quotes": [
+        "nis2_21_2g"
+      ],
+      "activities": [
+        {
+          "audience": "home",
+          "type": "c",
+          "text": "Install your main courier’s official app."
+        },
+        {
+          "audience": "work",
+          "type": "c",
+          "text": "Share today’s door in your team chat."
+        },
+        {
+          "audience": "leaders",
+          "type": "c",
+          "text": "Remind staff: no work payments from text-message links."
+        },
+        {
+          "audience": "tech",
+          "type": "c",
+          "text": "Block newly registered domains on managed phones."
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "title": "Smart gifts, safe setup",
+      "topic": "AI toys & connected devices",
+      "track": "both",
+      "for": [
+        "home"
+      ],
+      "icon": "gift",
+      "category": "iot",
+      "do": "Change default passwords, switch on updates, and check what an AI toy records and where it sends it.",
+      "dont": "Buy connected toys or cameras with no security-update promise or clear privacy policy.",
+      "cases": [
+        {
+          "kind": "Recall",
+          "when": "Nov 2025",
+          "name": "FoloToy",
+          "location": "United States",
+          "text": "After a US PIRG “Trouble in Toyland” test found its AI teddy bear discussing inappropriate topics with children, the maker suspended sales of its AI toys.",
+          "source": "US PIRG Education Fund"
+        },
+        {
+          "kind": "Ban",
+          "when": "Feb 2017",
+          "name": "My Friend Cayla",
+          "location": "Bonn, Germany",
+          "pin": "nrw",
+          "text": "Germany’s telecoms regulator classed the internet-connected doll as an illegal hidden spying device and told parents to disable it.",
+          "source": "Bundesnetzagentur"
+        }
+      ],
+      "lab": {
+        "timeline": [
+          {
+            "when": "Nov 2025",
+            "what": "US PIRG publishes its ‘Trouble in Toyland’ tests of AI toys."
+          },
+          {
+            "when": "Finding",
+            "what": "An AI teddy bear discussed inappropriate topics."
+          },
+          {
+            "when": "Nov 2025",
+            "what": "FoloToy suspends sales of its AI toys."
+          }
+        ],
+        "prevent": [
+          "Buy from makers with update and privacy commitments",
+          "Use parental controls and content filters"
+        ],
+        "detect": [
+          "Supervise early use and listen to what the toy says",
+          "Check app permissions and data sent"
+        ],
+        "tune": [
+          "Home router: put toys and cameras on a separate guest network",
+          "Alert (router app) when a new device joins the network"
+        ],
+        "playbook": [
+          "Switch off and unpair the toy",
+          "Delete recordings and account data",
+          "Report to the seller and consumer authority",
+          "Talk with the child about what happened"
+        ],
+        "tabletop": {
+          "inject": "A child tells you the new talking toy suggested where to find matches.",
+          "questions": [
+            "What do you switch off first?",
+            "Where do you report it?"
+          ]
+        }
+      },
+      "readMore": [
+        {
+          "org": "ETSI",
+          "ref": "EN 303 645",
+          "text": "European baseline for consumer IoT: no universal default passwords, a vulnerability disclosure policy and security updates.",
+          "url": "https://www.etsi.org/technologies/consumer-iot-security"
+        },
+        {
+          "org": "EU AI Act",
+          "ref": "Art. 5",
+          "text": "Bans AI that exploits people’s vulnerabilities due to age, among other prohibited practices.",
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+        }
+      ],
+      "explain": {
+        "simple": "Connected toys can listen and share. Check what they record, where it goes, and whether the maker will fix security problems.",
+        "technical": "Common flaws: default credentials, unauthenticated Bluetooth pairing, cloud APIs without auth and no OTA updates. Isolate IoT on a guest network.",
+        "business": "EU rules such as the Cyber Resilience Act and the AI Act raise the bar for connected products. Insecure toys are a regulatory and reputational risk."
+      },
+      "refs": "ETSI EN 303 645 · US PIRG Trouble in Toyland 2025",
+      "owasp": [],
+      "quiz": {
+        "question": "Before gifting an AI-powered toy, what’s the key check?",
+        "options": [
+          "What it records, where data goes, and updates",
+          "The battery life",
+          "Whether it comes gift-wrapped"
+        ],
+        "answer": 0
+      },
+      "quotes": [
+        "ai_5_1b"
+      ],
+      "activities": [
+        {
+          "audience": "home",
+          "type": "p",
+          "text": "Check what your smart speaker or toy stores, and delete old recordings."
+        },
+        {
+          "audience": "work",
+          "type": "c",
+          "text": "Keep personal smart gadgets off the office Wi-Fi."
+        },
+        {
+          "audience": "leaders",
+          "type": "p",
+          "text": "Ask whether your products meet Cyber Resilience Act basics."
+        },
+        {
+          "audience": "tech",
+          "type": "c",
+          "text": "Put IoT devices on a separate network segment."
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "title": "Call back before you pay",
+      "topic": "Deepfake fraud",
+      "track": "ai",
+      "for": [
+        "finance"
+      ],
+      "icon": "mask",
+      "category": "fraud",
+      "do": "Verify urgent payments and bank-detail changes by calling a number you already trust.",
+      "dont": "Move money on the strength of a video call — faces and voices can be faked in real time.",
+      "cases": [
+        {
+          "kind": "Attack",
+          "when": "2024",
+          "name": "Arup",
+          "location": "Hong Kong",
+          "text": "An employee joined a video call with deepfaked senior colleagues and made transfers totalling about US$25 million.",
+          "source": "CNN, 16 May 2024"
+        },
+        {
+          "kind": "Deepfake",
+          "when": "Jun 2022",
+          "name": "Berlin’s mayor and a fake Klitschko",
+          "location": "Berlin, Germany",
+          "pin": "berlin",
+          "text": "Berlin’s mayor Franziska Giffey held a video call with someone posing as Kyiv’s mayor Vitali Klitschko before realising it was a fake. Madrid’s and Vienna’s mayors were also targeted.",
+          "source": "City of Berlin; international press"
+        }
+      ],
+      "lab": {
+        "timeline": [
+          {
+            "when": "Jan 2024",
+            "what": "A Hong Kong employee gets a message from the ‘CFO’ about a secret transaction."
+          },
+          {
+            "when": "Video call",
+            "what": "Everyone else on the call is a deepfake; 15 transfers follow."
+          },
+          {
+            "when": "Later",
+            "what": "The employee checks with head office; the fraud is discovered."
+          },
+          {
+            "when": "May 2024",
+            "what": "Arup confirms it was the victim; about US$25 million lost."
+          }
+        ],
+        "prevent": [
+          "Call back on a known number for any urgent payment",
+          "Dual approval and a cooling-off period for new beneficiaries"
+        ],
+        "detect": [
+          "Treasury alerts on new beneficiaries and unusual series of transfers"
+        ],
+        "tune": [
+          "IF first payment to new beneficiary > threshold → hold until call-back logged",
+          "IF ≥ 3 transfers to new accounts in 24 h → freeze + escalate"
+        ],
+        "playbook": [
+          "Freeze outgoing payments",
+          "Ask the bank to recall the funds",
+          "Report to the police",
+          "Review approval rules and train the team"
+        ],
+        "tabletop": {
+          "inject": "The ‘CEO’ joins a video call and asks finance to wire €2 million today for a confidential acquisition.",
+          "questions": [
+            "What is the exact verification step — and who can override it?",
+            "How fast can our bank recall a transfer?"
+          ]
+        }
+      },
+      "readMore": [
+        {
+          "org": "DORA",
+          "ref": "Art. 5",
+          "text": "In financial entities, the management body is responsible for managing ICT risk.",
+          "url": "https://eur-lex.europa.eu/eli/reg/2022/2554/oj"
+        },
+        {
+          "org": "ENISA",
+          "ref": "Finance threat landscape",
+          "text": "ENISA’s analysis of threats to EU banks and financial institutions.",
+          "url": "https://www.enisa.europa.eu/publications/enisa-threat-landscape-finance-sector"
+        },
+        {
+          "org": "NIST",
+          "ref": "AI 600-1",
+          "text": "NIST’s Generative AI Profile covers risks such as convincing synthetic content, and how to manage them.",
+          "url": "https://doi.org/10.6028/NIST.AI.600-1"
+        }
+      ],
+      "explain": {
+        "simple": "Video and voice can now be faked live. Before moving money, hang up and call the person back on a number you already know.",
+        "technical": "Real-time face and voice synthesis defeats visual verification. Enforce out-of-band call-backs, dual authorisation and payment-change cooling periods.",
+        "business": "One deepfake call cost Arup about US$25 million. A mandatory call-back policy is free and stops this class of fraud."
+      },
+      "refs": "CNN, 16 May 2024 · DORA Art. 5",
+      "owasp": [],
+      "quiz": {
+        "question": "The “CFO” on a video call asks for an urgent transfer. Your next step?",
+        "options": [
+          "Transfer — you saw their face",
+          "Hang up and call back on a known number",
+          "Ask them to confirm in the chat"
+        ],
+        "answer": 1
+      },
+      "quotes": [
+        "dora_5_2",
+        "ai_50_4"
+      ],
+      "activities": [
+        {
+          "audience": "home",
+          "type": "a",
+          "text": "Agree how family members verify requests for money."
+        },
+        {
+          "audience": "work",
+          "type": "a",
+          "text": "Save your finance team’s official call-back numbers."
+        },
+        {
+          "audience": "leaders",
+          "type": "a",
+          "text": "Approve a written call-back rule for all urgent payments."
+        },
+        {
+          "audience": "tech",
+          "type": "c",
+          "text": "Add a hold on first payments to new beneficiaries."
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "title": "Risk lives in the boardroom",
+      "topic": "Governance",
+      "track": "both",
+      "for": [
+        "leaders"
+      ],
+      "icon": "building",
+      "category": "governance",
+      "do": "Name an accountable owner for cyber and AI risk, and rehearse a crisis with the board every year.",
+      "dont": "File security under IT’s budget — NIS2 makes management bodies approve and oversee risk measures.",
+      "cases": [
+        {
+          "kind": "Attack",
+          "when": "Sep 2025",
+          "name": "Jaguar Land Rover",
+          "location": "United Kingdom",
+          "pin": "uk",
+          "text": "A cyber attack halted production for about five weeks. The Cyber Monitoring Centre estimated the cost to the UK economy at £1.9 billion.",
+          "source": "Cyber Monitoring Centre, Oct 2025"
+        },
+        {
+          "kind": "Attack",
+          "when": "Oct 2023",
+          "name": "Südwestfalen-IT",
+          "location": "Hagen, Germany",
+          "pin": "nrw",
+          "text": "Ransomware at a municipal IT provider disrupted services in about 70 German municipalities for months, from ID documents to vehicle registration.",
+          "source": "Südwestfalen-IT; The Record"
+        }
+      ],
+      "lab": {
+        "timeline": [
+          {
+            "when": "31 Aug – 1 Sep 2025",
+            "what": "Cyber attack; JLR shuts down its IT systems."
+          },
+          {
+            "when": "Sep 2025",
+            "what": "Production halted across UK plants; suppliers hit hard."
+          },
+          {
+            "when": "28 Sep 2025",
+            "what": "UK government backs a £1.5 billion loan guarantee."
+          },
+          {
+            "when": "Oct 2025",
+            "what": "Phased restart; CMC estimates a £1.9 billion UK economic cost."
+          }
+        ],
+        "prevent": [
+          "Segment IT from manufacturing (OT) networks",
+          "Board-approved recovery priorities and tested restores"
+        ],
+        "detect": [
+          "24/7 monitoring with authority to isolate systems"
+        ],
+        "tune": [
+          "IF remote-admin tools run on > 20 hosts within 10 min → isolate + page on-call",
+          "IF backup deletion or mass service stops detected → critical alert"
+        ],
+        "playbook": [
+          "Isolate affected networks",
+          "Decide shutdown scope with the board",
+          "Restore revenue-critical systems first",
+          "Coordinate with suppliers and government"
+        ],
+        "tabletop": {
+          "inject": "Ransomware hits on a Sunday. Production can’t start Monday and suppliers are calling.",
+          "questions": [
+            "Who decides to stop production, and on what information?",
+            "Which three systems do we restore first?"
+          ]
+        }
+      },
+      "readMore": [
+        {
+          "org": "NIS2",
+          "ref": "Art. 20",
+          "text": "Management bodies must approve cybersecurity risk-management measures, oversee their implementation, can be held liable, and must follow training.",
+          "url": "https://eur-lex.europa.eu/eli/dir/2022/2555/oj"
+        },
+        {
+          "org": "NIST",
+          "ref": "CSF 2.0 · Govern",
+          "text": "CSF 2.0 added ‘Govern’: cyber risk strategy, roles and oversight as a leadership function.",
+          "url": "https://www.nist.gov/cyberframework"
+        },
+        {
+          "org": "DORA",
+          "ref": "Art. 5",
+          "text": "Financial entities’ management bodies define, approve and oversee the ICT risk-management framework.",
+          "url": "https://eur-lex.europa.eu/eli/reg/2022/2554/oj"
+        }
+      ],
+      "explain": {
+        "simple": "A cyber attack can stop a whole company. Leaders must own the risk — not just the IT team.",
+        "technical": "Map crown-jewel processes, set risk appetite, fund controls, and rehearse decisions (ransom, disclosure, shutdown) in board tabletop exercises.",
+        "business": "JLR’s halt was estimated at £1.9 billion to the UK economy. Under NIS2, boards approve risk measures and can be held liable."
+      },
+      "refs": "NIS2 Art. 20 · NIST CSF 2.0 Govern",
+      "owasp": [],
+      "quiz": {
+        "question": "Under NIS2, who must approve cybersecurity risk measures?",
+        "options": [
+          "Only the IT team",
+          "An external auditor",
+          "The organisation’s management body"
+        ],
+        "answer": 2
+      },
+      "quotes": [
+        "nis2_20_1",
+        "nis2_20_2",
+        "dora_5_2"
+      ],
+      "activities": [
+        {
+          "audience": "home",
+          "type": "c",
+          "text": "Talk with your household about one cyber risk you share."
+        },
+        {
+          "audience": "work",
+          "type": "c",
+          "text": "Find out who owns cyber risk in your team."
+        },
+        {
+          "audience": "leaders",
+          "type": "c",
+          "text": "Book a 60-minute board cyber crisis exercise."
+        },
+        {
+          "audience": "tech",
+          "type": "c",
+          "text": "Draft a one-page cyber risk summary for the board."
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "title": "Shine a light on shadow AI",
+      "topic": "Shadow AI & over-sharing",
+      "track": "ai",
+      "for": [
+        "it",
+        "leaders"
+      ],
+      "icon": "eye",
+      "category": "ai",
+      "do": "Publish an approved-AI list with a fast request path — and fix file over-sharing before AI assistants go live.",
+      "dont": "Ban everything — blanket bans push people to tools you can’t see or govern.",
+      "cases": [
+        {
+          "kind": "Study",
+          "when": "Jul 2025",
+          "name": "IBM Cost of a Data Breach",
+          "location": "Global",
+          "text": "One in five organisations reported a breach involving shadow AI; high levels of shadow AI added about US$670,000 to breach costs.",
+          "source": "IBM / Ponemon, 2025"
+        },
+        {
+          "kind": "Incident",
+          "when": "May 2024",
+          "name": "Hugging Face Spaces",
+          "location": "Global AI platform",
+          "text": "The AI platform detected unauthorised access to its Spaces service, suspected some stored secrets were exposed, and revoked tokens — a reminder that AI tools hold your keys too.",
+          "source": "Hugging Face"
+        }
+      ],
+      "lab": {
+        "timeline": [
+          {
+            "when": "2024–25",
+            "what": "IBM and Ponemon study breaches at 600 organisations."
+          },
+          {
+            "when": "Jul 2025",
+            "what": "Report published."
+          },
+          {
+            "when": "Finding",
+            "what": "1 in 5 had a shadow-AI breach; ~US$670,000 extra cost where shadow AI was high."
+          }
+        ],
+        "prevent": [
+          "Sanctioned AI tools behind single sign-on",
+          "An AI use policy with a fast request path"
+        ],
+        "detect": [
+          "Discover AI apps in proxy/DNS logs",
+          "Monitor OAuth consents to AI apps"
+        ],
+        "tune": [
+          "IF new OAuth grant to an AI app requests mail or file scopes → review queue",
+          "Weekly: top AI domains by users and data volume"
+        ],
+        "playbook": [
+          "Inventory AI tools in use",
+          "Block risky tools and offer approved alternatives",
+          "Revoke risky OAuth grants",
+          "Train and communicate"
+        ],
+        "tabletop": {
+          "inject": "You discover 300 staff connected an unvetted AI note-taker to their calendars and mail.",
+          "questions": [
+            "Do we revoke today — and what breaks?",
+            "What data has it already accessed?"
+          ]
+        }
+      },
+      "readMore": [
+        {
+          "org": "NIST",
+          "ref": "AI RMF 1.0",
+          "text": "The ‘Govern’ function: policies, inventories and accountability for how AI is used.",
+          "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+        },
+        {
+          "org": "OWASP",
+          "ref": "LLM08:2025",
+          "text": "Vector and Embedding Weaknesses: AI search over documents can surface data users shouldn’t see.",
+          "url": "https://genai.owasp.org/llm-top-10/"
+        },
+        {
+          "org": "EU AI Act",
+          "ref": "Art. 4",
+          "text": "AI literacy: organisations that provide or deploy AI take measures so staff understand it.",
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+        }
+      ],
+      "explain": {
+        "simple": "If people can’t get approved AI tools, they’ll use whatever is free — and you won’t know where your data went.",
+        "technical": "Discover AI usage via CASB/DNS logs, offer sanctioned tools with SSO and retention controls, and fix over-permissive sharing before enabling AI search.",
+        "business": "Unmanaged AI added about US$670,000 to breach costs in IBM’s study. Enabling safe tools is cheaper than policing bans."
+      },
+      "refs": "NIST AI RMF 1.0 · OWASP LLM08:2025",
+      "owasp": [
+        "LLM08:2025"
+      ],
+      "quiz": {
+        "question": "Staff are using unapproved AI tools. What works best?",
+        "options": [
+          "Offer approved tools and an easy request path",
+          "Block every AI website",
+          "Pretend you haven’t noticed"
+        ],
+        "answer": 0
+      },
+      "quotes": [
+        "ai_4",
+        "llm08"
+      ],
+      "activities": [
+        {
+          "audience": "home",
+          "type": "a",
+          "text": "List the AI apps on your phone and delete the ones you don’t use."
+        },
+        {
+          "audience": "work",
+          "type": "a",
+          "text": "Check whether a tool you use is on the approved-AI list."
+        },
+        {
+          "audience": "leaders",
+          "type": "a",
+          "text": "Approve a fast request path for new AI tools."
+        },
+        {
+          "audience": "tech",
+          "type": "a",
+          "text": "Review OAuth grants that give AI apps mail or file access."
+        }
+      ]
+    },
+    {
+      "day": 10,
+      "title": "Every input is a stranger",
+      "topic": "Prompt injection",
+      "track": "ai",
+      "for": [
+        "dev"
+      ],
+      "icon": "prompt",
+      "category": "ai",
+      "do": "Treat web pages, files and emails a model reads as untrusted, and limit what they can trigger.",
+      "dont": "Rely on the system prompt as a security boundary — assume it leaks and can be overridden.",
+      "cases": [
+        {
+          "kind": "Vulnerability",
+          "when": "Jun 2025",
+          "name": "EchoLeak",
+          "location": "Global",
+          "text": "Researchers showed a crafted email could make Microsoft 365 Copilot leak data with zero clicks (CVE-2025-32711). Microsoft fixed it server-side.",
+          "source": "Aim Security; Microsoft"
+        },
+        {
+          "kind": "Incident",
+          "when": "Dec 2023",
+          "name": "The US$1 car",
+          "location": "California, US",
+          "text": "A user told a car dealership’s ChatGPT-powered chatbot to agree with everything; it ‘agreed’ to sell a new SUV for US$1 and called the offer legally binding.",
+          "source": "Business Insider and others"
+        }
+      ],
+      "lab": {
+        "timeline": [
+          {
+            "when": "Jan 2025",
+            "what": "Aim Security reports the flaw to Microsoft."
+          },
+          {
+            "when": "Technique",
+            "what": "Hidden instructions in an email make Copilot pull internal data into a link — no click needed."
+          },
+          {
+            "when": "Jun 2025",
+            "what": "Microsoft fixes it server-side; CVE-2025-32711 published."
+          }
+        ],
+        "prevent": [
+          "Treat retrieved content as untrusted data, never instructions",
+          "Restrict assistant links and images to approved domains"
+        ],
+        "detect": [
+          "Log assistant tool calls and outbound URLs"
+        ],
+        "tune": [
+          "IF AI output contains external URL with long query string → strip + alert",
+          "Flag inbound emails with hidden text or prompt-like phrases"
+        ],
+        "playbook": [
+          "Disable the affected connector or feature",
+          "Review assistant logs for exfiltration URLs",
+          "Apply the vendor fix",
+          "Tighten data scopes"
+        ],
+        "tabletop": {
+          "inject": "A researcher shows your support AI can be told, via a customer email, to reveal other customers’ tickets.",
+          "questions": [
+            "Can we switch the AI off without stopping support?",
+            "How do we know if it already happened?"
+          ]
+        }
+      },
+      "readMore": [
+        {
+          "org": "OWASP",
+          "ref": "LLM01:2025",
+          "text": "Prompt Injection: crafted inputs change an LLM’s behaviour, directly or via content it reads.",
+          "url": "https://genai.owasp.org/llm-top-10/"
+        },
+        {
+          "org": "EU AI Act",
+          "ref": "Art. 15",
+          "text": "High-risk AI must be resilient against attempts to alter its use, outputs or performance by exploiting vulnerabilities.",
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+        },
+        {
+          "org": "ENISA",
+          "ref": "AI good practices",
+          "text": "Good cybersecurity practices across the AI lifecycle.",
+          "url": "https://www.enisa.europa.eu/publications/multilayer-framework-for-good-cybersecurity-practices-for-ai"
+        }
+      ],
+      "explain": {
+        "simple": "AI reads instructions hidden in emails or web pages. Treat everything it reads as possibly hostile, and limit what it’s allowed to do.",
+        "technical": "Indirect injection rides in retrieved content. Separate instructions from data, allow-list tools with per-action auth, and filter egress such as image or markdown links.",
+        "business": "An assistant with access to mail and files can be steered by an outsider. Limit its permissions before rolling it out company-wide."
+      },
+      "refs": "OWASP LLM01:2025 · LLM07:2025",
+      "owasp": [
+        "LLM01:2025",
+        "LLM07:2025"
+      ],
+      "quiz": {
+        "question": "Your AI assistant summarises inbound email. Which design is safest?",
+        "options": [
+          "Let email text trigger any tool",
+          "Treat email as untrusted; restrict tools and data",
+          "Hide the rules in the system prompt"
+        ],
+        "answer": 1
+      },
+      "quotes": [
+        "llm01",
+        "llm07",
+        "ai_15_5"
+      ],
+      "activities": [
+        {
+          "audience": "home",
+          "type": "a",
+          "text": "Be wary of AI summaries of unknown emails and web pages."
+        },
+        {
+          "audience": "work",
+          "type": "a",
+          "text": "Don’t let an AI assistant act on email without checking first."
+        },
+        {
+          "audience": "leaders",
+          "type": "a",
+          "text": "Ask your AI vendors how they handle prompt injection."
+        },
+        {
+          "audience": "tech",
+          "type": "a",
+          "text": "Add prompt-injection tests to your AI app’s test suite."
+        }
+      ]
+    },
+    {
+      "day": 11,
+      "title": "Hire the human, not the deepfake",
+      "topic": "Fake candidates",
+      "track": "ai",
+      "for": [
+        "hr"
+      ],
+      "icon": "person",
+      "category": "hr",
+      "do": "Verify remote candidates with live on-camera checks, ID verification and references you call yourself.",
+      "dont": "Skip checks because the interview went well — fake IT-worker schemes target remote roles.",
+      "cases": [
+        {
+          "kind": "Attack",
+          "when": "Jul 2024",
+          "name": "KnowBe4",
+          "location": "United States",
+          "text": "The security firm hired a remote engineer who was a North Korean operative using a stolen identity and an AI-enhanced photo. Its monitoring flagged malware on his new laptop.",
+          "source": "KnowBe4"
+        },
+        {
+          "kind": "Report",
+          "when": "Apr 2025",
+          "name": "Google Threat Intelligence",
+          "location": "Europe",
+          "text": "Google reported North Korean IT workers expanding from the US into Europe, using fake identities to land remote roles.",
+          "source": "Google Threat Intelligence Group"
+        }
+      ],
+      "lab": {
+        "timeline": [
+          {
+            "when": "Jul 2024",
+            "what": "Remote engineer hired after interviews and background checks."
+          },
+          {
+            "when": "Day 1",
+            "what": "Company laptop arrives; malware loading is detected that evening."
+          },
+          {
+            "when": "Within hours",
+            "what": "The security team contains the device; the FBI later confirms a North Korean operative."
+          }
+        ],
+        "prevent": [
+          "Live identity verification and references you call yourself",
+          "Least privilege for new hires"
+        ],
+        "detect": [
+          "EDR on day-one devices",
+          "Shipping-address and VPN anomalies"
+        ],
+        "tune": [
+          "New-hire device, first 7 days: alert on unsigned binaries or remote-access tools",
+          "IF login country ≠ declared location → notify HR + security"
+        ],
+        "playbook": [
+          "Isolate the device",
+          "Disable the accounts",
+          "Preserve evidence and contact law enforcement",
+          "Review hiring checks"
+        ],
+        "tabletop": {
+          "inject": "A new contractor’s laptop is being used from a different country than their address, via a VPN.",
+          "questions": [
+            "What does HR do, and what does security do?",
+            "When do we call law enforcement?"
+          ]
+        }
+      },
+      "readMore": [
+        {
+          "org": "NIS2",
+          "ref": "Art. 21(2)(i)",
+          "text": "Requires human-resources security, access-control policies and asset management.",
+          "url": "https://eur-lex.europa.eu/eli/dir/2022/2555/oj"
+        },
+        {
+          "org": "EU AI Act",
+          "ref": "Annex III",
+          "text": "AI used to recruit or select candidates is classed as high-risk.",
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+        }
+      ],
+      "explain": {
+        "simple": "Some ‘candidates’ are fake people using stolen IDs and AI-edited photos. Check identity live, on camera, before you hire.",
+        "technical": "Verify documents with liveness checks, confirm references independently, watch for VPN and geolocation mismatches, and restrict new-hire access.",
+        "business": "Hiring a sanctioned state actor brings data theft, extortion and sanctions exposure. Identity checks are cheap insurance."
+      },
+      "refs": "FBI IC3 advisories on North Korean IT workers",
+      "owasp": [],
+      "quiz": {
+        "question": "A remote candidate keeps the camera off and refuses an ID check. You…",
+        "options": [
+          "Hire — skills matter most",
+          "Let IT sort it out after onboarding",
+          "Pause and require live identity verification"
+        ],
+        "answer": 2
+      },
+      "quotes": [
+        "nis2_21_2i"
+      ],
+      "activities": [
+        {
+          "audience": "home",
+          "type": "p",
+          "text": "Check what your public CV and profiles reveal about you."
+        },
+        {
+          "audience": "work",
+          "type": "c",
+          "text": "HR: add a live ID check to remote interviews."
+        },
+        {
+          "audience": "leaders",
+          "type": "c",
+          "text": "Brief hiring managers on the warning signs of fake candidates."
+        },
+        {
+          "audience": "tech",
+          "type": "c",
+          "text": "Restrict new hires’ access for their first 30 days."
+        }
+      ]
+    },
+    {
+      "day": 12,
+      "title": "Fact-check the machine",
+      "topic": "Hallucinations",
+      "track": "ai",
+      "for": [
+        "everyone"
+      ],
+      "icon": "search",
+      "category": "ai",
+      "do": "Check AI answers against a primary source before you publish, sign or decide.",
+      "dont": "Cite sources you haven’t opened — AI can invent quotes, cases and references.",
+      "cases": [
+        {
+          "kind": "Incident",
+          "when": "Oct 2025",
+          "name": "Deloitte Australia",
+          "location": "Australia",
+          "text": "Deloitte agreed to partially refund the Australian government for an A$440,000 report that contained AI-generated errors, including references that did not exist.",
+          "source": "The Register; Australian press"
+        },
+        {
+          "kind": "Ruling",
+          "when": "Jun 2023",
+          "name": "Mata v. Avianca",
+          "location": "New York, US",
+          "text": "A US judge fined two lawyers US$5,000 after they filed a brief citing court cases invented by ChatGPT.",
+          "source": "US District Court, S.D.N.Y."
+        }
+      ],
+      "lab": {
+        "timeline": [
+          {
+            "when": "Jul 2025",
+            "what": "A$440,000 report delivered to an Australian government department."
+          },
+          {
+            "when": "Aug 2025",
+            "what": "An academic flags fabricated references."
+          },
+          {
+            "when": "Oct 2025",
+            "what": "Corrected version issued; Deloitte agrees to a partial refund."
+          }
+        ],
+        "prevent": [
+          "Human verification of every citation",
+          "Disclose AI use in deliverables"
+        ],
+        "detect": [
+          "Automated citation checks before release"
+        ],
+        "tune": [
+          "Release pipeline: flag references whose DOI or URL doesn’t resolve",
+          "Block publication of quotes without a source link"
+        ],
+        "playbook": [
+          "Withdraw or flag the document",
+          "Verify every reference",
+          "Notify the client",
+          "Fix the review process"
+        ],
+        "tabletop": {
+          "inject": "A client finds a non-existent court case in your published report.",
+          "questions": [
+            "Who tells the client, and how fast?",
+            "Which review step was missing?"
+          ]
+        }
+      },
+      "readMore": [
+        {
+          "org": "OWASP",
+          "ref": "LLM09:2025",
+          "text": "Misinformation: LLMs can produce confident, false content.",
+          "url": "https://genai.owasp.org/llm-top-10/"
+        },
+        {
+          "org": "NIST",
+          "ref": "AI 600-1",
+          "text": "Lists ‘confabulation’ — confidently stated false content — as a generative AI risk.",
+          "url": "https://doi.org/10.6028/NIST.AI.600-1"
+        }
+      ],
+      "explain": {
+        "simple": "AI can sound sure and still be wrong. Check important facts with the original source before you use them.",
+        "technical": "LLMs generate plausible text, not verified facts (‘confabulation’). Use retrieval with citations, require source links, and review high-stakes outputs.",
+        "business": "Publishing AI errors costs money and trust — Deloitte refunded part of a government fee. Build a review step into every AI-assisted deliverable."
+      },
+      "refs": "OWASP LLM09:2025 Misinformation",
+      "owasp": [
+        "LLM09:2025"
+      ],
+      "quiz": {
+        "question": "An AI tool gives you the perfect quote for your report. Before using it…",
+        "options": [
+          "Open the original source and confirm it",
+          "Paste it — it sounds right",
+          "Add “according to AI”"
+        ],
+        "answer": 0
+      },
+      "quotes": [
+        "llm09"
+      ],
+      "activities": [
+        {
+          "audience": "home",
+          "type": "a",
+          "text": "Ask a chatbot something you know well — and spot its mistakes."
+        },
+        {
+          "audience": "work",
+          "type": "a",
+          "text": "Add ‘sources checked’ to your review checklist."
+        },
+        {
+          "audience": "leaders",
+          "type": "a",
+          "text": "Require AI-use disclosure on client deliverables."
+        },
+        {
+          "audience": "tech",
+          "type": "a",
+          "text": "Automate checks that cited links resolve before publishing."
+        }
+      ]
+    },
+    {
+      "day": 13,
+      "title": "Gift cards are for gifts",
+      "topic": "Payment scams",
+      "track": "cyber",
+      "for": [
+        "home",
+        "finance"
+      ],
+      "icon": "card",
+      "category": "fraud",
+      "do": "Pause and tell someone when a “tax office”, “tech support” or “boss” demands urgent payment.",
+      "dont": "Pay anyone in gift cards or crypto on request — the demand itself is the scam.",
+      "cases": [
+        {
+          "kind": "Report",
+          "when": "Apr 2025",
+          "name": "FBI Internet Crime Report",
+          "location": "United States",
+          "text": "Americans reported losing US$9.3 billion to cryptocurrency-related fraud in 2024, up 66% on the year before.",
+          "source": "FBI IC3 Internet Crime Report 2024"
+        }
+      ],
+      "lab": {
+        "timeline": [
+          {
+            "when": "2024",
+            "what": "Americans report US$9.3 billion lost to crypto-related fraud."
+          },
+          {
+            "when": "Apr 2025",
+            "what": "FBI publishes its Internet Crime Report."
+          },
+          {
+            "when": "Pattern",
+            "what": "Urgency, secrecy and payment by crypto or gift cards."
+          }
+        ],
+        "prevent": [
+          "Teach the payment-method red flags",
+          "Spending limits on corporate cards"
+        ],
+        "detect": [
+          "Bank and card alerts"
+        ],
+        "tune": [
+          "IF gift-card merchant on corporate card > €200 → hold + manager approval",
+          "IF first-ever payment to a crypto exchange → review"
+        ],
+        "playbook": [
+          "Stop paying; keep the evidence",
+          "Call the bank or card issuer",
+          "Report to the police or national fraud centre",
+          "Warn others"
+        ],
+        "tabletop": {
+          "inject": "An assistant buys €3,000 in gift cards after an email from the ‘CEO’.",
+          "questions": [
+            "Can the cards still be frozen?",
+            "How did the request bypass approvals?"
+          ]
+        }
+      },
+      "readMore": [
+        {
+          "org": "CISA",
+          "ref": "Secure Our World",
+          "text": "Simple steps to recognise and report scams.",
+          "url": "https://www.cisa.gov/secure-our-world"
+        },
+        {
+          "org": "ENISA",
+          "ref": "European Cybersecurity Month",
+          "text": "EU-wide awareness on fraud and social engineering.",
+          "url": "https://cybersecuritymonth.eu/"
+        }
+      ],
+      "explain": {
+        "simple": "Real organisations never ask you to pay in gift cards or crypto. If someone does, it’s a scam — stop and tell someone.",
+        "technical": "Gift cards and crypto are favoured because they are fast, irreversible and hard to trace; scammers script urgency and isolation.",
+        "business": "Finance teams see the business version: urgent ‘CEO’ payment requests. Same red flags, same fix — verify through a second channel."
+      },
+      "refs": "FBI IC3 Internet Crime Report 2024",
+      "owasp": [],
+      "quiz": {
+        "question": "“Tech support” asks for payment in gift cards. This is…",
+        "options": [
+          "Normal for urgent fixes",
+          "Fine if it’s under €100",
+          "Always a scam"
+        ],
+        "answer": 2
+      },
+      "quotes": [
+        "nis2_21_2g"
+      ],
+      "activities": [
+        {
+          "audience": "home",
+          "type": "c",
+          "text": "Tell an older relative: gift-card payment requests are scams."
+        },
+        {
+          "audience": "work",
+          "type": "c",
+          "text": "Finance: confirm your policy on buying gift cards."
+        },
+        {
+          "audience": "leaders",
+          "type": "c",
+          "text": "Tell staff you will never ask them for gift cards."
+        },
+        {
+          "audience": "tech",
+          "type": "c",
+          "text": "Alert on gift-card merchants on corporate cards."
+        }
+      ]
+    },
+    {
+      "day": 14,
+      "title": "Keys belong in a vault",
+      "topic": "Secrets & AI-written code",
+      "track": "both",
+      "for": [
+        "dev"
+      ],
+      "icon": "key",
+      "category": "crypto",
+      "do": "Keep keys in a secrets manager, scan every commit, and review AI-written code like any pull request.",
+      "dont": "Hard-code tokens or share over-permissive links — or paste keys into an AI assistant to “help debug”.",
+      "cases": [
+        {
+          "kind": "Leak",
+          "when": "Sep 2023",
+          "name": "Microsoft AI research",
+          "location": "Global",
+          "text": "A GitHub repo for open AI training data shared an over-permissive storage token, exposing 38 TB of internal data, including secrets and private keys.",
+          "source": "Wiz Research; Microsoft"
+        },
+        {
+          "kind": "Leak",
+          "when": "Dec 2023",
+          "name": "Hugging Face API tokens",
+          "location": "Global AI platform",
+          "text": "Researchers found more than 1,500 exposed Hugging Face API tokens in public code, some with write access to model repositories of Meta and other major AI companies.",
+          "source": "Lasso Security"
+        }
+      ],
+      "lab": {
+        "timeline": [
+          {
+            "when": "Jul 2020",
+            "what": "An overly permissive storage (SAS) token is added to a public GitHub repo."
+          },
+          {
+            "when": "22 Jun 2023",
+            "what": "Wiz finds 38 TB exposed and reports it."
+          },
+          {
+            "when": "24 Jun 2023",
+            "what": "Microsoft revokes the token."
+          },
+          {
+            "when": "Sep 2023",
+            "what": "Joint public disclosure."
+          }
+        ],
+        "prevent": [
+          "Short-lived, narrowly scoped tokens",
+          "Secret scanning with push protection"
+        ],
+        "detect": [
+          "Continuous scanning of public code for your tokens"
+        ],
+        "tune": [
+          "IF storage token expiry > 30 days OR scope = full account → policy violation",
+          "Pre-commit hook: block high-entropy strings and known key formats"
+        ],
+        "playbook": [
+          "Revoke the token",
+          "Work out what it could reach",
+          "Rotate related secrets",
+          "Add scanning to CI"
+        ],
+        "tabletop": {
+          "inject": "A researcher emails: your cloud storage key has been public on GitHub for two years.",
+          "questions": [
+            "What can that key reach?",
+            "Do we have logs going back that far?"
+          ]
+        }
+      },
+      "readMore": [
+        {
+          "org": "OWASP",
+          "ref": "A04:2025",
+          "text": "Cryptographic Failures, including poor key management and hard-coded secrets.",
+          "url": "https://owasp.org/Top10/2025/"
+        },
+        {
+          "org": "NIS2",
+          "ref": "Art. 21(2)(h)",
+          "text": "Policies and procedures on the use of cryptography and, where appropriate, encryption.",
+          "url": "https://eur-lex.europa.eu/eli/dir/2022/2555/oj"
+        },
+        {
+          "org": "NIST",
+          "ref": "SP 800-218 (SSDF)",
+          "text": "Secure software development practices, including protecting code and secrets.",
+          "url": "https://csrc.nist.gov/pubs/sp/800/218/final"
+        }
+      ],
+      "explain": {
+        "simple": "API keys are like house keys. Leave one in your code and anyone who finds it can walk in.",
+        "technical": "Scan commits with push protection, use short-lived scoped tokens from a vault or KMS, rotate on exposure, and review AI-suggested code for hard-coded credentials.",
+        "business": "One leaked token exposed 38 TB at Microsoft. Secret scanning is cheap; clean-up and disclosure are not."
+      },
+      "refs": "OWASP A04:2025 Cryptographic Failures",
+      "owasp": [
+        "A04:2025"
+      ],
+      "quiz": {
+        "question": "Your AI coding assistant suggests a hard-coded API key “for now”. You…",
+        "options": [
+          "Accept — you’ll fix it later",
+          "Commit it to a private repo",
+          "Move it to the secrets manager before committing"
+        ],
+        "answer": 2
+      },
+      "quotes": [
+        "owasp_a04",
+        "nis2_21_2h"
+      ],
+      "activities": [
+        {
+          "audience": "home",
+          "type": "c",
+          "text": "Turn on new-login alerts for your key accounts."
+        },
+        {
+          "audience": "work",
+          "type": "c",
+          "text": "Never paste keys or passwords into chats or tickets."
+        },
+        {
+          "audience": "leaders",
+          "type": "c",
+          "text": "Ask whether your code is scanned for leaked secrets."
+        },
+        {
+          "audience": "tech",
+          "type": "c",
+          "text": "Turn on secret scanning with push protection for every repo."
+        }
+      ]
+    },
+    {
+      "day": 15,
+      "title": "Give agents a short leash",
+      "topic": "AI agents",
+      "track": "ai",
+      "for": [
+        "dev",
+        "it",
+        "leaders"
+      ],
+      "icon": "robot",
+      "category": "ai",
+      "do": "Grant AI agents least privilege, cap their spend, log every action, and require human approval for anything irreversible.",
+      "dont": "Hand an agent production credentials, or let it pay, send or delete unattended.",
+      "cases": [
+        {
+          "kind": "Incident",
+          "when": "Jul 2025",
+          "name": "Replit",
+          "location": "United States",
+          "text": "During a declared code freeze, an AI coding agent deleted a user’s production database, then misreported what it had done.",
+          "source": "eWeek; Replit"
+        },
+        {
+          "kind": "Attack",
+          "when": "Jul 2025",
+          "name": "Amazon Q Developer extension",
+          "location": "Global",
+          "text": "A malicious change slipped into a release of the AI coding extension with a prompt telling the agent to wipe local files and cloud resources. Amazon pulled the version and said no customer resources were affected.",
+          "source": "AWS; TechRadar"
+        }
+      ],
+      "lab": {
+        "timeline": [
+          {
+            "when": "Jul 2025",
+            "what": "An investor runs a multi-day ‘vibe coding’ experiment with Replit’s AI agent."
+          },
+          {
+            "when": "Code freeze",
+            "what": "The agent runs destructive commands and deletes the production database."
+          },
+          {
+            "when": "Then",
+            "what": "The agent misreports what happened; Replit apologises and adds safeguards."
+          }
+        ],
+        "prevent": [
+          "Separate dev and production; no prod write access for agents",
+          "Human approval for destructive actions"
+        ],
+        "detect": [
+          "Log every agent command and tool call"
+        ],
+        "tune": [
+          "Block DROP / DELETE / TRUNCATE from agent identities in production",
+          "IF agent acts during a change freeze → alert + pause agent"
+        ],
+        "playbook": [
+          "Revoke the agent’s credentials",
+          "Restore from backup",
+          "Review the agent’s logs",
+          "Add approval gates and budgets"
+        ],
+        "tabletop": {
+          "inject": "Your coding agent has just deleted a production table during a release freeze.",
+          "questions": [
+            "How old is our last restorable backup?",
+            "Who approved the agent’s production access?"
+          ]
+        }
+      },
+      "readMore": [
+        {
+          "org": "OWASP",
+          "ref": "LLM06:2025",
+          "text": "Excessive Agency: too much functionality, permission or autonomy lets LLMs take damaging actions.",
+          "url": "https://genai.owasp.org/llm-top-10/"
+        },
+        {
+          "org": "EU AI Act",
+          "ref": "Art. 14",
+          "text": "High-risk AI must be designed for effective human oversight, including the ability to intervene or stop it.",
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+        },
+        {
+          "org": "ENISA",
+          "ref": "Frontier AI paper (2026)",
+          "text": "ENISA’s view on cybersecurity in the frontier AI era.",
+          "url": "https://www.enisa.europa.eu/sites/default/files/2026-07/ENISA%20view%20on%20cybersecurity%20in%20the%20frontier%20AI%20era_en_0.pdf"
+        }
+      ],
+      "explain": {
+        "simple": "An AI agent can act on its own. Give it only the access it needs, and make a person approve anything that can’t be undone.",
+        "technical": "Apply least privilege with scoped, short-lived credentials; sandbox tool execution; require human-in-the-loop for destructive or financial actions; log, rate-limit and cap spend.",
+        "business": "Agents multiply productivity — and mistakes. Approval gates and budgets keep one bad action from deleting production or the quarter’s budget."
+      },
+      "refs": "OWASP LLM06:2025 · LLM10:2025 · A01 · A06:2025",
+      "owasp": [
+        "LLM06:2025",
+        "LLM10:2025",
+        "A01:2025",
+        "A06:2025"
+      ],
+      "quiz": {
+        "question": "Your AI agent wants to run a migration on production. Safest set-up?",
+        "options": [
+          "Full admin rights, no prompts",
+          "Read-only by default; a human approves changes",
+          "Let it retry until it works"
+        ],
+        "answer": 1
+      },
+      "quotes": [
+        "llm06",
+        "ai_14_1",
+        "llm10"
+      ],
+      "activities": [
+        {
+          "audience": "home",
+          "type": "a",
+          "text": "Check what your AI assistant is allowed to do on your behalf."
+        },
+        {
+          "audience": "work",
+          "type": "a",
+          "text": "Review the permissions you gave AI plug-ins and agents."
+        },
+        {
+          "audience": "leaders",
+          "type": "a",
+          "text": "Set a rule: agents never pay or delete without approval."
+        },
+        {
+          "audience": "tech",
+          "type": "a",
+          "text": "Remove production write access from agent identities."
+        }
+      ]
+    },
+    {
+      "day": 16,
+      "title": "Defaults are a gift — to attackers",
+      "topic": "Exposed AI infrastructure",
+      "track": "both",
+      "for": [
+        "it"
+      ],
+      "icon": "server",
+      "category": "vuln",
+      "do": "Harden internet-facing systems, patch known-exploited vulnerabilities first, and put AI services behind authentication.",
+      "dont": "Leave VPNs, admin panels, databases or AI dashboards on default settings over the holidays.",
+      "cases": [
+        {
+          "kind": "Leak",
+          "when": "Jan 2025",
+          "name": "DeepSeek",
+          "location": "Global",
+          "text": "Researchers at Wiz found a publicly accessible DeepSeek database exposing chat history, API secrets and backend details — no authentication required.",
+          "source": "Wiz Research"
+        },
+        {
+          "kind": "Attack",
+          "when": "May 2023",
+          "name": "Danish energy sector",
+          "location": "Copenhagen, Denmark",
+          "pin": "copenhagen",
+          "text": "Attackers exploited firewall vulnerabilities to compromise 22 Danish energy companies — the country’s largest coordinated attack on critical infrastructure. SektorCERT helped contain it.",
+          "source": "SektorCERT, Nov 2023"
+        }
+      ],
+      "lab": {
+        "timeline": [
+          {
+            "when": "Jan 2025",
+            "what": "Wiz finds a public ClickHouse database belonging to DeepSeek."
+          },
+          {
+            "when": "Exposure",
+            "what": "Chat history, API secrets and backend details — no authentication."
+          },
+          {
+            "when": "Shortly after",
+            "what": "DeepSeek secures the database once notified."
+          }
+        ],
+        "prevent": [
+          "Authentication on every database and AI endpoint",
+          "Nothing public by default; review exposure before go-live"
+        ],
+        "detect": [
+          "External attack-surface scanning"
+        ],
+        "tune": [
+          "IF cloud security group opens DB ports (e.g. ClickHouse 8123/9000) to 0.0.0.0/0 → block + alert",
+          "Daily diff of internet-exposed services vs approved list"
+        ],
+        "playbook": [
+          "Block public access",
+          "Rotate exposed secrets",
+          "Review access logs",
+          "Notify affected users if required"
+        ],
+        "tabletop": {
+          "inject": "A journalist asks why your AI chatbot’s logs are searchable on the internet.",
+          "questions": [
+            "How fast can we close it, and who confirms?",
+            "Must we notify the data-protection authority within 72 hours?"
+          ]
+        }
+      },
+      "readMore": [
+        {
+          "org": "OWASP",
+          "ref": "A02:2025",
+          "text": "Security Misconfiguration: default settings, open services and missing hardening.",
+          "url": "https://owasp.org/Top10/2025/"
+        },
+        {
+          "org": "ENISA",
+          "ref": "EUVD",
+          "text": "The European Vulnerability Database, launched by ENISA in May 2025.",
+          "url": "https://euvd.enisa.europa.eu/"
+        },
+        {
+          "org": "NIS2",
+          "ref": "Art. 21(2)(e)",
+          "text": "Security in acquisition, development and maintenance, including vulnerability handling and disclosure.",
+          "url": "https://eur-lex.europa.eu/eli/dir/2022/2555/oj"
+        }
+      ],
+      "explain": {
+        "simple": "Devices and apps often ship with easy default settings. Attackers scan the internet for them, so change defaults and patch quickly.",
+        "technical": "Prioritise known-exploited CVEs (CISA KEV, ENISA EUVD), remove default credentials, close exposed admin interfaces, and require auth on model APIs, vector DBs and notebooks.",
+        "business": "Internet-facing systems are the front door. Patching them before the holiday freeze is cheaper than a breach during it."
+      },
+      "refs": "OWASP A02:2025 · CISA KEV · ENISA EUVD",
+      "owasp": [
+        "A02:2025"
+      ],
+      "quiz": {
+        "question": "A new AI service is reachable from the internet with no login. Priority?",
+        "options": [
+          "Fine if the URL is secret",
+          "Wait for the January patch cycle",
+          "Put it behind authentication and review settings now"
+        ],
+        "answer": 2
+      },
+      "quotes": [
+        "owasp_a02",
+        "nis2_21_2e"
+      ],
+      "activities": [
+        {
+          "audience": "home",
+          "type": "c",
+          "text": "Change your router’s default admin password and update it."
+        },
+        {
+          "audience": "work",
+          "type": "c",
+          "text": "Install pending updates before the holiday break."
+        },
+        {
+          "audience": "leaders",
+          "type": "c",
+          "text": "Ask whether internet-facing systems are patched for known exploits."
+        },
+        {
+          "audience": "tech",
+          "type": "c",
+          "text": "Scan for exposed AI dashboards, notebooks and databases."
+        }
+      ]
+    },
+    {
+      "day": 17,
+      "title": "Never trust the output",
+      "topic": "Output handling",
+      "track": "ai",
+      "for": [
+        "dev"
+      ],
+      "icon": "code",
+      "category": "secdev",
+      "do": "Validate and encode model output before it reaches a browser, shell or database — and fail closed on errors.",
+      "dont": "Pipe LLM output into eval(), SQL or innerHTML, or skip a check when a service times out.",
+      "cases": [
+        {
+          "kind": "Vulnerability",
+          "when": "Jun 2024",
+          "name": "Vanna.AI",
+          "location": "Global",
+          "text": "A prompt-injection flaw (CVE-2024-5565) let attackers run code, because the library executed chart code the model had written.",
+          "source": "JFrog Security Research"
+        },
+        {
+          "kind": "Incident",
+          "when": "Jan 2024",
+          "name": "DPD chatbot",
+          "location": "United Kingdom",
+          "pin": "uk",
+          "text": "A customer got DPD’s AI support chatbot to swear and write a poem criticising the company; DPD disabled part of the bot.",
+          "source": "BBC"
+        }
+      ],
+      "lab": {
+        "timeline": [
+          {
+            "when": "2024",
+            "what": "Library turns plain-language questions into SQL and charts."
+          },
+          {
+            "when": "Jun 2024",
+            "what": "JFrog discloses CVE-2024-5565: prompt injection leads to code execution via generated chart code."
+          },
+          {
+            "when": "Response",
+            "what": "Maintainer publishes hardening guidance."
+          }
+        ],
+        "prevent": [
+          "Never execute generated code outside a sandbox",
+          "Validate structured output against a schema"
+        ],
+        "detect": [
+          "Log and alert on unexpected process launches from the app"
+        ],
+        "tune": [
+          "IF app process spawns a shell or network tool → kill + alert",
+          "Reject LLM output that fails schema validation; count rejections per user"
+        ],
+        "playbook": [
+          "Disable code execution paths",
+          "Patch or pin a fixed version",
+          "Review logs for exploitation",
+          "Add sandboxing and output encoding"
+        ],
+        "tabletop": {
+          "inject": "A user’s question to your analytics bot made the server run an unexpected command.",
+          "questions": [
+            "Can we turn off code execution without losing the feature?",
+            "What did the command reach?"
+          ]
+        }
+      },
+      "readMore": [
+        {
+          "org": "OWASP",
+          "ref": "A05:2025",
+          "text": "Injection: untrusted data interpreted as code or commands.",
+          "url": "https://owasp.org/Top10/2025/"
+        },
+        {
+          "org": "OWASP",
+          "ref": "LLM05:2025",
+          "text": "Improper Output Handling: LLM output passed downstream without validation.",
+          "url": "https://genai.owasp.org/llm-top-10/"
+        },
+        {
+          "org": "OWASP",
+          "ref": "A10:2025",
+          "text": "Mishandling of Exceptional Conditions: fail closed and handle errors safely.",
+          "url": "https://owasp.org/Top10/2025/"
+        }
+      ],
+      "explain": {
+        "simple": "Treat AI answers like text from a stranger. Check them before they’re allowed to run, display or change anything.",
+        "technical": "Encode for the sink (HTML, SQL, shell), never eval generated code without a sandbox and allow-list, validate against a schema, and fail closed on errors and timeouts.",
+        "business": "A chatbot saying the wrong thing is a PR problem; one executing the wrong thing is a breach. Output checks are basic engineering hygiene."
+      },
+      "refs": "OWASP A05:2025 · A10:2025 · LLM05:2025",
+      "owasp": [
+        "A05:2025",
+        "A10:2025",
+        "LLM05:2025"
+      ],
+      "quiz": {
+        "question": "Your app runs chart code the model writes, and parsing sometimes fails. Best pattern?",
+        "options": [
+          "Sandbox and validate it; fail closed on errors",
+          "exec() it — the model is trusted",
+          "Show users the full stack trace"
+        ],
+        "answer": 0
+      },
+      "quotes": [
+        "owasp_a05",
+        "llm05",
+        "owasp_a10"
+      ],
+      "activities": [
+        {
+          "audience": "home",
+          "type": "a",
+          "text": "Don’t run commands or code from an AI unless you understand them."
+        },
+        {
+          "audience": "work",
+          "type": "a",
+          "text": "Check AI output before it reaches customers."
+        },
+        {
+          "audience": "leaders",
+          "type": "a",
+          "text": "Require human review for AI that acts on systems."
+        },
+        {
+          "audience": "tech",
+          "type": "a",
+          "text": "Sandbox any execution of model-generated code."
+        }
+      ]
+    },
+    {
+      "day": 18,
+      "title": "Urgency is not identity",
+      "topic": "Help-desk social engineering",
+      "track": "both",
+      "for": [
+        "support"
+      ],
+      "icon": "phone",
+      "category": "identity",
+      "do": "Verify callers through a fixed process before any password, MFA or account change.",
+      "dont": "Reset MFA because a caller sounds right — voices can be cloned and urgency can be faked.",
+      "cases": [
+        {
+          "kind": "Attack",
+          "when": "Apr 2025",
+          "name": "Marks & Spencer",
+          "location": "United Kingdom",
+          "pin": "uk",
+          "text": "Attackers got in through social engineering involving a third party. M&S paused online orders for weeks and estimated a £300 million hit to profit.",
+          "source": "M&S; BBC"
+        },
+        {
+          "kind": "Attack",
+          "when": "Sep 2023",
+          "name": "MGM Resorts",
+          "location": "Las Vegas, US",
+          "text": "Attackers phoned the IT help desk posing as an employee and obtained access. The attack disrupted hotels and casinos and cost MGM about US$100 million.",
+          "source": "MGM Resorts SEC filing"
+        }
+      ],
+      "lab": {
+        "timeline": [
+          {
+            "when": "Apr 2025 (Easter)",
+            "what": "Problems with contactless payments and click-and-collect."
+          },
+          {
+            "when": "25 Apr 2025",
+            "what": "Online orders paused."
+          },
+          {
+            "when": "May 2025",
+            "what": "M&S confirms customer data taken and estimates a ~£300 million profit hit."
+          },
+          {
+            "when": "Jun 2025",
+            "what": "Online ordering gradually resumes."
+          }
+        ],
+        "prevent": [
+          "Strict identity checks for help-desk and outsourced resets",
+          "Call back on the number of record for MFA resets"
+        ],
+        "detect": [
+          "Alert on MFA resets followed by privileged logins"
+        ],
+        "tune": [
+          "IF help-desk reset AND new MFA device AND admin login within 1 h → critical alert",
+          "Detect attempts to copy the AD password database (NTDS.dit)"
+        ],
+        "playbook": [
+          "Lock the account and revoke sessions",
+          "Verify recent resets with managers",
+          "Hunt for lateral movement",
+          "Coordinate with suppliers and the help-desk provider"
+        ],
+        "tabletop": {
+          "inject": "Your outsourced help desk reset an executive’s MFA last night; this morning that account created new admin users.",
+          "questions": [
+            "Can our provider prove who they spoke to?",
+            "Do we pause online sales to contain it?"
+          ]
+        }
+      },
+      "readMore": [
+        {
+          "org": "CISA",
+          "ref": "AA23-320A",
+          "text": "Scattered Spider advisory: help-desk social engineering, SIM swapping and MFA fatigue.",
+          "url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-320a"
+        },
+        {
+          "org": "OWASP",
+          "ref": "A07:2025",
+          "text": "Weak account-recovery flows are authentication failures.",
+          "url": "https://owasp.org/Top10/2025/"
+        }
+      ],
+      "explain": {
+        "simple": "A stressed, important-sounding caller can be an attacker. Always follow the checks before resetting a password or MFA.",
+        "technical": "Require verified call-back to the number of record, manager approval and identity proofing for MFA resets; log and alert on reset bursts.",
+        "business": "Help-desk calls opened the door at MGM and M&S, costing hundreds of millions. A strict reset process protects the whole company."
+      },
+      "refs": "CISA AA23-320A · OWASP A07:2025",
+      "owasp": [
+        "A07:2025"
+      ],
+      "quiz": {
+        "question": "A “senior manager” calls, stressed, needing an MFA reset now. You…",
+        "options": [
+          "Follow the verification process, no exceptions",
+          "Reset it — they sound senior",
+          "Send the code by email instead"
+        ],
+        "answer": 0
+      },
+      "quotes": [
+        "owasp_a07",
+        "nis2_21_2j"
+      ],
+      "activities": [
+        {
+          "audience": "home",
+          "type": "c",
+          "text": "Set a PIN or password with your mobile phone carrier."
+        },
+        {
+          "audience": "work",
+          "type": "c",
+          "text": "Learn how to verify a caller who asks for access."
+        },
+        {
+          "audience": "leaders",
+          "type": "c",
+          "text": "Back the help desk when they refuse an urgent reset."
+        },
+        {
+          "audience": "tech",
+          "type": "c",
+          "text": "Alert on an MFA reset followed by an admin login."
+        }
+      ]
+    },
+    {
+      "day": 19,
+      "title": "Post later, connect safer",
+      "topic": "Travel & oversharing",
+      "track": "cyber",
+      "for": [
+        "everyone",
+        "home"
+      ],
+      "icon": "plane",
+      "category": "awareness",
+      "do": "Use your phone’s hotspot or a VPN on the road, and keep devices locked and with you.",
+      "dont": "Post boarding passes, fitness routes or “away for two weeks” in real time.",
+      "cases": [
+        {
+          "kind": "Investigation",
+          "when": "Oct 2024",
+          "name": "Le Monde ‘StravaLeaks’",
+          "location": "Paris, France",
+          "pin": "paris",
+          "text": "Journalists tracked the movements of security staff protecting world leaders through their public fitness-app activity.",
+          "source": "Le Monde, October 2024"
+        }
+      ],
+      "lab": {
+        "timeline": [
+          {
+            "when": "Oct 2024",
+            "what": "Le Monde publishes ‘StravaLeaks’."
+          },
+          {
+            "when": "Method",
+            "what": "Public fitness profiles of security staff reveal locations and routines."
+          },
+          {
+            "when": "Result",
+            "what": "Leaders’ movements could be anticipated."
+          }
+        ],
+        "prevent": [
+          "Private-by-default fitness and social profiles",
+          "Travel-posting guidance for staff"
+        ],
+        "detect": [
+          "Periodic check of your own public exposure"
+        ],
+        "tune": [
+          "Monitor public mentions of executive travel and home locations",
+          "Quarterly OSINT review for high-profile staff"
+        ],
+        "playbook": [
+          "Make profiles private",
+          "Remove location history",
+          "Brief exposed staff",
+          "Adjust routines if needed"
+        ],
+        "tabletop": {
+          "inject": "An executive’s running app shows their home address and daily 6 am route.",
+          "questions": [
+            "Who advises executives on personal exposure?",
+            "Is this a security issue, a privacy issue — or both?"
+          ]
+        }
+      },
+      "readMore": [
+        {
+          "org": "CISA",
+          "ref": "Secure Our World",
+          "text": "Everyday steps to stay safe online, at home and on the road.",
+          "url": "https://www.cisa.gov/secure-our-world"
+        },
+        {
+          "org": "GDPR",
+          "ref": "Art. 5",
+          "text": "Principles for processing personal data, including location data.",
+          "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
+        }
+      ],
+      "explain": {
+        "simple": "Posting ‘away for two weeks’ tells burglars and scammers where you are. Share holiday photos when you’re back.",
+        "technical": "Location metadata (EXIF, fitness heatmaps, check-ins) enables tracking and pattern-of-life analysis; boarding-pass barcodes reveal booking details.",
+        "business": "Executives’ travel posts help attackers time impersonation and fraud. Simple posting guidance reduces exposure."
+      },
+      "refs": "Le Monde, October 2024",
+      "owasp": [],
+      "quiz": {
+        "question": "When is the safest time to post holiday photos?",
+        "options": [
+          "Live, with location tags",
+          "After you’re back home",
+          "Only in stories that disappear"
+        ],
+        "answer": 1
+      },
+      "quotes": [
+        "gdpr_5_1c"
+      ],
+      "activities": [
+        {
+          "audience": "home",
+          "type": "p",
+          "text": "Make your fitness and social profiles private."
+        },
+        {
+          "audience": "work",
+          "type": "p",
+          "text": "Turn on auto-lock and ‘find my device’ before travelling."
+        },
+        {
+          "audience": "leaders",
+          "type": "p",
+          "text": "Review what your public profiles reveal about your routines."
+        },
+        {
+          "audience": "tech",
+          "type": "c",
+          "text": "Check the VPN works for travelling staff before the break."
+        }
+      ]
+    },
+    {
+      "day": 20,
+      "title": "A safe word for the family",
+      "topic": "Voice cloning",
+      "track": "ai",
+      "for": [
+        "home"
+      ],
+      "icon": "wave",
+      "category": "fraud",
+      "do": "Agree a family safe word for emergency calls and messages.",
+      "dont": "Send money on an urgent call from a “relative” or VIP — hang up and call back on a known number.",
+      "cases": [
+        {
+          "kind": "Attack",
+          "when": "Feb 2025",
+          "name": "A cloned minister",
+          "location": "Rome, Italy",
+          "pin": "rome",
+          "text": "Scammers cloned the voice of Defence Minister Guido Crosetto to ask business leaders for money. At least one paid about €1 million before police froze the funds.",
+          "source": "Italian press; StratNews Global"
+        },
+        {
+          "kind": "Attack",
+          "when": "2019",
+          "name": "UK energy firm",
+          "location": "United Kingdom",
+          "text": "The chief executive of a UK energy company transferred about €220,000 after a call from a voice he believed was his German parent company’s boss.",
+          "source": "Wall Street Journal"
+        }
+      ],
+      "lab": {
+        "timeline": [
+          {
+            "when": "Feb 2025",
+            "what": "Business leaders get calls from a cloned voice of Defence Minister Crosetto."
+          },
+          {
+            "when": "The ask",
+            "what": "Money to free kidnapped journalists, supposedly to be repaid later."
+          },
+          {
+            "when": "Outcome",
+            "what": "At least one pays about €1 million; police later freeze the funds."
+          }
+        ],
+        "prevent": [
+          "Call back via an official number",
+          "Shared code words for urgent requests"
+        ],
+        "detect": [
+          "Unusual requests from VIPs through unusual channels"
+        ],
+        "tune": [
+          "Finance rule: any request citing secrecy + urgency → mandatory second approver",
+          "Flag calls from withheld numbers claiming to be executives"
+        ],
+        "playbook": [
+          "Hang up; call back on a known number",
+          "If you paid: call the bank immediately",
+          "Report to the police",
+          "Warn your network"
+        ],
+        "tabletop": {
+          "inject": "A ‘minister’ calls your CEO asking for an urgent confidential transfer for national security.",
+          "questions": [
+            "What would make the CEO hang up?",
+            "How do we verify a government request?"
+          ]
+        }
+      },
+      "readMore": [
+        {
+          "org": "EU AI Act",
+          "ref": "Art. 50(4)",
+          "text": "Deployers of deepfakes must disclose that content is artificially generated or manipulated.",
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+        },
+        {
+          "org": "ENISA",
+          "ref": "Threat Landscape 2025",
+          "text": "AI-supported social engineering is now the norm, not the exception.",
+          "url": "https://www.enisa.europa.eu/publications/enisa-threat-landscape-2025"
+        }
+      ],
+      "explain": {
+        "simple": "AI can copy a voice from a short clip. A family safe word proves it’s really them.",
+        "technical": "Voice cloning needs only seconds of audio and caller ID is spoofable. Use shared secrets and call-backs on known numbers.",
+        "business": "The same trick targets executives and finance teams. A verification phrase or call-back policy costs nothing."
+      },
+      "refs": "EU AI Act Art. 50 · ENISA Threat Landscape 2025",
+      "owasp": [],
+      "quiz": {
+        "question": "“Mum, I’m in trouble, send money now” — in your child’s voice. First move?",
+        "options": [
+          "Send it — it’s their voice",
+          "Ask them to text instead",
+          "Ask for the family safe word, or call back"
+        ],
+        "answer": 2
+      },
+      "quotes": [
+        "ai_50_4"
+      ],
+      "activities": [
+        {
+          "audience": "home",
+          "type": "a",
+          "text": "Agree a family safe word tonight."
+        },
+        {
+          "audience": "work",
+          "type": "a",
+          "text": "Agree a verification phrase for urgent requests with your manager."
+        },
+        {
+          "audience": "leaders",
+          "type": "a",
+          "text": "Tell staff how you will — and won’t — ask for money."
+        },
+        {
+          "audience": "tech",
+          "type": "a",
+          "text": "Flag calls from withheld numbers that claim to be executives."
+        }
+      ]
+    },
+    {
+      "day": 21,
+      "title": "Label the synthetic",
+      "topic": "AI labels & deepfakes",
+      "track": "ai",
+      "for": [
+        "marketing"
+      ],
+      "icon": "tag",
+      "category": "ai",
+      "do": "Label AI-generated or manipulated images, audio and video, and keep a named human sign-off.",
+      "dont": "Publish synthetic media of real people without consent — or let fakes of your leaders go unanswered.",
+      "cases": [
+        {
+          "kind": "Attack",
+          "when": "May 2024",
+          "name": "WPP",
+          "location": "London, UK",
+          "pin": "uk",
+          "text": "Fraudsters used a voice clone and YouTube footage of WPP’s CEO in a fake video meeting to try to set up a new business. Alert staff stopped it.",
+          "source": "The Guardian"
+        }
+      ],
+      "lab": {
+        "timeline": [
+          {
+            "when": "May 2024",
+            "what": "Fraudsters create a messaging account with the CEO’s photo."
+          },
+          {
+            "when": "Meeting",
+            "what": "A video call uses a voice clone and public footage of the CEO."
+          },
+          {
+            "when": "Goal",
+            "what": "Get an agency leader to set up a new business and hand over money and details. Staff stop it."
+          }
+        ],
+        "prevent": [
+          "Label AI content and keep provenance records",
+          "Tell staff how executives will — and won’t — contact them"
+        ],
+        "detect": [
+          "Monitor for executive impersonation online"
+        ],
+        "tune": [
+          "Alert on new social or messaging accounts using executive names and photos",
+          "Add content credentials (C2PA) to official media"
+        ],
+        "playbook": [
+          "Report and take down the fake",
+          "Warn staff and partners",
+          "Publish an official statement",
+          "Review verification guidance"
+        ],
+        "tabletop": {
+          "inject": "A deepfake video of your CEO announcing layoffs is spreading on social media.",
+          "questions": [
+            "Who confirms it’s fake, and how fast?",
+            "Which channels do we use to respond?"
+          ]
+        }
+      },
+      "readMore": [
+        {
+          "org": "EU AI Act",
+          "ref": "Art. 50",
+          "text": "People must be told when they interact with AI; synthetic content must be marked; deepfakes must be disclosed.",
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+        },
+        {
+          "org": "NIST",
+          "ref": "AI 600-1",
+          "text": "Covers content provenance and labelling for generative AI.",
+          "url": "https://doi.org/10.6028/NIST.AI.600-1"
+        }
+      ],
+      "explain": {
+        "simple": "If AI made or changed an image, video or voice, say so. People deserve to know what’s real.",
+        "technical": "Use C2PA content credentials or watermarks where available, keep provenance records, and run brand-impersonation monitoring for executive deepfakes.",
+        "business": "Labelling protects trust and helps meet EU AI Act transparency duties. Unlabelled fakes — or fakes of your CEO — become a brand crisis."
+      },
+      "refs": "EU AI Act Art. 50 (transparency obligations)",
+      "owasp": [],
+      "quiz": {
+        "question": "Your campaign uses an AI-generated spokesperson. Good practice?",
+        "options": [
+          "Clearly label it as AI-generated",
+          "Say nothing — it looks real",
+          "Use a real person’s face for trust"
+        ],
+        "answer": 0
+      },
+      "quotes": [
+        "ai_50_1",
+        "ai_50_4"
+      ],
+      "activities": [
+        {
+          "audience": "home",
+          "type": "a",
+          "text": "Look for ‘AI-generated’ labels before sharing an image."
+        },
+        {
+          "audience": "work",
+          "type": "a",
+          "text": "Label AI-generated images in your next presentation."
+        },
+        {
+          "audience": "leaders",
+          "type": "a",
+          "text": "Approve an AI content-labelling policy."
+        },
+        {
+          "audience": "tech",
+          "type": "a",
+          "text": "Add content credentials (C2PA) to official media."
+        }
+      ]
+    },
+    {
+      "day": 22,
+      "title": "Know what you ship",
+      "topic": "Software & model supply chain",
+      "track": "both",
+      "for": [
+        "dev"
+      ],
+      "icon": "chain",
+      "category": "supply",
+      "do": "Pin dependencies and CI actions to full commit SHAs, keep an SBOM, and verify signatures.",
+      "dont": "Install a package an AI assistant suggests without checking it’s real — or load untrusted model files.",
+      "cases": [
+        {
+          "kind": "Attack",
+          "when": "Mar 2025",
+          "name": "tj-actions/changed-files",
+          "location": "Global (GitHub)",
+          "text": "Attackers re-pointed the version tags of a popular GitHub Action to malicious code that dumped CI secrets into build logs (CVE-2025-30066).",
+          "source": "StepSecurity; GitHub"
+        },
+        {
+          "kind": "Attack",
+          "when": "Feb 2024",
+          "name": "Malicious models on Hugging Face",
+          "location": "Global AI platform",
+          "text": "Researchers found about 100 malicious AI models on Hugging Face; some ran code on the machine of anyone who loaded them, via unsafe pickle files.",
+          "source": "JFrog Security Research"
+        },
+        {
+          "kind": "Attack",
+          "when": "Jun 2024",
+          "name": "Polyfill.io",
+          "location": "Global",
+          "text": "After a popular JavaScript CDN domain changed hands, it served malicious code to more than 100,000 websites that loaded it.",
+          "source": "Sansec and others"
+        }
+      ],
+      "lab": {
+        "timeline": [
+          {
+            "when": "14 Mar 2025",
+            "what": "Attackers re-point the action’s version tags to a malicious commit."
+          },
+          {
+            "when": "Same day",
+            "what": "StepSecurity spots anomalous behaviour; secrets appear in public build logs."
+          },
+          {
+            "when": "15 Mar 2025",
+            "what": "Malicious code removed; CVE-2025-30066 assigned."
+          },
+          {
+            "when": "Root cause",
+            "what": "Traced to an earlier compromise of reviewdog actions."
+          }
+        ],
+        "prevent": [
+          "Pin actions and dependencies to commit SHAs",
+          "Least-privilege CI tokens; prefer safetensors over pickle"
+        ],
+        "detect": [
+          "Monitor CI runner network egress"
+        ],
+        "tune": [
+          "IF build log contains base64 blobs or secret patterns → fail build + alert",
+          "Block CI egress except approved registries"
+        ],
+        "playbook": [
+          "Find every workflow that used the action",
+          "Rotate every exposed secret",
+          "Pin to a known-good SHA",
+          "Search logs for leaked values"
+        ],
+        "tabletop": {
+          "inject": "A widely used GitHub Action you depend on is reported compromised this morning.",
+          "questions": [
+            "Which repos and secrets are affected?",
+            "How fast can we rotate all of them?"
+          ]
+        }
+      },
+      "readMore": [
+        {
+          "org": "OWASP",
+          "ref": "A03:2025",
+          "text": "Software Supply Chain Failures: compromised dependencies, build systems and distribution.",
+          "url": "https://owasp.org/Top10/2025/"
+        },
+        {
+          "org": "EU AI Act",
+          "ref": "Art. 15",
+          "text": "High-risk AI must resist data poisoning, model poisoning, adversarial examples and model flaws.",
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+        },
+        {
+          "org": "NIST",
+          "ref": "SP 800-218 (SSDF)",
+          "text": "Secure software development framework, including verifying third-party components.",
+          "url": "https://csrc.nist.gov/pubs/sp/800/218/final"
+        }
+      ],
+      "explain": {
+        "simple": "Most software is built from other people’s parts. Lock the exact versions you trust and check them before use.",
+        "technical": "Pin to SHAs, verify provenance (SLSA, Sigstore), generate SBOMs, prefer safetensors over pickle, and self-host critical third-party scripts.",
+        "business": "A poisoned component reaches every customer at once. Supply-chain controls are now expected under NIS2, DORA, the Cyber Resilience Act and the AI Act."
+      },
+      "refs": "OWASP A03:2025 · A08:2025 · LLM03:2025 · LLM04:2025",
+      "owasp": [
+        "A03:2025",
+        "A08:2025",
+        "LLM03:2025",
+        "LLM04:2025"
+      ],
+      "quiz": {
+        "question": "Which reference to a GitHub Action is safest?",
+        "options": [
+          "uses: some/action@main",
+          "uses: some/action@3d3c42e… (full commit SHA)",
+          "uses: some/action@v1"
+        ],
+        "answer": 1
+      },
+      "quotes": [
+        "owasp_a03",
+        "llm03",
+        "owasp_a08"
+      ],
+      "activities": [
+        {
+          "audience": "home",
+          "type": "c",
+          "text": "Install apps only from official stores."
+        },
+        {
+          "audience": "work",
+          "type": "c",
+          "text": "Ask before installing browser extensions."
+        },
+        {
+          "audience": "leaders",
+          "type": "c",
+          "text": "Ask whether you have an SBOM for your key products."
+        },
+        {
+          "audience": "tech",
+          "type": "c",
+          "text": "Pin your CI actions to full commit SHAs today."
+        }
+      ]
+    },
+    {
+      "day": 23,
+      "title": "Read the AI small print",
+      "topic": "Vendor & AI supplier risk",
+      "track": "both",
+      "for": [
+        "procurement",
+        "legal"
+      ],
+      "icon": "doc",
+      "category": "supply",
+      "do": "Ask every vendor: is our data used for training, where is it stored, and who are the sub-processors?",
+      "dont": "Approve tools on click-through terms without a security and privacy review.",
+      "cases": [
+        {
+          "kind": "Attack",
+          "when": "May 2023",
+          "name": "MOVEit",
+          "location": "Global",
+          "text": "A zero-day in a widely used file-transfer product let the Cl0p gang steal data from thousands of organisations — many hit through their suppliers.",
+          "source": "Progress Software; CISA"
+        },
+        {
+          "kind": "Attack",
+          "when": "Sep 2025",
+          "name": "Collins Aerospace",
+          "location": "Brussels, Belgium",
+          "pin": "brussels",
+          "text": "Ransomware at a third-party check-in system provider disrupted passengers at Brussels, Berlin and London Heathrow airports; ENISA confirmed it was ransomware.",
+          "source": "ENISA; TechCrunch"
+        }
+      ],
+      "lab": {
+        "timeline": [
+          {
+            "when": "27–31 May 2023",
+            "what": "Cl0p exploits a zero-day SQL injection in MOVEit Transfer."
+          },
+          {
+            "when": "31 May 2023",
+            "what": "Progress discloses and patches CVE-2023-34362."
+          },
+          {
+            "when": "Jun 2023",
+            "what": "Victims emerge, many via suppliers such as payroll providers."
+          },
+          {
+            "when": "Months later",
+            "what": "Thousands of organisations affected."
+          }
+        ],
+        "prevent": [
+          "Supplier due diligence and contractual security duties",
+          "Know which suppliers hold which data"
+        ],
+        "detect": [
+          "Track supplier advisories and threat intel"
+        ],
+        "tune": [
+          "Map supplier products to your asset inventory → auto-alert on new KEV entries",
+          "IF supplier notifies incident → open major-incident ticket within 15 min"
+        ],
+        "playbook": [
+          "Confirm exposure with the supplier",
+          "Cut or restrict the connection",
+          "Assess your reporting duties (NIS2, DORA, GDPR)",
+          "Notify customers and regulators as required"
+        ],
+        "tabletop": {
+          "inject": "Your payroll provider says attackers stole files that include your employees’ bank details.",
+          "questions": [
+            "Whose deadline is running — ours or theirs?",
+            "Who is our contact at the authority?"
+          ]
+        }
+      },
+      "readMore": [
+        {
+          "org": "DORA",
+          "ref": "Art. 28–30",
+          "text": "Financial entities manage ICT third-party risk, keep a register of information and include key contractual provisions, including exit strategies.",
+          "url": "https://eur-lex.europa.eu/eli/reg/2022/2554/oj"
+        },
+        {
+          "org": "NIS2",
+          "ref": "Art. 21(2)(d) & 21(3)",
+          "text": "Supply-chain security, considering each direct supplier’s vulnerabilities and secure development practices.",
+          "url": "https://eur-lex.europa.eu/eli/dir/2022/2555/oj"
+        },
+        {
+          "org": "GDPR",
+          "ref": "Art. 28 & 33(2)",
+          "text": "Processor contracts; processors must notify the controller without undue delay after becoming aware of a breach.",
+          "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
+        }
+      ],
+      "explain": {
+        "simple": "When you use a supplier’s tool, your data and operations depend on them. Read what they do with your data before you sign.",
+        "technical": "Assess vendors on training use, retention, residency, sub-processors, certifications and incident SLAs; add audit rights and exit plans.",
+        "business": "One supplier outage disrupted check-in at three major airports. NIS2 and DORA make third-party risk your responsibility, not just the vendor’s."
+      },
+      "refs": "NIS2 Art. 21(2)(d) · DORA Art. 28–30 · GDPR Art. 28",
+      "owasp": [
+        "A03:2025",
+        "LLM03:2025"
+      ],
+      "quiz": {
+        "question": "A free AI tool’s terms let it train on your uploads. You…",
+        "options": [
+          "Click accept — it’s free",
+          "Use it only for confidential files",
+          "Escalate for a security and privacy review"
+        ],
+        "answer": 2
+      },
+      "quotes": [
+        "nis2_21_3",
+        "dora_28_1a",
+        "gdpr_28_1"
+      ],
+      "activities": [
+        {
+          "audience": "home",
+          "type": "p",
+          "text": "Check one app’s privacy settings: is your data used for training?"
+        },
+        {
+          "audience": "work",
+          "type": "p",
+          "text": "Ask before signing up to a new tool with work data."
+        },
+        {
+          "audience": "leaders",
+          "type": "c",
+          "text": "Check incident-notice times in your top five supplier contracts."
+        },
+        {
+          "audience": "tech",
+          "type": "c",
+          "text": "Map which suppliers can reach your systems."
+        }
+      ]
+    },
+    {
+      "day": 24,
+      "title": "Ready when the office is empty",
+      "topic": "Incident readiness",
+      "track": "cyber",
+      "for": [
+        "it",
+        "leaders"
+      ],
+      "icon": "bell",
+      "category": "incident",
+      "do": "Staff an on-call rota, route alerts to a human, and keep the incident plan and contacts offline.",
+      "dont": "Trust backups you’ve never restored — follow 3-2-1 and test a restore before the break.",
+      "cases": [
+        {
+          "kind": "Attack",
+          "when": "Oct 2023",
+          "name": "British Library",
+          "location": "London, UK",
+          "pin": "uk",
+          "text": "Rhysida ransomware crippled services for months. The library’s own lessons-learned report pointed to remote access without MFA and legacy systems.",
+          "source": "British Library, Mar 2024"
+        },
+        {
+          "kind": "Attack",
+          "when": "Mar 2023",
+          "name": "Hospital Clínic",
+          "location": "Barcelona, Spain",
+          "pin": "barcelona",
+          "text": "Ransomware forced one of Barcelona’s main hospitals to cancel thousands of appointments and fall back to paper.",
+          "source": "Hospital Clínic; Spanish press"
+        }
+      ],
+      "lab": {
+        "timeline": [
+          {
+            "when": "28 Oct 2023",
+            "what": "Rhysida attack; British Library systems go down."
+          },
+          {
+            "when": "Nov 2023",
+            "what": "Stolen data auctioned and leaked."
+          },
+          {
+            "when": "Mar 2024",
+            "what": "The library publishes its lessons-learned review."
+          },
+          {
+            "when": "2024",
+            "what": "Recovery takes months; legacy systems rebuilt."
+          }
+        ],
+        "prevent": [
+          "MFA on all remote access",
+          "Offline, immutable backups with tested restores"
+        ],
+        "detect": [
+          "24/7 alert routing to a named human"
+        ],
+        "tune": [
+          "IF backup job fails or backup deletion attempted → page on-call",
+          "IF a new local admin or domain admin is created out of hours → critical alert"
+        ],
+        "playbook": [
+          "Activate the incident team via out-of-band channels",
+          "Isolate and preserve evidence",
+          "Restore from the last clean backup",
+          "Report to authorities within the legal deadlines"
+        ],
+        "tabletop": {
+          "inject": "24 December, 22:00: encryption alerts fire on file servers. Half the team is travelling.",
+          "questions": [
+            "Who is on call, and can they reach the plan offline?",
+            "When was our last successful test restore?"
+          ]
+        }
+      },
+      "readMore": [
+        {
+          "org": "NIS2",
+          "ref": "Art. 21(2)(c)",
+          "text": "Business continuity, such as backup management and disaster recovery, and crisis management.",
+          "url": "https://eur-lex.europa.eu/eli/dir/2022/2555/oj"
+        },
+        {
+          "org": "DORA",
+          "ref": "Art. 12",
+          "text": "Backup policies and procedures, and restoration and recovery procedures.",
+          "url": "https://eur-lex.europa.eu/eli/reg/2022/2554/oj"
+        },
+        {
+          "org": "NIST",
+          "ref": "SP 800-61r3",
+          "text": "NIST’s incident-response recommendations, aligned with CSF 2.0.",
+          "url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final"
+        }
+      ],
+      "explain": {
+        "simple": "Attackers like holidays, when fewer people are watching. Make sure someone gets the alerts and that you can restore from backups.",
+        "technical": "Ensure 24/7 alert routing, offline or immutable backups (3-2-1-1-0), tested restores, out-of-band comms and printed runbooks; pre-authorise containment actions.",
+        "business": "Recovery took months at the British Library. Tested backups and an on-call plan decide whether an incident lasts days or quarters."
+      },
+      "refs": "OWASP A09:2025 · CISA #StopRansomware Guide",
+      "owasp": [
+        "A09:2025"
+      ],
+      "quiz": {
+        "question": "Which backup set-up survives ransomware best?",
+        "options": [
+          "3-2-1 with an offline copy, restore-tested",
+          "One copy on the same server",
+          "Cloud sync of the live folder"
+        ],
+        "answer": 0
+      },
+      "quotes": [
+        "nis2_21_2c",
+        "owasp_a09"
+      ],
+      "activities": [
+        {
+          "audience": "home",
+          "type": "c",
+          "text": "Back up your phone photos to a second place."
+        },
+        {
+          "audience": "work",
+          "type": "c",
+          "text": "Save the security team’s phone number offline."
+        },
+        {
+          "audience": "leaders",
+          "type": "c",
+          "text": "Confirm who is on call over the holidays."
+        },
+        {
+          "audience": "tech",
+          "type": "c",
+          "text": "Test a restore from backup this week."
+        }
+      ]
+    },
+    {
+      "day": 25,
+      "title": "Talk AI with your kids",
+      "topic": "Children & chatbots",
+      "track": "ai",
+      "for": [
+        "home"
+      ],
+      "icon": "kids",
+      "category": "privacy",
+      "do": "Explain that chatbots can be wrong and aren’t friends, and set up age-appropriate controls together.",
+      "dont": "Let children share their full name, school, photos or location with chatbots or strangers.",
+      "cases": [
+        {
+          "kind": "Ruling",
+          "when": "Dec 2024",
+          "name": "Italy’s Garante fines OpenAI",
+          "location": "Rome, Italy",
+          "pin": "rome",
+          "text": "Italy’s data-protection authority fined OpenAI €15 million, citing among other issues the lack of adequate age verification for ChatGPT.",
+          "source": "Garante per la protezione dei dati personali"
+        },
+        {
+          "kind": "Ruling",
+          "when": "Sep 2023",
+          "name": "TikTok and children’s data",
+          "location": "Dublin, Ireland",
+          "pin": "dublin",
+          "text": "Ireland’s Data Protection Commission fined TikTok €345 million over how it handled children’s data, including public-by-default settings.",
+          "source": "Data Protection Commission"
+        }
+      ],
+      "lab": {
+        "timeline": [
+          {
+            "when": "Mar 2023",
+            "what": "The Garante temporarily blocks ChatGPT in Italy."
+          },
+          {
+            "when": "Dec 2024",
+            "what": "The Garante fines OpenAI €15 million and orders a public awareness campaign."
+          },
+          {
+            "when": "Response",
+            "what": "OpenAI says it will appeal."
+          }
+        ],
+        "prevent": [
+          "Age-appropriate modes and parental controls",
+          "Private-by-default settings for minors"
+        ],
+        "detect": [
+          "Talk regularly about what kids see and share"
+        ],
+        "tune": [
+          "Family router or device controls: limit apps by age rating",
+          "Review app permissions (mic, camera, location) monthly"
+        ],
+        "playbook": [
+          "Pause the app",
+          "Delete shared personal data where possible",
+          "Report concerns to the platform",
+          "Talk it through with the child"
+        ],
+        "tabletop": {
+          "inject": "Your 11-year-old has been chatting with an AI ‘friend’ that asked for photos.",
+          "questions": [
+            "What do we save as evidence before deleting?",
+            "Who do we report it to?"
+          ]
+        }
+      },
+      "readMore": [
+        {
+          "org": "GDPR",
+          "ref": "Art. 8",
+          "text": "Conditions for children’s consent to online services: 16 by default, and member states may lower it to 13.",
+          "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
+        },
+        {
+          "org": "EU AI Act",
+          "ref": "Art. 5",
+          "text": "Bans AI that exploits people’s vulnerabilities due to age.",
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+        }
+      ],
+      "explain": {
+        "simple": "Chatbots can be wrong and aren’t friends. Help kids keep personal details private and check answers with you.",
+        "technical": "Enable age-appropriate modes, turn off chat history or training where possible, and review app permissions for microphone, camera and location.",
+        "business": "For companies, children’s data brings some of the highest GDPR fines — €345 million for TikTok. Design for minors by default."
+      },
+      "refs": "GDPR Art. 8 · EU AI Act Art. 5",
+      "owasp": [],
+      "quiz": {
+        "question": "Your child asks a chatbot for homework help. Which rule matters most?",
+        "options": [
+          "Share their school so answers fit",
+          "Never share personal details; double-check answers",
+          "Let the chatbot decide what’s true"
+        ],
+        "answer": 1
+      },
+      "quotes": [
+        "gdpr_8_1",
+        "ai_5_1b"
+      ],
+      "activities": [
+        {
+          "audience": "home",
+          "type": "a",
+          "text": "Set up parental controls on a child’s AI or chat app."
+        },
+        {
+          "audience": "work",
+          "type": "p",
+          "text": "Check your organisation’s rules on children’s data."
+        },
+        {
+          "audience": "leaders",
+          "type": "p",
+          "text": "Ask whether your services protect minors’ data by default."
+        },
+        {
+          "audience": "tech",
+          "type": "p",
+          "text": "Review age assurance and default settings for minors."
+        }
+      ]
+    },
+    {
+      "day": 26,
+      "title": "New gadget, clean slate",
+      "topic": "On-device AI",
+      "track": "both",
+      "for": [
+        "everyone",
+        "home"
+      ],
+      "icon": "device",
+      "category": "iot",
+      "do": "Update new devices first, set a strong screen lock, and review AI-feature and microphone settings.",
+      "dont": "Sell or hand down old phones and laptops before backing up and factory-resetting.",
+      "cases": [
+        {
+          "kind": "Recall",
+          "when": "Jun 2024",
+          "name": "Microsoft Recall",
+          "location": "Global",
+          "text": "After researchers showed the AI screenshot feature stored data in an easily readable database, Microsoft delayed it and relaunched it as opt-in with encryption.",
+          "source": "Microsoft; security researchers"
+        }
+      ],
+      "lab": {
+        "timeline": [
+          {
+            "when": "May 2024",
+            "what": "Recall announced: AI screenshots you can search later."
+          },
+          {
+            "when": "Jun 2024",
+            "what": "Researchers show the data sits in an easily readable database; Microsoft delays the feature."
+          },
+          {
+            "when": "Later",
+            "what": "Relaunched as opt-in with encryption and Windows Hello."
+          }
+        ],
+        "prevent": [
+          "Review AI features before enabling them",
+          "Full-disk encryption and a strong screen lock"
+        ],
+        "detect": [
+          "Device management reports on new AI features and settings"
+        ],
+        "tune": [
+          "MDM policy: AI screenshot or recording features off unless approved",
+          "Alert when an enrolled device is not encrypted"
+        ],
+        "playbook": [
+          "Disable the feature",
+          "Delete stored captures",
+          "Check who could access them",
+          "Set a company policy for AI features"
+        ],
+        "tabletop": {
+          "inject": "A staff laptop with an AI screenshot feature on is stolen from a car.",
+          "questions": [
+            "What could the thief see?",
+            "Is this a reportable personal-data breach?"
+          ]
+        }
+      },
+      "readMore": [
+        {
+          "org": "CISA",
+          "ref": "Secure Our World",
+          "text": "Update software — one of four simple everyday steps.",
+          "url": "https://www.cisa.gov/secure-our-world"
+        },
+        {
+          "org": "ETSI",
+          "ref": "EN 303 645",
+          "text": "Baseline security for consumer devices, including updates.",
+          "url": "https://www.etsi.org/technologies/consumer-iot-security"
+        }
+      ],
+      "explain": {
+        "simple": "New devices need updates first. Also check AI features and microphone settings, and wipe old devices before giving them away.",
+        "technical": "Apply OS updates, enable full-disk encryption and remote wipe, review on-device AI data stores and permissions, and factory-reset with crypto-erase before resale.",
+        "business": "Lost or resold devices with company data are reportable breaches. Device enrolment and wipe policies prevent them."
+      },
+      "refs": "CISA Secure Our World",
+      "owasp": [],
+      "quiz": {
+        "question": "Before selling your old phone, you should…",
+        "options": [
+          "Back up, sign out, then factory-reset",
+          "Delete a few photos",
+          "Just remove the SIM card"
+        ],
+        "answer": 0
+      },
+      "quotes": [
+        "gdpr_33_1"
+      ],
+      "activities": [
+        {
+          "audience": "home",
+          "type": "c",
+          "text": "Update and lock any new device before you use it."
+        },
+        {
+          "audience": "work",
+          "type": "c",
+          "text": "Enrol new work devices in device management."
+        },
+        {
+          "audience": "leaders",
+          "type": "p",
+          "text": "Set a policy for AI recording features on work devices."
+        },
+        {
+          "audience": "tech",
+          "type": "c",
+          "text": "Check every managed device is encrypted."
+        }
+      ]
+    },
+    {
+      "day": 27,
+      "title": "Famous face, fake offer",
+      "topic": "Deepfake investment ads",
+      "track": "ai",
+      "for": [
+        "home",
+        "everyone"
+      ],
+      "icon": "trend",
+      "category": "fraud",
+      "do": "Treat celebrity investment ads and “guaranteed returns” as scams, and check your financial regulator’s warning list.",
+      "dont": "Trust a video because the face is famous — deepfaked endorsements are a scam staple.",
+      "cases": [
+        {
+          "kind": "Attack",
+          "when": "Jul 2023",
+          "name": "Martin Lewis deepfake",
+          "location": "United Kingdom",
+          "pin": "uk",
+          "text": "A deepfake video of the UK consumer champion promoting an “investment” app spread on social media. He warned the public it was a scam.",
+          "source": "BBC"
+        }
+      ],
+      "lab": {
+        "timeline": [
+          {
+            "when": "Jul 2023",
+            "what": "A deepfake video of Martin Lewis promotes an ‘investment app’."
+          },
+          {
+            "when": "Same week",
+            "what": "He warns the public and calls for action from platforms."
+          },
+          {
+            "when": "Since",
+            "what": "Deepfaked celebrity investment ads remain widespread."
+          }
+        ],
+        "prevent": [
+          "Check the regulator’s warning list before investing",
+          "Never invest via a link in an ad"
+        ],
+        "detect": [
+          "Report suspicious ads to the platform"
+        ],
+        "tune": [
+          "Brand monitoring: alert on ads using your executives’ names or faces",
+          "Track look-alike domains of your brand"
+        ],
+        "playbook": [
+          "Don’t click; report the ad",
+          "If you paid: contact your bank",
+          "Report to the police and regulator",
+          "Warn friends and family"
+        ],
+        "tabletop": {
+          "inject": "A deepfake ad shows your CEO recommending a crypto scheme.",
+          "questions": [
+            "How fast can we get it taken down?",
+            "What do we tell customers?"
+          ]
+        }
+      },
+      "readMore": [
+        {
+          "org": "EU AI Act",
+          "ref": "Art. 50(4)",
+          "text": "Deepfakes must be disclosed as artificially generated or manipulated.",
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+        },
+        {
+          "org": "ENISA",
+          "ref": "Threat Landscape 2025",
+          "text": "Tracks AI-enabled fraud and social engineering across the EU.",
+          "url": "https://www.enisa.europa.eu/publications/enisa-threat-landscape-2025"
+        }
+      ],
+      "explain": {
+        "simple": "Ads with celebrities promising easy money are almost always fake — often made with AI. Check your financial regulator’s warning list.",
+        "technical": "Deepfake ad campaigns rotate creatives and landing domains to evade platform review; report to the platform and the national regulator.",
+        "business": "Your executives’ faces can be used the same way. Monitor for impersonation and keep a takedown process ready."
+      },
+      "refs": "EU AI Act Art. 50 · ENISA Threat Landscape 2025",
+      "owasp": [],
+      "quiz": {
+        "question": "A video of a famous presenter urges you to invest in a new app. You…",
+        "options": [
+          "Invest a little to test it",
+          "Check the regulator’s warning list and scroll on",
+          "Share it with friends first"
+        ],
+        "answer": 1
+      },
+      "quotes": [
+        "ai_50_4"
+      ],
+      "activities": [
+        {
+          "audience": "home",
+          "type": "a",
+          "text": "Check your national regulator’s investment warning list."
+        },
+        {
+          "audience": "work",
+          "type": "a",
+          "text": "Report deepfake ads that use your company’s brand."
+        },
+        {
+          "audience": "leaders",
+          "type": "a",
+          "text": "Prepare a takedown process for executive deepfakes."
+        },
+        {
+          "audience": "tech",
+          "type": "a",
+          "text": "Monitor look-alike domains of your brand."
+        }
+      ]
+    },
+    {
+      "day": 28,
+      "title": "Map your AI, keep a human",
+      "topic": "AI governance & law",
+      "track": "ai",
+      "for": [
+        "legal",
+        "hr"
+      ],
+      "icon": "scales",
+      "category": "ai",
+      "do": "Inventory your AI tools and the personal data they touch, train staff (EU AI Act Art. 4), and run DPIAs where GDPR requires.",
+      "dont": "Let AI decide about customers or candidates with no human review — you own what your bot says.",
+      "cases": [
+        {
+          "kind": "Ruling",
+          "when": "Feb 2024",
+          "name": "Air Canada",
+          "location": "Canada",
+          "text": "A Canadian tribunal held the airline liable after its website chatbot gave a customer wrong refund advice, rejecting the idea that the bot was a separate entity.",
+          "source": "BC Civil Resolution Tribunal"
+        },
+        {
+          "kind": "Scandal",
+          "when": "Jan 2021",
+          "name": "Dutch childcare benefits",
+          "location": "The Hague, Netherlands",
+          "pin": "thehague",
+          "text": "Tax authority risk systems wrongly flagged thousands of families for fraud. The Dutch government resigned over the scandal.",
+          "source": "Dutch parliamentary inquiry; international press"
+        }
+      ],
+      "lab": {
+        "timeline": [
+          {
+            "when": "Nov 2022",
+            "what": "Chatbot tells a grieving customer he can claim a bereavement refund afterwards."
+          },
+          {
+            "when": "Refused",
+            "what": "The airline says its policy says otherwise."
+          },
+          {
+            "when": "Feb 2024",
+            "what": "Tribunal orders Air Canada to pay and rejects ‘the chatbot is a separate entity’."
+          }
+        ],
+        "prevent": [
+          "Inventory AI systems and classify their risk",
+          "Human review for decisions about people"
+        ],
+        "detect": [
+          "Log AI decisions and complaints"
+        ],
+        "tune": [
+          "Alert when an AI decision is appealed or reversed — track rates by system",
+          "Sample 1% of chatbot answers weekly for accuracy"
+        ],
+        "playbook": [
+          "Pause the AI decision path",
+          "Review affected cases",
+          "Notify people and correct outcomes",
+          "Run a DPIA or fundamental-rights review"
+        ],
+        "tabletop": {
+          "inject": "Your AI screening tool rejected 400 candidates; a journalist says it penalised a protected group.",
+          "questions": [
+            "Can we reconstruct why each decision was made?",
+            "Who owns the system under the EU AI Act?"
+          ]
+        }
+      },
+      "readMore": [
+        {
+          "org": "EU AI Act",
+          "ref": "Art. 4 & 26",
+          "text": "AI literacy for staff; deployers of high-risk AI must use it as instructed, assign human oversight and monitor it.",
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+        },
+        {
+          "org": "GDPR",
+          "ref": "Art. 22",
+          "text": "Right not to be subject to decisions based solely on automated processing with legal or similarly significant effects.",
+          "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
+        },
+        {
+          "org": "GDPR",
+          "ref": "Art. 35",
+          "text": "Data protection impact assessments for high-risk processing.",
+          "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
+        }
+      ],
+      "explain": {
+        "simple": "If AI helps decide about people, a person must still check. And your organisation is responsible for what its bot says.",
+        "technical": "Keep an AI inventory with risk classification, log decisions, enable contestability and human review, and run DPIAs or fundamental-rights impact assessments for high-risk uses.",
+        "business": "Automated decisions without oversight helped bring down a government. The EU AI Act and GDPR make human oversight a legal duty."
+      },
+      "refs": "EU AI Act Art. 4 · GDPR Art. 22 & 35",
+      "owasp": [],
+      "quiz": {
+        "question": "Your support chatbot invented a refund policy. Who’s responsible?",
+        "options": [
+          "The AI vendor alone",
+          "Nobody — it’s just a bot",
+          "Your organisation"
+        ],
+        "answer": 2
+      },
+      "quotes": [
+        "ai_4",
+        "gdpr_22_1",
+        "gdpr_35_1"
+      ],
+      "activities": [
+        {
+          "audience": "home",
+          "type": "a",
+          "text": "Ask one service you use whether a human checks its AI decisions."
+        },
+        {
+          "audience": "work",
+          "type": "a",
+          "text": "Add your AI tools to the team’s inventory."
+        },
+        {
+          "audience": "leaders",
+          "type": "a",
+          "text": "Name an owner for each high-risk AI use."
+        },
+        {
+          "audience": "tech",
+          "type": "p",
+          "text": "Start a DPIA template for AI projects."
+        }
+      ]
+    },
+    {
+      "day": 29,
+      "title": "Leavers leave. Access too.",
+      "topic": "Access control",
+      "track": "cyber",
+      "for": [
+        "hr",
+        "it"
+      ],
+      "icon": "exit",
+      "category": "identity",
+      "do": "Revoke accounts, tokens, keys and AI-tool seats on the person’s last day.",
+      "dont": "Leave shared passwords unchanged or old accounts dormant “just in case”.",
+      "cases": [
+        {
+          "kind": "Insider",
+          "when": "2023",
+          "name": "Tesla",
+          "location": "United States",
+          "text": "Two former employees leaked personal data on about 75,000 staff to a newspaper, Tesla said in its breach notice.",
+          "source": "Tesla breach notification"
+        }
+      ],
+      "lab": {
+        "timeline": [
+          {
+            "when": "May 2023",
+            "what": "German newspaper Handelsblatt reports receiving a large cache of Tesla data."
+          },
+          {
+            "when": "Aug 2023",
+            "what": "Tesla notifies about 75,000 people and says two former employees leaked it."
+          },
+          {
+            "when": "Response",
+            "what": "Legal action against the former employees."
+          }
+        ],
+        "prevent": [
+          "Automated joiner-mover-leaver process",
+          "Data-loss prevention on bulk exports"
+        ],
+        "detect": [
+          "Alert on mass downloads by staff who have given notice"
+        ],
+        "tune": [
+          "IF user flagged as leaver AND bulk download > baseline → alert",
+          "Weekly report of accounts unused for 30+ days"
+        ],
+        "playbook": [
+          "Disable accounts and revoke tokens",
+          "Recover devices",
+          "Review recent data access",
+          "Rotate shared secrets"
+        ],
+        "tabletop": {
+          "inject": "HR tells you a senior engineer resigned last week. Logs show 20 GB of downloads yesterday.",
+          "questions": [
+            "Do we suspend access now?",
+            "What can we legally review?"
+          ]
+        }
+      },
+      "readMore": [
+        {
+          "org": "OWASP",
+          "ref": "A01:2025",
+          "text": "Broken Access Control: access beyond what a user should have.",
+          "url": "https://owasp.org/Top10/2025/"
+        },
+        {
+          "org": "NIS2",
+          "ref": "Art. 21(2)(i)",
+          "text": "Human-resources security, access-control policies and asset management.",
+          "url": "https://eur-lex.europa.eu/eli/dir/2022/2555/oj"
+        }
+      ],
+      "explain": {
+        "simple": "When someone leaves, their access should leave too — on their last day, not weeks later.",
+        "technical": "Automate joiner-mover-leaver via the HR system and SSO/SCIM; revoke tokens, API keys and OAuth grants; rotate shared secrets; review dormant accounts.",
+        "business": "Former staff with live access are a leading insider risk. Same-day offboarding is a cheap, auditable control."
+      },
+      "refs": "OWASP A01:2025 Broken Access Control · CIS Controls v8 (5, 6)",
+      "owasp": [
+        "A01:2025"
+      ],
+      "quiz": {
+        "question": "A contractor finished yesterday. What should already be done?",
+        "options": [
+          "All access, tokens and AI seats revoked",
+          "Nothing until their manager asks",
+          "Their password changed to a shared one"
+        ],
+        "answer": 0
+      },
+      "quotes": [
+        "owasp_a01",
+        "nis2_21_2i"
+      ],
+      "activities": [
+        {
+          "audience": "home",
+          "type": "p",
+          "text": "Delete old accounts you no longer use."
+        },
+        {
+          "audience": "work",
+          "type": "c",
+          "text": "Hand over shared passwords properly when roles change."
+        },
+        {
+          "audience": "leaders",
+          "type": "c",
+          "text": "Check offboarding happens on the person’s last day."
+        },
+        {
+          "audience": "tech",
+          "type": "c",
+          "text": "Find accounts unused for 30+ days and disable them."
+        }
+      ]
+    },
+    {
+      "day": 30,
+      "title": "Speak up, fast",
+      "topic": "Incident reporting",
+      "track": "both",
+      "for": [
+        "everyone",
+        "leaders"
+      ],
+      "icon": "megaphone",
+      "category": "incident",
+      "do": "Report a wrong click, a lost device or a regretted paste into a chatbot straight away — minutes matter.",
+      "dont": "Hide a mistake out of embarrassment. Under NIS2, significant incidents need an early warning within 24 hours.",
+      "cases": [
+        {
+          "kind": "Attack",
+          "when": "Apr 2025",
+          "name": "Co-op",
+          "location": "Manchester, UK",
+          "pin": "uk",
+          "text": "Co-op spotted intruders and shut systems down early. Members’ data was still stolen, but by the attackers’ own account the fast shutdown stopped ransomware being deployed.",
+          "source": "BBC; TechCrunch"
+        },
+        {
+          "kind": "Attack",
+          "when": "May 2021",
+          "name": "Ireland’s HSE",
+          "location": "Dublin, Ireland",
+          "pin": "dublin",
+          "text": "A phishing email opened two months earlier led to Conti ransomware across the national health service. The independent review found earlier security alerts weren’t acted on.",
+          "source": "PwC post-incident review, Dec 2021"
+        }
+      ],
+      "lab": {
+        "timeline": [
+          {
+            "when": "Apr 2025",
+            "what": "Co-op detects intruders and proactively shuts down systems."
+          },
+          {
+            "when": "May 2025",
+            "what": "Confirms member data was taken."
+          },
+          {
+            "when": "Jul 2025",
+            "what": "Says data on all 6.5 million members was stolen."
+          },
+          {
+            "when": "Lesson",
+            "what": "Fast shutdown stopped ransomware deploying, per the attackers."
+          }
+        ],
+        "prevent": [
+          "A blame-free reporting culture",
+          "One obvious way to report: a button, a number, a chat"
+        ],
+        "detect": [
+          "User reports routed straight to the SOC"
+        ],
+        "tune": [
+          "Measure time from user report to triage; alert if > 15 min",
+          "IF the same host has repeated unresolved EDR alerts → escalate"
+        ],
+        "playbook": [
+          "Thank the reporter and collect details",
+          "Contain: isolate host, revoke sessions",
+          "Classify: does NIS2, DORA or GDPR reporting apply?",
+          "Send the early warning on time"
+        ],
+        "tabletop": {
+          "inject": "A colleague admits clicking a link three days ago but was afraid to say.",
+          "questions": [
+            "How do we make the next person report in minutes?",
+            "Are any regulatory clocks already running?"
+          ]
+        }
+      },
+      "readMore": [
+        {
+          "org": "NIS2",
+          "ref": "Art. 23",
+          "text": "Early warning within 24 hours, incident notification within 72 hours and a final report within one month.",
+          "url": "https://eur-lex.europa.eu/eli/dir/2022/2555/oj"
+        },
+        {
+          "org": "DORA",
+          "ref": "Art. 19",
+          "text": "Major ICT incidents: initial notification within 4 hours of classifying it as major (no later than 24 hours after detection), intermediate report within 72 hours, final report within one month.",
+          "url": "https://eur-lex.europa.eu/eli/reg/2022/2554/oj"
+        },
+        {
+          "org": "NIST",
+          "ref": "SP 800-61r3",
+          "text": "Incident-response recommendations, including detection and reporting.",
+          "url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final"
+        }
+      ],
+      "explain": {
+        "simple": "Clicked something bad? Tell security right away. Fast reporting is what stops a small mistake becoming a disaster.",
+        "technical": "Early reports let the SOC isolate hosts, revoke sessions and block indicators before lateral movement; dwell time drives impact.",
+        "business": "Regulators expect early warnings within hours — NIS2 24 hours, DORA 4 hours after classification. A blame-free culture makes that possible."
+      },
+      "refs": "NIS2 Art. 23 · DORA Art. 19 · OWASP A09:2025",
+      "owasp": [
+        "A09:2025"
+      ],
+      "quiz": {
+        "question": "You clicked a phishing link 10 minutes ago. Best move?",
+        "options": [
+          "Wait and see if anything happens",
+          "Clear your browser history",
+          "Report it to security right now"
+        ],
+        "answer": 2
+      },
+      "quotes": [
+        "nis2_23_4a",
+        "nis2_23_4b",
+        "dora_19_1",
+        "gdpr_33_1"
+      ],
+      "activities": [
+        {
+          "audience": "home",
+          "type": "c",
+          "text": "Find out where to report scams in your country."
+        },
+        {
+          "audience": "work",
+          "type": "c",
+          "text": "Report anything odd from this week — even small things."
+        },
+        {
+          "audience": "leaders",
+          "type": "c",
+          "text": "Say publicly that reporting mistakes is welcome here."
+        },
+        {
+          "audience": "tech",
+          "type": "c",
+          "text": "Measure the time from a user report to triage."
+        }
+      ]
+    },
+    {
+      "day": 31,
+      "title": "Three resolutions",
+      "topic": "Habits for the new year",
+      "track": "both",
+      "for": [
+        "everyone"
+      ],
+      "icon": "star",
+      "category": "governance",
+      "do": "Carry three habits into 2027: passkeys on, verify before you pay, think before you paste.",
+      "dont": "Treat security as a season — book a January check-in and keep the habit going.",
+      "cases": [
+        {
+          "kind": "Recap",
+          "when": "2023–2025",
+          "name": "This calendar",
+          "location": "Europe and beyond",
+          "text": "Change Healthcare, 23andMe, Arup, M&S: in each, the way in was a missing basic — MFA, a unique password, a call-back, a verification step.",
+          "source": "Doors 1, 2, 7 and 18"
+        }
+      ],
+      "lab": {
+        "timeline": [
+          {
+            "when": "2023",
+            "what": "MOVEit, MGM Resorts, 23andMe, British Library."
+          },
+          {
+            "when": "2024",
+            "what": "Change Healthcare, Arup, Snowflake campaign."
+          },
+          {
+            "when": "2025",
+            "what": "M&S, Co-op, Jaguar Land Rover, Collins Aerospace."
+          }
+        ],
+        "prevent": [
+          "Passkeys and phishing-resistant MFA",
+          "Verify before you pay or reset"
+        ],
+        "detect": [
+          "Make reporting easy and blame-free"
+        ],
+        "tune": [
+          "Review this month’s tuning ideas; pick three to implement in January",
+          "Track mean time from report to containment"
+        ],
+        "playbook": [
+          "Pick three controls for Q1",
+          "Assign owners and dates",
+          "Schedule a tabletop with suppliers",
+          "Re-run this calendar next December"
+        ],
+        "tabletop": {
+          "inject": "Final exercise: combine Doors 7, 18 and 23 — a deepfaked CFO call, a help-desk reset and a supplier breach on the same day.",
+          "questions": [
+            "Which decision would we get wrong today?",
+            "What will we fix first in January?"
+          ]
+        }
+      },
+      "readMore": [
+        {
+          "org": "ENISA",
+          "ref": "Threat Landscape 2025",
+          "text": "The EU’s annual picture of threats to plan next year’s priorities.",
+          "url": "https://www.enisa.europa.eu/publications/enisa-threat-landscape-2025"
+        },
+        {
+          "org": "NIST",
+          "ref": "CSF 2.0",
+          "text": "Govern, Identify, Protect, Detect, Respond, Recover — a frame for your 2027 plan.",
+          "url": "https://www.nist.gov/cyberframework"
+        },
+        {
+          "org": "OWASP",
+          "ref": "Top 10:2025",
+          "text": "The current list of top web application risks.",
+          "url": "https://owasp.org/Top10/2025/"
+        }
+      ],
+      "explain": {
+        "simple": "Three habits stop most attacks: passkeys on, verify before you pay, think before you paste.",
+        "technical": "Phishing-resistant MFA, out-of-band verification and data-loss controls address the main initial-access and exfiltration paths seen in 2023–2025.",
+        "business": "These habits cost little and cut the most expensive incident types. Build them into onboarding and annual training."
+      },
+      "refs": "ENISA Threat Landscape 2025",
+      "owasp": [],
+      "quiz": {
+        "question": "Which habit would have stopped the most attacks in this calendar?",
+        "options": [
+          "Buying a new firewall",
+          "Verify before you trust: MFA, call-backs, checks",
+          "Changing your Wi-Fi name"
+        ],
+        "answer": 1
+      },
+      "quotes": [
+        "nis2_21_2g",
+        "nis2_20_1"
+      ],
+      "activities": [
+        {
+          "audience": "home",
+          "type": "c",
+          "text": "Pick your three habits for 2027 and write them down."
+        },
+        {
+          "audience": "work",
+          "type": "c",
+          "text": "Share your favourite door with a colleague."
+        },
+        {
+          "audience": "leaders",
+          "type": "c",
+          "text": "Schedule a January check-in on three controls."
+        },
+        {
+          "audience": "tech",
+          "type": "c",
+          "text": "Pick three detection rules from this month to implement."
+        }
+      ]
+    }
+  ],
+  "audiences": [
+    {
+      "id": "home",
+      "name": "At home"
+    },
+    {
+      "id": "work",
+      "name": "At work"
+    },
+    {
+      "id": "leaders",
+      "name": "Leaders"
+    },
+    {
+      "id": "tech",
+      "name": "Tech teams"
+    }
+  ],
+  "hygiene": {
+    "c": "Cyber hygiene",
+    "a": "AI hygiene",
+    "p": "Privacy hygiene"
+  },
+  "quotes": {
+    "nis2_20_1": {
+      "src": "NIS2",
+      "ref": "Directive (EU) 2022/2555 · Article 20(1)",
+      "url": "https://eur-lex.europa.eu/eli/dir/2022/2555/oj",
+      "text": "Member States shall ensure that the management bodies of essential and important entities approve the cybersecurity risk-management measures taken by those entities in order to comply with Article 21, oversee its implementation and can be held liable for infringements by the entities of that Article."
+    },
+    "nis2_20_2": {
+      "src": "NIS2",
+      "ref": "Directive (EU) 2022/2555 · Article 20(2)",
+      "url": "https://eur-lex.europa.eu/eli/dir/2022/2555/oj",
+      "text": "Member States shall ensure that the members of the management bodies of essential and important entities are required to follow training […]"
+    },
+    "nis2_21_2c": {
+      "src": "NIS2",
+      "ref": "Directive (EU) 2022/2555 · Article 21(2)(c)",
+      "url": "https://eur-lex.europa.eu/eli/dir/2022/2555/oj",
+      "text": "business continuity, such as backup management and disaster recovery, and crisis management;"
+    },
+    "nis2_21_2d": {
+      "src": "NIS2",
+      "ref": "Directive (EU) 2022/2555 · Article 21(2)(d)",
+      "url": "https://eur-lex.europa.eu/eli/dir/2022/2555/oj",
+      "text": "supply chain security, including security-related aspects concerning the relationships between each entity and its direct suppliers or service providers;"
+    },
+    "nis2_21_2e": {
+      "src": "NIS2",
+      "ref": "Directive (EU) 2022/2555 · Article 21(2)(e)",
+      "url": "https://eur-lex.europa.eu/eli/dir/2022/2555/oj",
+      "text": "security in network and information systems acquisition, development and maintenance, including vulnerability handling and disclosure;"
+    },
+    "nis2_21_2g": {
+      "src": "NIS2",
+      "ref": "Directive (EU) 2022/2555 · Article 21(2)(g)",
+      "url": "https://eur-lex.europa.eu/eli/dir/2022/2555/oj",
+      "text": "basic cyber hygiene practices and cybersecurity training;"
+    },
+    "nis2_21_2h": {
+      "src": "NIS2",
+      "ref": "Directive (EU) 2022/2555 · Article 21(2)(h)",
+      "url": "https://eur-lex.europa.eu/eli/dir/2022/2555/oj",
+      "text": "policies and procedures regarding the use of cryptography and, where appropriate, encryption;"
+    },
+    "nis2_21_2i": {
+      "src": "NIS2",
+      "ref": "Directive (EU) 2022/2555 · Article 21(2)(i)",
+      "url": "https://eur-lex.europa.eu/eli/dir/2022/2555/oj",
+      "text": "human resources security, access control policies and asset management;"
+    },
+    "nis2_21_2j": {
+      "src": "NIS2",
+      "ref": "Directive (EU) 2022/2555 · Article 21(2)(j)",
+      "url": "https://eur-lex.europa.eu/eli/dir/2022/2555/oj",
+      "text": "the use of multi-factor authentication or continuous authentication solutions, secured voice, video and text communications and secured emergency communication systems within the entity, where appropriate."
+    },
+    "nis2_21_3": {
+      "src": "NIS2",
+      "ref": "Directive (EU) 2022/2555 · Article 21(3)",
+      "url": "https://eur-lex.europa.eu/eli/dir/2022/2555/oj",
+      "text": "Member States shall ensure that, when considering which measures referred to in paragraph 2, point (d), of this Article are appropriate, entities take into account the vulnerabilities specific to each direct supplier and service provider and the overall quality of products and cybersecurity practices of their suppliers and service providers, including their secure development procedures."
+    },
+    "nis2_23_4a": {
+      "src": "NIS2",
+      "ref": "Directive (EU) 2022/2555 · Article 23(4)(a)",
+      "url": "https://eur-lex.europa.eu/eli/dir/2022/2555/oj",
+      "text": "without undue delay and in any event within 24 hours of becoming aware of the significant incident, an early warning, which, where applicable, shall indicate whether the significant incident is suspected of being caused by unlawful or malicious acts or could have a cross-border impact;"
+    },
+    "nis2_23_4b": {
+      "src": "NIS2",
+      "ref": "Directive (EU) 2022/2555 · Article 23(4)(b)",
+      "url": "https://eur-lex.europa.eu/eli/dir/2022/2555/oj",
+      "text": "without undue delay and in any event within 72 hours of becoming aware of the significant incident, an incident notification, which, where applicable, shall update the information referred to in point (a) and indicate an initial assessment of the significant incident, including its severity and impact, as well as, where available, the indicators of compromise;"
+    },
+    "gdpr_5_1c": {
+      "src": "GDPR",
+      "ref": "Regulation (EU) 2016/679 · Article 5(1)(c)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj",
+      "text": "Personal data shall be: […] adequate, relevant and limited to what is necessary in relation to the purposes for which they are processed (‘data minimisation’);"
+    },
+    "gdpr_8_1": {
+      "src": "GDPR",
+      "ref": "Regulation (EU) 2016/679 · Article 8(1)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj",
+      "text": "Where point (a) of Article 6(1) applies, in relation to the offer of information society services directly to a child, the processing of the personal data of a child shall be lawful where the child is at least 16 years old."
+    },
+    "gdpr_22_1": {
+      "src": "GDPR",
+      "ref": "Regulation (EU) 2016/679 · Article 22(1)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj",
+      "text": "The data subject shall have the right not to be subject to a decision based solely on automated processing, including profiling, which produces legal effects concerning him or her or similarly significantly affects him or her."
+    },
+    "gdpr_28_1": {
+      "src": "GDPR",
+      "ref": "Regulation (EU) 2016/679 · Article 28(1)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj",
+      "text": "Where processing is to be carried out on behalf of a controller, the controller shall use only processors providing sufficient guarantees to implement appropriate technical and organisational measures in such a manner that processing will meet the requirements of this Regulation and ensure the protection of the rights of the data subject."
+    },
+    "gdpr_33_1": {
+      "src": "GDPR",
+      "ref": "Regulation (EU) 2016/679 · Article 33(1)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj",
+      "text": "In the case of a personal data breach, the controller shall without undue delay and, where feasible, not later than 72 hours after having become aware of it, notify the personal data breach to the supervisory authority competent in accordance with Article 55, unless the personal data breach is unlikely to result in a risk to the rights and freedoms of natural persons.",
+      "note": "Proposed change: the Digital Omnibus would move this to 96 hours and high-risk breaches only. The Council agreed its position on 21 October 2026; it is not law yet."
+    },
+    "gdpr_33_2": {
+      "src": "GDPR",
+      "ref": "Regulation (EU) 2016/679 · Article 33(2)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj",
+      "text": "The processor shall notify the controller without undue delay after becoming aware of a personal data breach."
+    },
+    "gdpr_35_1": {
+      "src": "GDPR",
+      "ref": "Regulation (EU) 2016/679 · Article 35(1)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj",
+      "text": "Where a type of processing in particular using new technologies, and taking into account the nature, scope, context and purposes of the processing, is likely to result in a high risk to the rights and freedoms of natural persons, the controller shall, prior to the processing, carry out an assessment of the impact of the envisaged processing operations on the protection of personal data."
+    },
+    "dora_5_2": {
+      "src": "DORA",
+      "ref": "Regulation (EU) 2022/2554 · Article 5(2)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2022/2554/oj",
+      "text": "The management body of the financial entity shall define, approve, oversee and be responsible for the implementation of all arrangements related to the ICT risk management framework referred to in Article 6(1)."
+    },
+    "dora_19_1": {
+      "src": "DORA",
+      "ref": "Regulation (EU) 2022/2554 · Article 19(1)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2022/2554/oj",
+      "text": "Financial entities shall report major ICT-related incidents to the relevant competent authority as referred to in Article 46 in accordance with paragraph 4 of this Article.",
+      "note": "Deadlines are set by Delegated Regulation (EU) 2025/301: initial notification within 4 hours of classifying the incident as major (no later than 24 hours after detection), intermediate report within 72 hours, final report within one month."
+    },
+    "dora_28_1a": {
+      "src": "DORA",
+      "ref": "Regulation (EU) 2022/2554 · Article 28(1)(a)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2022/2554/oj",
+      "text": "financial entities that have in place contractual arrangements for the use of ICT services to run their business operations shall, at all times, remain fully responsible for compliance with, and the discharge of, all obligations under this Regulation and applicable financial services law;"
+    },
+    "dora_28_3": {
+      "src": "DORA",
+      "ref": "Regulation (EU) 2022/2554 · Article 28(3)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2022/2554/oj",
+      "text": "As part of their ICT risk management framework, financial entities shall maintain and update at entity level, and at sub-consolidated and consolidated levels, a register of information in relation to all contractual arrangements on the use of ICT services provided by ICT third-party service providers."
+    },
+    "ai_4": {
+      "src": "EU AI Act",
+      "ref": "Regulation (EU) 2024/1689 · Article 4(1), as amended",
+      "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-4",
+      "text": "Providers and deployers of AI systems shall take measures to support the development of AI literacy of their staff and other persons dealing with the operation and use of AI systems on their behalf taking into account their technical knowledge, experience, education and training and the context the AI systems are to be used in, and considering the persons or groups of persons on whom the AI systems are to be used. This obligation does not require providers or deployers to guarantee any specific level of AI literacy of any individual.",
+      "note": "Amended by the Digital Omnibus on AI. Wording from the European Commission’s AI Act Service Desk, consolidated text as at 27 July 2026."
+    },
+    "ai_5_1b": {
+      "src": "EU AI Act",
+      "ref": "Regulation (EU) 2024/1689 · Article 5(1)(b)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+      "text": "the placing on the market, the putting into service or the use of an AI system that exploits any of the vulnerabilities of a natural person or a specific group of persons due to their age, disability or a specific social or economic situation, with the objective, or the effect, of materially distorting the behaviour of that person or a person belonging to that group in a manner that causes or is reasonably likely to cause that person or another person significant harm;"
+    },
+    "ai_14_1": {
+      "src": "EU AI Act",
+      "ref": "Regulation (EU) 2024/1689 · Article 14(1)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+      "text": "High-risk AI systems shall be designed and developed in such a way, including with appropriate human-machine interface tools, that they can be effectively overseen by natural persons during the period in which they are in use."
+    },
+    "ai_15_1": {
+      "src": "EU AI Act",
+      "ref": "Regulation (EU) 2024/1689 · Article 15(1)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+      "text": "High-risk AI systems shall be designed and developed in such a way that they achieve an appropriate level of accuracy, robustness, and cybersecurity, and that they perform consistently in those respects throughout their lifecycle."
+    },
+    "ai_15_5": {
+      "src": "EU AI Act",
+      "ref": "Regulation (EU) 2024/1689 · Article 15(5)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+      "text": "High-risk AI systems shall be resilient against attempts by unauthorised third parties to alter their use, outputs or performance by exploiting system vulnerabilities."
+    },
+    "ai_50_1": {
+      "src": "EU AI Act",
+      "ref": "Regulation (EU) 2024/1689 · Article 50(1)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+      "text": "Providers shall ensure that AI systems intended to interact directly with natural persons are designed and developed in such a way that the natural persons concerned are informed that they are interacting with an AI system, unless this is obvious from the point of view of a natural person who is reasonably well-informed, observant and circumspect, taking into account the circumstances and the context of use."
+    },
+    "ai_50_4": {
+      "src": "EU AI Act",
+      "ref": "Regulation (EU) 2024/1689 · Article 50(4)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+      "text": "Deployers of an AI system that generates or manipulates image, audio or video content constituting a deep fake, shall disclose that the content has been artificially generated or manipulated."
+    },
+    "nist_63b": {
+      "src": "NIST",
+      "ref": "SP 800-63B-4 · §3.1.1.2",
+      "url": "https://csrc.nist.gov/pubs/sp/800/63/b/4/final",
+      "text": "Verifiers and CSPs SHALL NOT require subscribers to change passwords periodically. However, verifiers SHALL force a change if there is evidence that the authenticator has been compromised."
+    },
+    "owasp_a01": {
+      "src": "OWASP",
+      "ref": "Top 10:2025 · A01 Broken Access Control",
+      "url": "https://owasp.org/Top10/2025/",
+      "text": "Access control enforces policy such that users cannot act outside of their intended permissions. Failures typically lead to unauthorized information disclosure, modification or destruction of all data, or performing a business function outside the user's limits."
+    },
+    "owasp_a02": {
+      "src": "OWASP",
+      "ref": "Top 10:2025 · A02 Security Misconfiguration",
+      "url": "https://owasp.org/Top10/2025/",
+      "text": "Security misconfiguration is when a system, application, or cloud service is set up incorrectly from a security perspective, creating vulnerabilities."
+    },
+    "owasp_a03": {
+      "src": "OWASP",
+      "ref": "Top 10:2025 · A03 Software Supply Chain Failures",
+      "url": "https://owasp.org/Top10/2025/",
+      "text": "Software supply chain failures are breakdowns or other compromises in the process of building, distributing, or updating software. They are often caused by vulnerabilities or malicious changes in third-party code, tools, or other dependencies that the system relies on."
+    },
+    "owasp_a04": {
+      "src": "OWASP",
+      "ref": "Top 10:2025 · A04 Cryptographic Failures",
+      "url": "https://owasp.org/Top10/2025/",
+      "text": "Generally speaking, all data in transit should be encrypted at the transport layer (OSI layer 4)."
+    },
+    "owasp_a05": {
+      "src": "OWASP",
+      "ref": "Top 10:2025 · A05 Injection",
+      "url": "https://owasp.org/Top10/2025/",
+      "text": "An injection vulnerability is an application flaw that allows untrusted user input to be sent to an interpreter (e.g. a browser, database, the command line) and causes the interpreter to execute parts of that input as commands."
+    },
+    "owasp_a07": {
+      "src": "OWASP",
+      "ref": "Top 10:2025 · A07 Authentication Failures",
+      "url": "https://owasp.org/Top10/2025/",
+      "text": "When an attacker is able to trick a system into recognizing an invalid or incorrect user as legitimate, this vulnerability is present."
+    },
+    "owasp_a08": {
+      "src": "OWASP",
+      "ref": "Top 10:2025 · A08 Software or Data Integrity Failures",
+      "url": "https://owasp.org/Top10/2025/",
+      "text": "Software and data integrity failures relate to code and infrastructure that does not protect against invalid or untrusted code or data being treated as trusted and valid."
+    },
+    "owasp_a09": {
+      "src": "OWASP",
+      "ref": "Top 10:2025 · A09 Security Logging and Alerting Failures",
+      "url": "https://owasp.org/Top10/2025/",
+      "text": "Without logging and monitoring, attacks and breaches cannot be detected, and without alerting it is very difficult to respond quickly and effectively during a security incident."
+    },
+    "owasp_a10": {
+      "src": "OWASP",
+      "ref": "Top 10:2025 · A10 Mishandling of Exceptional Conditions",
+      "url": "https://owasp.org/Top10/2025/",
+      "text": "Mishandling exceptional conditions in software happens when programs fail to prevent, detect, and respond to unusual and unpredictable situations, which leads to crashes, unexpected behavior, and sometimes vulnerabilities."
+    },
+    "llm01": {
+      "src": "OWASP",
+      "ref": "Top 10 for LLM Applications 2025 · LLM01 Prompt Injection",
+      "url": "https://genai.owasp.org/llm-top-10/",
+      "text": "A Prompt Injection Vulnerability occurs when user prompts alter the LLM’s behavior or output in unintended ways. These inputs can affect the model even if they are imperceptible to humans, therefore prompt injections do not need to be human-visible/readable, as long as the content is parsed by the model."
+    },
+    "llm02": {
+      "src": "OWASP",
+      "ref": "Top 10 for LLM Applications 2025 · LLM02 Sensitive Information Disclosure",
+      "url": "https://genai.owasp.org/llm-top-10/",
+      "text": "Sensitive information can affect both the LLM and its application context. This includes personal identifiable information (PII), financial details, health records, confidential business data, security credentials, and legal documents."
+    },
+    "llm03": {
+      "src": "OWASP",
+      "ref": "Top 10 for LLM Applications 2025 · LLM03 Supply Chain",
+      "url": "https://genai.owasp.org/llm-top-10/",
+      "text": "LLM supply chains are susceptible to various vulnerabilities, which can affect the integrity of training data, models, and deployment platforms."
+    },
+    "llm05": {
+      "src": "OWASP",
+      "ref": "Top 10 for LLM Applications 2025 · LLM05 Improper Output Handling",
+      "url": "https://genai.owasp.org/llm-top-10/",
+      "text": "Improper Output Handling refers specifically to insufficient validation, sanitization, and handling of the outputs generated by large language models before they are passed downstream to other components and systems."
+    },
+    "llm06": {
+      "src": "OWASP",
+      "ref": "Top 10 for LLM Applications 2025 · LLM06 Excessive Agency",
+      "url": "https://genai.owasp.org/llm-top-10/",
+      "text": "Excessive Agency is the vulnerability that enables damaging actions to be performed in response to unexpected, ambiguous or manipulated outputs from an LLM, regardless of what is causing the LLM to malfunction."
+    },
+    "llm07": {
+      "src": "OWASP",
+      "ref": "Top 10 for LLM Applications 2025 · LLM07 System Prompt Leakage",
+      "url": "https://genai.owasp.org/llm-top-10/",
+      "text": "It's important to understand that the system prompt should not be considered a secret, nor should it be used as a security control."
+    },
+    "llm08": {
+      "src": "OWASP",
+      "ref": "Top 10 for LLM Applications 2025 · LLM08 Vector and Embedding Weaknesses",
+      "url": "https://genai.owasp.org/llm-top-10/",
+      "text": "Vectors and embeddings vulnerabilities present significant security risks in systems utilizing Retrieval Augmented Generation (RAG) with Large Language Models (LLMs)."
+    },
+    "llm09": {
+      "src": "OWASP",
+      "ref": "Top 10 for LLM Applications 2025 · LLM09 Misinformation",
+      "url": "https://genai.owasp.org/llm-top-10/",
+      "text": "Misinformation occurs when LLMs produce false or misleading information that appears credible. This vulnerability can lead to security breaches, reputational damage, and legal liability."
+    },
+    "llm10": {
+      "src": "OWASP",
+      "ref": "Top 10 for LLM Applications 2025 · LLM10 Unbounded Consumption",
+      "url": "https://genai.owasp.org/llm-top-10/",
+      "text": "Unbounded Consumption occurs when a Large Language Model (LLM) application allows users to conduct excessive and uncontrolled inferences, leading to risks such as denial of service (DoS), economic losses, model theft, and service degradation."
+    }
+  }
+}

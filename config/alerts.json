@@ -1,0 +1,23 @@
+{
+  "mode": "full",
+  "siteUrl": "https://[YOUR-GITHUB-USER].github.io/[YOUR-REPO]/",
+  "whatsapp": {
+    "enabled": true,
+    "graphApiVersion": "v26.0",
+    "templateName": "advent_daily",
+    "templateLanguage": "en",
+    "routing": "Days tagged for a stakeholder also go to WHATSAPP_RECIPIENTS_<STAKEHOLDER> if that secret is set (e.g. WHATSAPP_RECIPIENTS_FINANCE)."
+  },
+  "linkedin": {
+    "enabled": true,
+    "apiVersion": "202609",
+    "visibility": "PUBLIC",
+    "hashtags": ["CyberSecurity", "AI", "CyberAdvent"]
+  },
+  "githubIssue": {
+    "enabled": true,
+    "label": "advent-alert"
+  },
+  "reviewer": "[YOUR NAME]",
+  "unsubscribeUrl": "[UNSUBSCRIBE LINK]"
+}

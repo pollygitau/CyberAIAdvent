@@ -1,0 +1,3 @@
+site/*.ics
+__pycache__/
+.DS_Store
