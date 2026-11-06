@@ -8,6 +8,12 @@
 (function () {
   const SVGNS = "http://www.w3.org/2000/svg";
   const STAR = "M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z";
+  /* Garland icons: cyber = shield, AI = sparkle, privacy = padlock (drawn with even-odd holes). */
+  const GARLAND = [
+    ["cyber", "M12 2.5l8 3v6.2c0 4.9-3.4 8.4-8 9.8-4.6-1.4-8-4.9-8-9.8V5.5z"],
+    ["ai", STAR],
+    ["privacy", "M7 10V7.5a5 5 0 0 1 10 0V10h1.5c.8 0 1.5.7 1.5 1.5v8c0 .8-.7 1.5-1.5 1.5h-13C4.7 21 4 20.3 4 19.5v-8c0-.8.7-1.5 1.5-1.5zM9.5 10h5V7.5a2.5 2.5 0 0 0-5 0zM12 13.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"]
+  ];
 
   function svg(d, cls, label) {
     const s = document.createElementNS(SVGNS, "svg");
@@ -88,18 +94,22 @@
         snow.append(f);
       }
     }
+    /* The garland: instead of plain bulbs, little glowing cyber (shield), AI (sparkle) and privacy
+       (padlock) icons in the four bulb colours, hanging along the wire's curve. */
     const lights = lightsId && document.getElementById(lightsId);
     if (lights) {
       const cols = ["#FF6B6B", "#F5C451", "#9EE6C4", "#F8F3E9"];
       for (let i = 0; i < 26; i++) {
+        const [kind, d] = GARLAND[i % GARLAND.length], col = cols[i % 4];
         const b = document.createElement("span");
         const x = (2 * i) / 25 - 1;
-        b.className = "bulb";
-        b.style.marginTop = (Math.round(30 * (1 - x * x)) + 6) + "px";
-        b.style.background = cols[i % 4];
-        b.style.boxShadow = "0 0 12px " + cols[i % 4];
+        b.className = "bulb " + kind;
+        b.style.marginTop = (Math.round(30 * (1 - x * x)) + 4) + "px";
+        b.style.color = col;
+        b.style.filter = "drop-shadow(0 0 4px " + col + ")";
         b.style.animationDuration = (1.4 + (i % 4) * 0.35).toFixed(2) + "s";
         b.style.animationDelay = (i * 0.13).toFixed(2) + "s";
+        b.append(svg(d));
         lights.append(b);
       }
     }

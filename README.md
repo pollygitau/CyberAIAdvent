@@ -48,8 +48,10 @@ config/site.json         The public site address (used for the calendar reminder
 scripts/
   validate.py            Content checks; fails the build on any problem
   build_ics.py           Builds advent-24.ics and days-31.ics calendar reminders (generated on deploy, not committed)
+  check_links.py         Checks every external link and the published site (run by links.yml)
 .github/workflows/
   pages.yml              Validate → build → publish the site
+  links.yml              Link check on GitHub: pull requests that touch the site, by hand, and weekly
 .github/dependabot.yml   Keeps the SHA-pinned Actions current
 SECURITY.md              How this repo itself maps to OWASP Top 10:2025
 ```

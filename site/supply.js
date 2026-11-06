@@ -32,6 +32,11 @@
     s.tests.forEach((t) => el("tests").append(h("div", { class: "check" }, svg(CHECK), h("span", {}, h("b", { text: t.title }), h("span", { text: t.text })))));
     s.injects.forEach((x) => el("injects").append(h("li", {}, h("b", { text: x.t }), x.text)));
     s.discuss.forEach((q) => el("discuss").append(h("span", { class: "q-item" }, h("b", { "aria-hidden": "true", text: "?" }), q)));
+    /* On narrow screens each table row becomes a card; every cell carries its column heading. */
+    ["laws", "contacts"].forEach((id) => {
+      const heads = [...el(id).closest("table").querySelectorAll("thead th")].map((th) => th.textContent.trim());
+      el(id).querySelectorAll("tr").forEach((tr) => [...tr.children].forEach((cell, i) => { if (heads[i]) cell.dataset.label = heads[i]; }));
+    });
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", main); else main();
 })();
