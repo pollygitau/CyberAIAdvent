@@ -71,7 +71,7 @@ def build(data: dict, site_url: str, mode: str) -> str:
 
 def main() -> int:
     data = json.loads((SITE / "days.json").read_text(encoding="utf-8"))
-    cfg = json.loads((ROOT / "config" / "alerts.json").read_text(encoding="utf-8"))
+    cfg = json.loads((ROOT / "config" / "site.json").read_text(encoding="utf-8"))
     site_url = cfg["siteUrl"]
     # While siteUrl is still a placeholder, use the address GitHub Pages reports (set by pages.yml),
     # so calendar reminders never link to "https://[YOUR-GITHUB-USER]…".

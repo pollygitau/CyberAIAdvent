@@ -46,7 +46,7 @@ jobs:
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
 
       # The Pages address is passed through env (never interpolated into the shell). It is used
-      # only while siteUrl in config/alerts.json is still a placeholder.
+      # only while siteUrl in config/site.json is still a placeholder.
       - name: Build calendar subscriptions (.ics)
         env:
           SITE_URL: ${{ steps.pages.outputs.base_url }}
