@@ -286,13 +286,13 @@ select { min-height: 44px; padding: 0 12px; border-radius: 12px; background: var
 .sec h2 { font: 500 36px var(--serif); }
 .sec .intro { font-size: 17px; color: var(--muted); max-width: 820px; }
 .grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 16px; }
-.card { display: flex; flex-direction: column; gap: 12px; padding: 20px; border-radius: 18px; background: var(--surface); border: 1px solid var(--line); animation: rise .5s ease both; }
-.card .ch { display: flex; align-items: center; gap: 12px; }
-.card .badge-n { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 12px; background: var(--gold); color: var(--on); font: italic 700 20px var(--serif); }
-.card h3 { font-size: 20px; font-weight: 600; }
-.card ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
-.card li { display: flex; gap: 10px; font-size: 15px; line-height: 1.5; }
-.card li b { flex: none; color: var(--gold); }
+.stage { display: flex; flex-direction: column; gap: 12px; padding: 20px; border-radius: 18px; background: var(--surface); border: 1px solid var(--line); animation: rise .5s ease both; }
+.stage .ch { display: flex; align-items: center; gap: 12px; }
+.stage .badge-n { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 12px; background: var(--gold); color: var(--on); font: italic 700 20px var(--serif); }
+.stage h3 { font-size: 20px; font-weight: 600; }
+.stage ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.stage li { display: flex; gap: 10px; font-size: 15px; line-height: 1.5; text-align: left; }
+.stage li b { flex: none; color: var(--gold); }
 .tbl { overflow-x: auto; border-radius: 16px; border: 1px solid var(--line); }
 .tbl table { width: 100%; min-width: 880px; border-collapse: collapse; font-size: 14px; line-height: 1.5; }
 .tbl thead tr { background: var(--surface); text-align: left; }
