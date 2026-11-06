@@ -59,7 +59,7 @@ SECURITY.md              How this repo itself maps to OWASP Top 10:2025
 ## 1. Publish the site (about 10 minutes)
 
 1. **Create a repository** and push these files to `main`. GitHub Pages is free for public repositories; private repositories need GitHub Pro, Team or Enterprise.
-2. **Settings → Pages → Build and deployment → Source: GitHub Actions.** Then tick **Enforce HTTPS**.
+2. **This repo publishes no Pages site of its own.** The site goes only to the public repo named in `config/site.json` (`siteRepo`), at `siteUrl` (see *Keep the source private* below). In this repo's **Settings → Pages**, leave Pages unpublished, so the calendar can't appear at a second address.
 3. **Replace the placeholders:**
    - `site/index.html` and `site/door.html`: `[YOUR NAME]`, `[COUNTRY / ORGANISATION]` and `[REVIEW DATE]` (the header shows the site's own name, and the footers show the site address)
    - `config/site.json`: `siteUrl` (e.g. `https://your-user.github.io/your-repo/`). While it is a placeholder, every build shows a warning and the `.ics` reminders use the address GitHub Pages reports.
@@ -77,7 +77,7 @@ GitHub Pages on the free plan only serves public repositories, so this repo can 
 | Repo | Visibility | Holds |
 |---|---|---|
 | this repo (`CyberAIAdvent`) | Private | All source, and the deploy token as an Actions secret |
-| `aware-by-design/CyberAIAdvent2026` (set in `SITE_REPO` in `pages.yml`) | Public, in the free **aware-by-design** organisation | Only the built `site/` folder, served at `https://aware-by-design.github.io/CyberAIAdvent2026/` |
+| `aware-by-design/CyberAIAdvent2026` (set as `siteRepo` in `config/site.json`) | Public, in the free **aware-by-design** organisation | Only the built `site/` folder, served at `https://aware-by-design.github.io/CyberAIAdvent2026/` |
 
 Do it in this order so the site never goes offline:
 

@@ -15,7 +15,7 @@ Every attack below was tried against the built site in a headless browser, or ag
 | 5 | **Clickjacking** — framing the calendar from another origin | Warning banner; all controls disabled | `guardFraming()` (GitHub Pages can't send `frame-ancestors`, so this is defence-in-depth) |
 | 6 | **Reverse tabnabbing** via outbound links | Not possible | Every external link gets `rel="noopener noreferrer"` |
 | 7 | **Personal data in sharing** — phone numbers, LinkedIn or other social identities, email addresses, contact lists | None collected, processed or stored | The automated WhatsApp and LinkedIn channels were removed (6 Nov 2026). Daily reminders come from a calendar file people add themselves; the share kit opens the visitor's own app with text and **no recipient**; the site has no forms, accounts, cookies or analytics, and game progress never leaves the visitor's browser |
-| 8 | **Workflow script injection** | Not possible | No workflow takes free-text input; values reach scripts only through `env`, never interpolated into the shell; `SITE_REPO` must match `owner/repo` |
+| 8 | **Workflow script injection** | Not possible | No workflow takes free-text input; values reach scripts only through `env`, never interpolated into the shell; `siteRepo` must match `owner/repo` |
 | 9 | **Supply-chain compromise of Actions** (the tj-actions lesson, Door 22) | Mitigated | Every Action is pinned to a full commit SHA; Dependabot proposes reviewed updates; `persist-credentials: false` |
 | 10 | **Secret leakage in logs** | None | The only secret is the deploy token: it reaches git as a masked, one-off header and is never printed, written to a remote URL or stored in a file |
 | 11 | **Fork pull requests reading secrets** | Not possible | `pages.yml` uses `pull_request` (not `pull_request_target`): fork PRs get a read-only token and no secrets |
@@ -39,6 +39,7 @@ Every attack below was tried against the built site in a headless browser, or ag
 | 29 | **A missing or broken `settings.json`** stopping the calendar | Falls back to the defaults | The settings fetch is caught; only `days.json` is required |
 | 30 | **Wrong or tampered Action pins** | Verified 6 Nov 2026 | `checkout` v7.0.1, `configure-pages` v6.0.0, `upload-pages-artifact` v5.0.0 and `deploy-pages` v5.0.1 each match their release tag's commit |
 | 31 | **Publishing from a private repo** — leaking the source, or the deploy token, through the public site repo | Only the built site is copied | `publish-site` copies `site/` alone, using `CYBERAI_DEPLOY_TOKEN` (fine-grained, one repo, *Contents* only). It runs only on pushes to `main`, never on pull requests; the token reaches git as a masked one-off header, never a remote URL or a file; commits in the public repo carry no source history |
+| 32 | **Publishing to the wrong address** — the calendar going live at the source repo's own Pages URL as well as the real one | Prevented | The workflow publishes only to `siteRepo` in `config/site.json`. `validate.py` fails the build if any workflow uses a Pages deploy action, if `siteUrl` isn't the GitHub Pages address of `siteRepo`, or if `siteRepo` is the source repo itself. Owner action: keep Pages unpublished in the source repo's settings |
 
 ## OWASP Top 10:2025 mapping
 
