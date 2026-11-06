@@ -127,6 +127,26 @@ def main() -> int:
     site_url = str(cfg.get("siteUrl", ""))
     if "[" in site_url or not site_url.startswith("https://"):
         warnings.append("config/site.json siteUrl is still a placeholder: the .ics files will use the Pages address")
+
+    # Publish to ONE place only: the site repo in config/site.json, whose Pages address must be siteUrl.
+    site_repo = str(cfg.get("siteRepo", ""))
+    check(bool(re.fullmatch(r"[A-Za-z0-9-]+/[A-Za-z0-9._-]+", site_repo)), "config/site.json siteRepo must look like owner/repo")
+    if "/" in site_repo and site_url.startswith("https://"):
+        owner, repo = site_repo.split("/", 1)
+        host = urlparse(site_url).hostname or ""
+        if host.endswith(".github.io"):  # a custom domain can't be checked from here
+            expected = f"https://{owner}.github.io/" if repo.lower() == f"{owner}.github.io".lower() else f"https://{owner}.github.io/{repo}/"
+            check(site_url.lower() == expected.lower(),
+                  f"config/site.json siteUrl ({site_url}) is not the GitHub Pages address of siteRepo {site_repo} ({expected})")
+        this_repo = os.environ.get("GITHUB_REPOSITORY", "")
+        check(not this_repo or this_repo.lower() != site_repo.lower(),
+              f"config/site.json siteRepo is this source repo ({this_repo}); the site must go to a separate public repo")
+    # This repo must never publish a GitHub Pages site of its own: the calendar would appear at a second address.
+    for wf in ROOT.joinpath(".github", "workflows").glob("*.yml"):
+        text = wf.read_text(encoding="utf-8")
+        for action in ("actions/deploy-pages", "actions/upload-pages-artifact", "actions/configure-pages"):
+            check(action not in text, f".github/workflows/{wf.name} uses {action}: this repo must not publish its own Pages site; "
+                                      f"the site is published only to {site_repo or 'the siteRepo in config/site.json'}")
     # Privacy by design: the repo must never hold recipient lists or social-media identities.
     banned = re.compile(r"WHATSAPP_RECIPIENTS|LINKEDIN_AUTHOR_URN|urn:li:person:", re.I)
     for path in [*ROOT.joinpath("config").glob("*.json"), *ROOT.joinpath(".github", "workflows").glob("*.yml")]:
