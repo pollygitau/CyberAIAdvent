@@ -80,7 +80,7 @@
   }
 
   async function main() {
-    festive("snow", null, 24);
+    festive("snow", "lights", 24);
     if (guardFraming()) return;
     let data, settings;
     try {

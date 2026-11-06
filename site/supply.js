@@ -6,7 +6,7 @@
   const el = (id) => document.getElementById(id);
 
   async function main() {
-    festive("snow", null, 24);
+    festive("snow", "lights", 24);
     if (guardFraming()) return;
     let s;
     try { s = await getJSON("supply.json"); } catch (e) { el("stages").append(h("p", { text: "The toolkit could not load. Please refresh the page." })); return; }
