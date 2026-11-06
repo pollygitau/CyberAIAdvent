@@ -66,7 +66,7 @@ Every attack below was tried against the built site in a headless browser, or ag
 
 The code can't set these; they decide who can change what goes live and what gets broadcast.
 
-- **Settings → Rules → Rulesets:** an *Owner only* ruleset on all branches (restrict creations, updates, deletions; block force pushes; bypass: Repository admin) and a *Protect main* ruleset on the default branch (require a pull request — 0 approvals for a sole maintainer — conversation resolution and the `build` status check; bypass: Repository admin, *for pull requests only*). Anything merged is published and sent to WhatsApp and LinkedIn. On the public site repo use only the owner-only ruleset, because the workflow pushes to it directly.
+- **Settings → Rules → Rulesets:** one ruleset, *Owner*, on the default branch only: restrict deletions, block force pushes, require a pull request (0 approvals for a sole maintainer, conversation resolution, squash merges), require the `build` status check with up-to-date branches, and require CodeQL results while the repo is public. Bypass: *Repository admin* only (choose *For pull requests only* to hold yourself to the same rule). Other branches have no rules, so Dependabot and Claude can open pull requests without being on the bypass list; only the owner merges. Anything merged is published and sent to WhatsApp and LinkedIn.
 - **Settings → Actions → General:** workflow permissions *Read repository contents and packages permissions*; leave *Allow GitHub Actions to create and approve pull requests* unticked; keep approval required for first-time contributors' workflows.
 - **Settings → Advanced Security:** turn on private vulnerability reporting, secret scanning with push protection, and Dependabot alerts.
 - **Settings → Environments:** `alerts` limited to `main` with no required reviewers (see README); keep `github-pages` limited to the default branch.
@@ -74,4 +74,4 @@ The code can't set these; they decide who can change what goes live and what get
 
 ## Reporting a vulnerability
 
-Email **[SECURITY CONTACT]**, or use GitHub's private vulnerability reporting on this repository. Please don't open a public issue for security problems.
+Please report security issues privately through GitHub: open the **Security** tab of the public site repository, [pollygitau/AdventCalendar2026](https://github.com/pollygitau/AdventCalendar2026/security/advisories/new), and choose **Report a vulnerability**. You can also email **[SECURITY CONTACT]**. Please don't open a public issue for security problems.
