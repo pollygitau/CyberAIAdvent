@@ -308,6 +308,16 @@ select { min-height: 44px; padding: 0 12px; border-radius: 12px; background: var
 .tbl td { color: var(--soft); }
 .tbl td.clock { color: var(--gold); }
 .tbl .ref { display: block; margin-top: 2px; font: 11px var(--mono); color: var(--faint); }
+@media (max-width: 900px) {
+  .tbl { border: 0; border-radius: 0; overflow: visible; }
+  .tbl table { min-width: 0; }
+  .tbl thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .tbl table, .tbl tbody, .tbl tr, .tbl th, .tbl td { display: block; width: 100%; }
+  .tbl tr { margin-bottom: 12px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); overflow: hidden; }
+  .tbl th, .tbl td { border-bottom: 1px solid var(--line); padding: 12px 14px; }
+  .tbl tr > :last-child { border-bottom: 0; }
+  .tbl td::before { content: attr(data-label); display: block; margin-bottom: 4px; font: 11px var(--mono); letter-spacing: .08em; color: var(--faint); }
+}
 .clockgrid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(190px, 100%), 1fr)); gap: 12px; }
 .clockgrid li { display: flex; flex-direction: column; gap: 8px; padding: 16px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); animation: rise .5s ease both; }
 .clockgrid .t { align-self: flex-start; padding: 4px 10px; border-radius: 999px; background: var(--gold); color: var(--on); font: 600 12px var(--mono); }
@@ -544,6 +554,8 @@ select { min-height: 44px; padding: 0 12px; border-radius: 12px; background: var
 }
 
 @media (max-width: 760px) {
+  .lights .bulb:nth-of-type(2n) { display: none; }
+  .bf-bar .grow { display: none; } .bf-bar .pos { order: -1; flex-basis: 100%; }
   .house { --u: 10px; padding: 64px 3% 40px; border-radius: 18px; }
   .floor1 { padding: 34px 12px 0; }
   .cards, .cards.m-advent { grid-template-columns: repeat(auto-fill, minmax(78px, 1fr)); gap: 9px; }
