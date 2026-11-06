@@ -77,17 +77,17 @@ GitHub Pages on the free plan only serves public repositories, so this repo can 
 | Repo | Visibility | Holds |
 |---|---|---|
 | this repo (`CyberAIAdvent`) | Private | All source, the daily alerts and their secrets |
-| `AdventCalendar2027` (set in `SITE_REPO` in `pages.yml`) | Public | Only the built `site/` folder, served at `https://pollygitau.github.io/AdventCalendar2027/` |
+| `AdventCalendar2026` (set in `SITE_REPO` in `pages.yml`) | Public | Only the built `site/` folder, served at `https://pollygitau.github.io/AdventCalendar2026/` |
 
 Do it in this order so the site never goes offline:
 
-1. Create the public repo `AdventCalendar2027` (no README).
+1. Create the public repo `AdventCalendar2026` (no README).
 2. Create a fine-grained token for **that repo only** with **Contents: Read and write** and an expiry after the campaign (e.g. 31 Jan 2027).
 3. Store it in **this** repo as an Actions secret named `SITE_DEPLOY_TOKEN` (Settings → Secrets and variables → Actions). Never paste it anywhere else.
 4. Push or merge anything to `main` (or run the *Pages* workflow by hand). The `publish-site` job copies the built site into the public repo, adding `.nojekyll` and a short README.
 5. In the public repo: **Settings → Pages → Source: Deploy from a branch → `main` / `(root)`**. Check the site loads.
-6. Make this repo private (**Settings → General → Change visibility**). The old address goes offline; the new one carries on, and every merge to `main` republishes it.
-7. Protect the public repo with an owner-only ruleset (no pull-request rule there — the workflow pushes to it directly).
+6. Before making this repo private, untick **Require code scanning results** in the ruleset (CodeQL needs a paid plan on private repos, so pull requests would be blocked). Then make this repo private (**Settings → General → Change visibility**). The old address goes offline; the new one carries on, and every merge to `main` republishes it.
+7. In the public repo: turn on **private vulnerability reporting** (Settings → Advanced Security) — the workflow adds a `SECURITY.md` there that points to it — and protect `main` with a ruleset that blocks deletion and force pushes, bypass *Repository admin: Always*. Don't add a pull-request rule there: the workflow pushes to it directly.
 
 ## 2. Turn on the daily alert
 

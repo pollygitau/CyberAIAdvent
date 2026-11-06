@@ -23,7 +23,7 @@ concurrency:
 
 env:
   # The public repo that hosts the built site when this repo is private.
-  SITE_REPO: pollygitau/AdventCalendar2027
+  SITE_REPO: pollygitau/AdventCalendar2026
 
 jobs:
   # Runs on every pull request too: this is the "build" status check that must pass before merging.
@@ -125,6 +125,9 @@ jobs:
           printf '%s\n' "# Winterwatch · Cyber & AI" "" \
             "This repository holds only the built website, published with GitHub Pages." \
             "It is updated automatically; please don't open pull requests here." > public/README.md
+          printf '%s\n' "# Security policy" "" \
+            "Please report security issues privately: open the **Security** tab of this repository and choose **Report a vulnerability**." \
+            "Please don't open a public issue for security problems." > public/SECURITY.md
 
           cd public
           git add -A
