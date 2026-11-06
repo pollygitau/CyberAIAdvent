@@ -86,6 +86,7 @@ Do it in this order so the site never goes offline:
 3. Store it in **this** repo as an Actions secret named `CYBERAI_DEPLOY_TOKEN` (Settings → Secrets and variables → Actions). Never paste it anywhere else.
 4. Push or merge anything to `main` (or run the *Pages* workflow by hand). The `publish-site` job copies the built site into the public repo, adding `.nojekyll` and a short README.
 5. In the public repo: **Settings → Pages → Source: Deploy from a branch → `main` / `(root)`**. Check the site loads.
+   If a GitHub Pages deployment in the public repo times out, run **Actions → Pages → Run workflow** here with **Republish even if nothing changed** ticked: it pushes an empty commit so Pages deploys again.
 6. Before making this repo private, untick **Require code scanning results** in the ruleset (CodeQL needs a paid plan on private repos, so pull requests would be blocked). Then make this repo private (**Settings → General → Change visibility**). The old address goes offline; the new one carries on, and every merge to `main` republishes it.
 7. In the public repo: turn on **private vulnerability reporting** (Settings → Advanced Security) — the workflow adds a `SECURITY.md` there that points to it — and protect `main` with a ruleset that blocks deletion and force pushes, bypass *Repository admin: Always*. Don't add a pull-request rule there: the workflow pushes to it directly.
 
