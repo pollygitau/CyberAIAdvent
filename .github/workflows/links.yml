@@ -1,0 +1,30 @@
+# Checks every external link and the published site from GitHub's servers.
+# Not a required check: outside websites can be slow or refuse bots, so read the report rather than block merges.
+name: Link check
+
+on:
+  pull_request:
+    paths: ["site/**", "config/**", "scripts/check_links.py", ".github/workflows/links.yml"]
+  workflow_dispatch:
+  schedule:
+    - cron: "23 6 * * 1"   # Mondays 06:23 UTC
+
+permissions: {}
+
+concurrency:
+  group: links-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  links:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Check every external link
+        run: python3 scripts/check_links.py
